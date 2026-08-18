@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scraper temp
+/scripts/*.html
+/scripts/cj.txt
+/data/processed/
+/scripts/*.js
+/scripts/__pycache__/
