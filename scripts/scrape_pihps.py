@@ -13,7 +13,7 @@ PRICE_TYPES = [1]  # 1=Pasar Tradisional, 2=Modern, 3=Pedagang Besar, 4=Produsen
 START_DATE = "2024-01-01"
 DELAY = 0.3  # detik antar request
 # komoditas utama utk MVP (bisa diperluas)
-MAIN_COMMODITIES = ["Beras", "Daging Ayam", "Bawang Merah", "Cabai Merah", "Minyak Goreng"]
+MAIN_COMMODITIES = ["Beras", "Daging Ayam", "Daging Sapi", "Telur Ayam", "Bawang Merah", "Bawang Putih", "Cabai Merah", "Cabai Rawit", "Minyak Goreng", "Gula Pasir"]
 
 
 def make_session():
