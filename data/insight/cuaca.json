@@ -1,0 +1,3122 @@
+[
+ {
+  "komoditas": "bawang-merah",
+  "nama": "Bawang Merah",
+  "provinsi": [
+   {
+    "provinsi": "Aceh",
+    "n_hari": 920,
+    "r_hujan_harian": -0.048,
+    "r_suhu_harian": 0.057,
+    "r_hujan_mingguan": -0.079,
+    "r_suhu_mingguan": 0.061,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bali",
+    "n_hari": 919,
+    "r_hujan_harian": 0.007,
+    "r_suhu_harian": 0.06,
+    "r_hujan_mingguan": 0.012,
+    "r_suhu_mingguan": 0.076,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Banten",
+    "n_hari": 915,
+    "r_hujan_harian": 0.055,
+    "r_suhu_harian": -0.136,
+    "r_hujan_mingguan": 0.11,
+    "r_suhu_mingguan": -0.159,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bengkulu",
+    "n_hari": 904,
+    "r_hujan_harian": 0.061,
+    "r_suhu_harian": 0.101,
+    "r_hujan_mingguan": 0.108,
+    "r_suhu_mingguan": 0.151,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DI Yogyakarta",
+    "n_hari": 918,
+    "r_hujan_harian": 0.013,
+    "r_suhu_harian": -0.167,
+    "r_hujan_mingguan": 0.019,
+    "r_suhu_mingguan": -0.232,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DKI Jakarta",
+    "n_hari": 912,
+    "r_hujan_harian": 0.061,
+    "r_suhu_harian": -0.069,
+    "r_hujan_mingguan": 0.093,
+    "r_suhu_mingguan": -0.077,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Gorontalo",
+    "n_hari": 919,
+    "r_hujan_harian": -0.022,
+    "r_suhu_harian": 0.033,
+    "r_hujan_mingguan": -0.081,
+    "r_suhu_mingguan": 0.058,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jambi",
+    "n_hari": 919,
+    "r_hujan_harian": 0.207,
+    "r_suhu_harian": -0.246,
+    "r_hujan_mingguan": 0.388,
+    "r_suhu_mingguan": -0.336,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Barat",
+    "n_hari": 919,
+    "r_hujan_harian": 0.043,
+    "r_suhu_harian": -0.087,
+    "r_hujan_mingguan": 0.07,
+    "r_suhu_mingguan": -0.106,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Tengah",
+    "n_hari": 919,
+    "r_hujan_harian": 0.018,
+    "r_suhu_harian": -0.087,
+    "r_hujan_mingguan": 0.024,
+    "r_suhu_mingguan": -0.092,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Timur",
+    "n_hari": 920,
+    "r_hujan_harian": 0.039,
+    "r_suhu_harian": -0.192,
+    "r_hujan_mingguan": 0.048,
+    "r_suhu_mingguan": -0.235,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Barat",
+    "n_hari": 899,
+    "r_hujan_harian": -0.101,
+    "r_suhu_harian": -0.01,
+    "r_hujan_mingguan": -0.172,
+    "r_suhu_mingguan": -0.001,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Selatan",
+    "n_hari": 903,
+    "r_hujan_harian": 0.012,
+    "r_suhu_harian": -0.049,
+    "r_hujan_mingguan": 0.018,
+    "r_suhu_mingguan": -0.072,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Tengah",
+    "n_hari": 913,
+    "r_hujan_harian": 0.007,
+    "r_suhu_harian": -0.043,
+    "r_hujan_mingguan": 0.017,
+    "r_suhu_mingguan": -0.069,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Timur",
+    "n_hari": 915,
+    "r_hujan_harian": 0.004,
+    "r_suhu_harian": -0.112,
+    "r_hujan_mingguan": 0.002,
+    "r_suhu_mingguan": -0.168,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Utara",
+    "n_hari": 894,
+    "r_hujan_harian": 0.077,
+    "r_suhu_harian": 0.013,
+    "r_hujan_mingguan": 0.129,
+    "r_suhu_mingguan": 0.05,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Bangka Belitung",
+    "n_hari": 915,
+    "r_hujan_harian": 0.084,
+    "r_suhu_harian": -0.067,
+    "r_hujan_mingguan": 0.138,
+    "r_suhu_mingguan": -0.084,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Riau",
+    "n_hari": 907,
+    "r_hujan_harian": 0.047,
+    "r_suhu_harian": -0.251,
+    "r_hujan_mingguan": 0.107,
+    "r_suhu_mingguan": -0.365,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Lampung",
+    "n_hari": 915,
+    "r_hujan_harian": 0.051,
+    "r_suhu_harian": -0.019,
+    "r_hujan_mingguan": 0.099,
+    "r_suhu_mingguan": -0.037,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku",
+    "n_hari": 899,
+    "r_hujan_harian": -0.016,
+    "r_suhu_harian": -0.202,
+    "r_hujan_mingguan": -0.037,
+    "r_suhu_mingguan": -0.215,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku Utara",
+    "n_hari": 897,
+    "r_hujan_harian": 0.113,
+    "r_suhu_harian": -0.106,
+    "r_hujan_mingguan": 0.172,
+    "r_suhu_mingguan": -0.112,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Barat",
+    "n_hari": 919,
+    "r_hujan_harian": 0.129,
+    "r_suhu_harian": -0.327,
+    "r_hujan_mingguan": 0.196,
+    "r_suhu_mingguan": -0.387,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Timur",
+    "n_hari": 918,
+    "r_hujan_harian": 0.099,
+    "r_suhu_harian": -0.382,
+    "r_hujan_mingguan": 0.146,
+    "r_suhu_mingguan": -0.425,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua",
+    "n_hari": 915,
+    "r_hujan_harian": -0.118,
+    "r_suhu_harian": -0.077,
+    "r_hujan_mingguan": -0.187,
+    "r_suhu_mingguan": -0.148,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua Barat",
+    "n_hari": 918,
+    "r_hujan_harian": 0.068,
+    "r_suhu_harian": -0.162,
+    "r_hujan_mingguan": 0.085,
+    "r_suhu_mingguan": -0.274,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Riau",
+    "n_hari": 912,
+    "r_hujan_harian": 0.04,
+    "r_suhu_harian": -0.025,
+    "r_hujan_mingguan": 0.087,
+    "r_suhu_mingguan": -0.039,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Barat",
+    "n_hari": 918,
+    "r_hujan_harian": -0.031,
+    "r_suhu_harian": 0.124,
+    "r_hujan_mingguan": -0.074,
+    "r_suhu_mingguan": 0.19,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Selatan",
+    "n_hari": 914,
+    "r_hujan_harian": 0.07,
+    "r_suhu_harian": -0.227,
+    "r_hujan_mingguan": 0.109,
+    "r_suhu_mingguan": -0.268,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tengah",
+    "n_hari": 910,
+    "r_hujan_harian": -0.058,
+    "r_suhu_harian": -0.002,
+    "r_hujan_mingguan": -0.115,
+    "r_suhu_mingguan": 0.015,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tenggara",
+    "n_hari": 918,
+    "r_hujan_harian": 0.055,
+    "r_suhu_harian": -0.207,
+    "r_hujan_mingguan": 0.078,
+    "r_suhu_mingguan": -0.266,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Utara",
+    "n_hari": 919,
+    "r_hujan_harian": 0.007,
+    "r_suhu_harian": 0.008,
+    "r_hujan_mingguan": 0.004,
+    "r_suhu_mingguan": 0.012,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Barat",
+    "n_hari": 908,
+    "r_hujan_harian": 0.015,
+    "r_suhu_harian": 0.084,
+    "r_hujan_mingguan": 0.03,
+    "r_suhu_mingguan": 0.127,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Selatan",
+    "n_hari": 916,
+    "r_hujan_harian": 0.086,
+    "r_suhu_harian": -0.228,
+    "r_hujan_mingguan": 0.146,
+    "r_suhu_mingguan": -0.289,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.036,
+    "r_suhu_harian": 0.045,
+    "r_hujan_mingguan": -0.025,
+    "r_suhu_mingguan": 0.041,
+    "kekuatan": "lemah"
+   }
+  ]
+ },
+ {
+  "komoditas": "bawang-putih",
+  "nama": "Bawang Putih",
+  "provinsi": [
+   {
+    "provinsi": "Aceh",
+    "n_hari": 920,
+    "r_hujan_harian": 0.051,
+    "r_suhu_harian": -0.174,
+    "r_hujan_mingguan": 0.086,
+    "r_suhu_mingguan": -0.217,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bali",
+    "n_hari": 919,
+    "r_hujan_harian": 0.062,
+    "r_suhu_harian": 0.171,
+    "r_hujan_mingguan": 0.092,
+    "r_suhu_mingguan": 0.202,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Banten",
+    "n_hari": 915,
+    "r_hujan_harian": 0.007,
+    "r_suhu_harian": -0.023,
+    "r_hujan_mingguan": 0.001,
+    "r_suhu_mingguan": -0.034,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bengkulu",
+    "n_hari": 904,
+    "r_hujan_harian": -0.047,
+    "r_suhu_harian": 0.109,
+    "r_hujan_mingguan": -0.089,
+    "r_suhu_mingguan": 0.166,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DI Yogyakarta",
+    "n_hari": 918,
+    "r_hujan_harian": 0.013,
+    "r_suhu_harian": 0.005,
+    "r_hujan_mingguan": 0.017,
+    "r_suhu_mingguan": 0.011,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DKI Jakarta",
+    "n_hari": 912,
+    "r_hujan_harian": 0.042,
+    "r_suhu_harian": -0.06,
+    "r_hujan_mingguan": 0.068,
+    "r_suhu_mingguan": -0.078,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Gorontalo",
+    "n_hari": 919,
+    "r_hujan_harian": 0.062,
+    "r_suhu_harian": -0.092,
+    "r_hujan_mingguan": 0.099,
+    "r_suhu_mingguan": -0.105,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jambi",
+    "n_hari": 919,
+    "r_hujan_harian": 0.046,
+    "r_suhu_harian": -0.018,
+    "r_hujan_mingguan": 0.076,
+    "r_suhu_mingguan": -0.024,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Barat",
+    "n_hari": 919,
+    "r_hujan_harian": 0.053,
+    "r_suhu_harian": -0.05,
+    "r_hujan_mingguan": 0.097,
+    "r_suhu_mingguan": -0.067,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Tengah",
+    "n_hari": 919,
+    "r_hujan_harian": 0.041,
+    "r_suhu_harian": -0.078,
+    "r_hujan_mingguan": 0.046,
+    "r_suhu_mingguan": -0.083,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Timur",
+    "n_hari": 920,
+    "r_hujan_harian": 0.139,
+    "r_suhu_harian": -0.079,
+    "r_hujan_mingguan": 0.204,
+    "r_suhu_mingguan": -0.118,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Barat",
+    "n_hari": 899,
+    "r_hujan_harian": 0.073,
+    "r_suhu_harian": -0.024,
+    "r_hujan_mingguan": 0.126,
+    "r_suhu_mingguan": -0.022,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Selatan",
+    "n_hari": 903,
+    "r_hujan_harian": 0.106,
+    "r_suhu_harian": -0.114,
+    "r_hujan_mingguan": 0.159,
+    "r_suhu_mingguan": -0.176,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Tengah",
+    "n_hari": 913,
+    "r_hujan_harian": 0.088,
+    "r_suhu_harian": -0.088,
+    "r_hujan_mingguan": 0.154,
+    "r_suhu_mingguan": -0.142,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Timur",
+    "n_hari": 915,
+    "r_hujan_harian": 0.083,
+    "r_suhu_harian": -0.021,
+    "r_hujan_mingguan": 0.158,
+    "r_suhu_mingguan": -0.001,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Utara",
+    "n_hari": 894,
+    "r_hujan_harian": 0.038,
+    "r_suhu_harian": -0.04,
+    "r_hujan_mingguan": 0.094,
+    "r_suhu_mingguan": -0.088,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Bangka Belitung",
+    "n_hari": 915,
+    "r_hujan_harian": 0.176,
+    "r_suhu_harian": -0.125,
+    "r_hujan_mingguan": 0.262,
+    "r_suhu_mingguan": -0.169,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Riau",
+    "n_hari": 907,
+    "r_hujan_harian": 0.063,
+    "r_suhu_harian": -0.108,
+    "r_hujan_mingguan": 0.134,
+    "r_suhu_mingguan": -0.178,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Lampung",
+    "n_hari": 915,
+    "r_hujan_harian": 0.013,
+    "r_suhu_harian": -0.024,
+    "r_hujan_mingguan": 0.034,
+    "r_suhu_mingguan": -0.046,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku",
+    "n_hari": 899,
+    "r_hujan_harian": 0.171,
+    "r_suhu_harian": -0.21,
+    "r_hujan_mingguan": 0.281,
+    "r_suhu_mingguan": -0.247,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku Utara",
+    "n_hari": 897,
+    "r_hujan_harian": 0.161,
+    "r_suhu_harian": -0.25,
+    "r_hujan_mingguan": 0.257,
+    "r_suhu_mingguan": -0.299,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Barat",
+    "n_hari": 919,
+    "r_hujan_harian": 0.054,
+    "r_suhu_harian": 0.102,
+    "r_hujan_mingguan": 0.083,
+    "r_suhu_mingguan": 0.118,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Timur",
+    "n_hari": 918,
+    "r_hujan_harian": -0.022,
+    "r_suhu_harian": -0.186,
+    "r_hujan_mingguan": -0.034,
+    "r_suhu_mingguan": -0.211,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua",
+    "n_hari": 915,
+    "r_hujan_harian": -0.106,
+    "r_suhu_harian": -0.09,
+    "r_hujan_mingguan": -0.173,
+    "r_suhu_mingguan": -0.187,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua Barat",
+    "n_hari": 918,
+    "r_hujan_harian": 0.074,
+    "r_suhu_harian": -0.094,
+    "r_hujan_mingguan": 0.1,
+    "r_suhu_mingguan": -0.15,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Riau",
+    "n_hari": 912,
+    "r_hujan_harian": 0.137,
+    "r_suhu_harian": -0.219,
+    "r_hujan_mingguan": 0.227,
+    "r_suhu_mingguan": -0.271,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Barat",
+    "n_hari": 918,
+    "r_hujan_harian": 0.083,
+    "r_suhu_harian": -0.037,
+    "r_hujan_mingguan": 0.155,
+    "r_suhu_mingguan": -0.045,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Selatan",
+    "n_hari": 914,
+    "r_hujan_harian": 0.018,
+    "r_suhu_harian": -0.075,
+    "r_hujan_mingguan": 0.027,
+    "r_suhu_mingguan": -0.08,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tengah",
+    "n_hari": 910,
+    "r_hujan_harian": 0.147,
+    "r_suhu_harian": -0.043,
+    "r_hujan_mingguan": 0.298,
+    "r_suhu_mingguan": -0.075,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tenggara",
+    "n_hari": 918,
+    "r_hujan_harian": -0.006,
+    "r_suhu_harian": -0.261,
+    "r_hujan_mingguan": -0.003,
+    "r_suhu_mingguan": -0.354,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Utara",
+    "n_hari": 919,
+    "r_hujan_harian": 0.084,
+    "r_suhu_harian": -0.088,
+    "r_hujan_mingguan": 0.153,
+    "r_suhu_mingguan": -0.11,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Barat",
+    "n_hari": 908,
+    "r_hujan_harian": -0.024,
+    "r_suhu_harian": -0.076,
+    "r_hujan_mingguan": -0.034,
+    "r_suhu_mingguan": -0.131,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Selatan",
+    "n_hari": 916,
+    "r_hujan_harian": 0.074,
+    "r_suhu_harian": -0.172,
+    "r_hujan_mingguan": 0.117,
+    "r_suhu_mingguan": -0.222,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Utara",
+    "n_hari": 919,
+    "r_hujan_harian": 0.084,
+    "r_suhu_harian": -0.291,
+    "r_hujan_mingguan": 0.173,
+    "r_suhu_mingguan": -0.375,
+    "kekuatan": "lemah"
+   }
+  ]
+ },
+ {
+  "komoditas": "beras",
+  "nama": "Beras",
+  "provinsi": [
+   {
+    "provinsi": "Aceh",
+    "n_hari": 920,
+    "r_hujan_harian": -0.088,
+    "r_suhu_harian": 0.216,
+    "r_hujan_mingguan": -0.154,
+    "r_suhu_mingguan": 0.272,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bali",
+    "n_hari": 919,
+    "r_hujan_harian": -0.014,
+    "r_suhu_harian": -0.019,
+    "r_hujan_mingguan": -0.027,
+    "r_suhu_mingguan": -0.009,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Banten",
+    "n_hari": 915,
+    "r_hujan_harian": -0.065,
+    "r_suhu_harian": -0.044,
+    "r_hujan_mingguan": -0.129,
+    "r_suhu_mingguan": -0.037,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bengkulu",
+    "n_hari": 904,
+    "r_hujan_harian": -0.051,
+    "r_suhu_harian": 0.202,
+    "r_hujan_mingguan": -0.096,
+    "r_suhu_mingguan": 0.299,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DI Yogyakarta",
+    "n_hari": 918,
+    "r_hujan_harian": -0.038,
+    "r_suhu_harian": 0.011,
+    "r_hujan_mingguan": -0.047,
+    "r_suhu_mingguan": 0.015,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DKI Jakarta",
+    "n_hari": 912,
+    "r_hujan_harian": -0.08,
+    "r_suhu_harian": 0.094,
+    "r_hujan_mingguan": -0.147,
+    "r_suhu_mingguan": 0.132,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Gorontalo",
+    "n_hari": 919,
+    "r_hujan_harian": -0.111,
+    "r_suhu_harian": 0.226,
+    "r_hujan_mingguan": -0.22,
+    "r_suhu_mingguan": 0.313,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jambi",
+    "n_hari": 919,
+    "r_hujan_harian": -0.115,
+    "r_suhu_harian": 0.047,
+    "r_hujan_mingguan": -0.217,
+    "r_suhu_mingguan": 0.065,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Barat",
+    "n_hari": 919,
+    "r_hujan_harian": -0.034,
+    "r_suhu_harian": 0.061,
+    "r_hujan_mingguan": -0.058,
+    "r_suhu_mingguan": 0.081,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Tengah",
+    "n_hari": 919,
+    "r_hujan_harian": -0.083,
+    "r_suhu_harian": 0.02,
+    "r_hujan_mingguan": -0.129,
+    "r_suhu_mingguan": 0.022,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Timur",
+    "n_hari": 920,
+    "r_hujan_harian": -0.046,
+    "r_suhu_harian": -0.096,
+    "r_hujan_mingguan": -0.064,
+    "r_suhu_mingguan": -0.106,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Barat",
+    "n_hari": 899,
+    "r_hujan_harian": -0.136,
+    "r_suhu_harian": 0.141,
+    "r_hujan_mingguan": -0.257,
+    "r_suhu_mingguan": 0.246,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Selatan",
+    "n_hari": 903,
+    "r_hujan_harian": -0.136,
+    "r_suhu_harian": 0.232,
+    "r_hujan_mingguan": -0.236,
+    "r_suhu_mingguan": 0.36,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Tengah",
+    "n_hari": 913,
+    "r_hujan_harian": -0.023,
+    "r_suhu_harian": 0.15,
+    "r_hujan_mingguan": -0.03,
+    "r_suhu_mingguan": 0.242,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Timur",
+    "n_hari": 915,
+    "r_hujan_harian": -0.093,
+    "r_suhu_harian": -0.087,
+    "r_hujan_mingguan": -0.197,
+    "r_suhu_mingguan": -0.152,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Utara",
+    "n_hari": 894,
+    "r_hujan_harian": -0.03,
+    "r_suhu_harian": 0.088,
+    "r_hujan_mingguan": -0.079,
+    "r_suhu_mingguan": 0.159,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Bangka Belitung",
+    "n_hari": 915,
+    "r_hujan_harian": -0.012,
+    "r_suhu_harian": 0.097,
+    "r_hujan_mingguan": 0.01,
+    "r_suhu_mingguan": 0.122,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Riau",
+    "n_hari": 907,
+    "r_hujan_harian": -0.059,
+    "r_suhu_harian": 0.124,
+    "r_hujan_mingguan": -0.131,
+    "r_suhu_mingguan": 0.171,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Lampung",
+    "n_hari": 915,
+    "r_hujan_harian": -0.12,
+    "r_suhu_harian": 0.164,
+    "r_hujan_mingguan": -0.217,
+    "r_suhu_mingguan": 0.257,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku",
+    "n_hari": 899,
+    "r_hujan_harian": -0.049,
+    "r_suhu_harian": -0.342,
+    "r_hujan_mingguan": -0.091,
+    "r_suhu_mingguan": -0.389,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku Utara",
+    "n_hari": 897,
+    "r_hujan_harian": -0.041,
+    "r_suhu_harian": 0.173,
+    "r_hujan_mingguan": -0.083,
+    "r_suhu_mingguan": 0.226,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Barat",
+    "n_hari": 919,
+    "r_hujan_harian": 0.089,
+    "r_suhu_harian": -0.212,
+    "r_hujan_mingguan": 0.145,
+    "r_suhu_mingguan": -0.267,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Timur",
+    "n_hari": 918,
+    "r_hujan_harian": -0.061,
+    "r_suhu_harian": 0.087,
+    "r_hujan_mingguan": -0.098,
+    "r_suhu_mingguan": 0.105,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua",
+    "n_hari": 915,
+    "r_hujan_harian": -0.23,
+    "r_suhu_harian": -0.015,
+    "r_hujan_mingguan": -0.345,
+    "r_suhu_mingguan": -0.032,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua Barat",
+    "n_hari": 918,
+    "r_hujan_harian": 0.016,
+    "r_suhu_harian": 0.072,
+    "r_hujan_mingguan": 0.011,
+    "r_suhu_mingguan": 0.127,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Riau",
+    "n_hari": 912,
+    "r_hujan_harian": -0.215,
+    "r_suhu_harian": 0.261,
+    "r_hujan_mingguan": -0.37,
+    "r_suhu_mingguan": 0.351,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Barat",
+    "n_hari": 918,
+    "r_hujan_harian": -0.11,
+    "r_suhu_harian": 0.182,
+    "r_hujan_mingguan": -0.224,
+    "r_suhu_mingguan": 0.277,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Selatan",
+    "n_hari": 914,
+    "r_hujan_harian": -0.22,
+    "r_suhu_harian": 0.238,
+    "r_hujan_mingguan": -0.334,
+    "r_suhu_mingguan": 0.271,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tengah",
+    "n_hari": 910,
+    "r_hujan_harian": -0.147,
+    "r_suhu_harian": 0.235,
+    "r_hujan_mingguan": -0.295,
+    "r_suhu_mingguan": 0.339,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tenggara",
+    "n_hari": 918,
+    "r_hujan_harian": -0.149,
+    "r_suhu_harian": -0.209,
+    "r_hujan_mingguan": -0.238,
+    "r_suhu_mingguan": -0.267,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.166,
+    "r_suhu_harian": 0.297,
+    "r_hujan_mingguan": -0.307,
+    "r_suhu_mingguan": 0.363,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Barat",
+    "n_hari": 908,
+    "r_hujan_harian": -0.017,
+    "r_suhu_harian": 0.112,
+    "r_hujan_mingguan": -0.025,
+    "r_suhu_mingguan": 0.171,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Selatan",
+    "n_hari": 916,
+    "r_hujan_harian": -0.135,
+    "r_suhu_harian": 0.201,
+    "r_hujan_mingguan": -0.218,
+    "r_suhu_mingguan": 0.271,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.164,
+    "r_suhu_harian": 0.31,
+    "r_hujan_mingguan": -0.285,
+    "r_suhu_mingguan": 0.383,
+    "kekuatan": "lemah"
+   }
+  ]
+ },
+ {
+  "komoditas": "cabai-merah",
+  "nama": "Cabai Merah",
+  "provinsi": [
+   {
+    "provinsi": "Aceh",
+    "n_hari": 920,
+    "r_hujan_harian": -0.024,
+    "r_suhu_harian": 0.013,
+    "r_hujan_mingguan": 0.062,
+    "r_suhu_mingguan": -0.025,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bali",
+    "n_hari": 919,
+    "r_hujan_harian": 0.11,
+    "r_suhu_harian": 0.17,
+    "r_hujan_mingguan": 0.172,
+    "r_suhu_mingguan": 0.215,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Banten",
+    "n_hari": 915,
+    "r_hujan_harian": 0.152,
+    "r_suhu_harian": -0.259,
+    "r_hujan_mingguan": 0.276,
+    "r_suhu_mingguan": -0.319,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bengkulu",
+    "n_hari": 904,
+    "r_hujan_harian": 0.177,
+    "r_suhu_harian": -0.035,
+    "r_hujan_mingguan": 0.316,
+    "r_suhu_mingguan": -0.067,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DI Yogyakarta",
+    "n_hari": 918,
+    "r_hujan_harian": 0.114,
+    "r_suhu_harian": -0.236,
+    "r_hujan_mingguan": 0.187,
+    "r_suhu_mingguan": -0.342,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DKI Jakarta",
+    "n_hari": 912,
+    "r_hujan_harian": 0.076,
+    "r_suhu_harian": -0.146,
+    "r_hujan_mingguan": 0.124,
+    "r_suhu_mingguan": -0.182,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Gorontalo",
+    "n_hari": 919,
+    "r_hujan_harian": 0.074,
+    "r_suhu_harian": -0.317,
+    "r_hujan_mingguan": 0.181,
+    "r_suhu_mingguan": -0.44,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jambi",
+    "n_hari": 919,
+    "r_hujan_harian": 0.153,
+    "r_suhu_harian": -0.143,
+    "r_hujan_mingguan": 0.297,
+    "r_suhu_mingguan": -0.214,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Barat",
+    "n_hari": 919,
+    "r_hujan_harian": 0.024,
+    "r_suhu_harian": -0.172,
+    "r_hujan_mingguan": 0.051,
+    "r_suhu_mingguan": -0.208,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Tengah",
+    "n_hari": 919,
+    "r_hujan_harian": 0.114,
+    "r_suhu_harian": -0.331,
+    "r_hujan_mingguan": 0.198,
+    "r_suhu_mingguan": -0.365,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Timur",
+    "n_hari": 920,
+    "r_hujan_harian": 0.245,
+    "r_suhu_harian": -0.181,
+    "r_hujan_mingguan": 0.359,
+    "r_suhu_mingguan": -0.216,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Barat",
+    "n_hari": 899,
+    "r_hujan_harian": -0.036,
+    "r_suhu_harian": 0.095,
+    "r_hujan_mingguan": -0.081,
+    "r_suhu_mingguan": 0.171,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Selatan",
+    "n_hari": 903,
+    "r_hujan_harian": 0.113,
+    "r_suhu_harian": -0.113,
+    "r_hujan_mingguan": 0.188,
+    "r_suhu_mingguan": -0.179,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Tengah",
+    "n_hari": 913,
+    "r_hujan_harian": 0.049,
+    "r_suhu_harian": -0.06,
+    "r_hujan_mingguan": 0.082,
+    "r_suhu_mingguan": -0.109,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Timur",
+    "n_hari": 915,
+    "r_hujan_harian": 0.004,
+    "r_suhu_harian": -0.011,
+    "r_hujan_mingguan": 0.023,
+    "r_suhu_mingguan": -0.014,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Utara",
+    "n_hari": 894,
+    "r_hujan_harian": 0.052,
+    "r_suhu_harian": -0.016,
+    "r_hujan_mingguan": 0.107,
+    "r_suhu_mingguan": -0.048,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Bangka Belitung",
+    "n_hari": 915,
+    "r_hujan_harian": 0.243,
+    "r_suhu_harian": -0.257,
+    "r_hujan_mingguan": 0.388,
+    "r_suhu_mingguan": -0.348,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Riau",
+    "n_hari": 907,
+    "r_hujan_harian": 0.008,
+    "r_suhu_harian": 0.023,
+    "r_hujan_mingguan": 0.029,
+    "r_suhu_mingguan": -0.008,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Lampung",
+    "n_hari": 915,
+    "r_hujan_harian": 0.184,
+    "r_suhu_harian": -0.089,
+    "r_hujan_mingguan": 0.332,
+    "r_suhu_mingguan": -0.145,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku",
+    "n_hari": 899,
+    "r_hujan_harian": 0.082,
+    "r_suhu_harian": -0.202,
+    "r_hujan_mingguan": 0.139,
+    "r_suhu_mingguan": -0.232,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku Utara",
+    "n_hari": 897,
+    "r_hujan_harian": 0.202,
+    "r_suhu_harian": -0.205,
+    "r_hujan_mingguan": 0.353,
+    "r_suhu_mingguan": -0.28,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Barat",
+    "n_hari": 919,
+    "r_hujan_harian": 0.148,
+    "r_suhu_harian": -0.343,
+    "r_hujan_mingguan": 0.224,
+    "r_suhu_mingguan": -0.408,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Timur",
+    "n_hari": 918,
+    "r_hujan_harian": -0.013,
+    "r_suhu_harian": -0.274,
+    "r_hujan_mingguan": -0.024,
+    "r_suhu_mingguan": -0.301,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua",
+    "n_hari": 915,
+    "r_hujan_harian": -0.056,
+    "r_suhu_harian": -0.158,
+    "r_hujan_mingguan": -0.074,
+    "r_suhu_mingguan": -0.348,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua Barat",
+    "n_hari": 918,
+    "r_hujan_harian": -0.038,
+    "r_suhu_harian": -0.055,
+    "r_hujan_mingguan": -0.092,
+    "r_suhu_mingguan": -0.091,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Riau",
+    "n_hari": 912,
+    "r_hujan_harian": 0.002,
+    "r_suhu_harian": -0.143,
+    "r_hujan_mingguan": 0.006,
+    "r_suhu_mingguan": -0.204,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Barat",
+    "n_hari": 918,
+    "r_hujan_harian": -0.054,
+    "r_suhu_harian": 0.045,
+    "r_hujan_mingguan": -0.116,
+    "r_suhu_mingguan": 0.078,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Selatan",
+    "n_hari": 914,
+    "r_hujan_harian": -0.13,
+    "r_suhu_harian": 0.105,
+    "r_hujan_mingguan": -0.198,
+    "r_suhu_mingguan": 0.115,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tengah",
+    "n_hari": 910,
+    "r_hujan_harian": 0.099,
+    "r_suhu_harian": -0.087,
+    "r_hujan_mingguan": 0.207,
+    "r_suhu_mingguan": -0.127,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tenggara",
+    "n_hari": 918,
+    "r_hujan_harian": -0.007,
+    "r_suhu_harian": -0.287,
+    "r_hujan_mingguan": -0.016,
+    "r_suhu_mingguan": -0.378,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.021,
+    "r_suhu_harian": 0.046,
+    "r_hujan_mingguan": -0.001,
+    "r_suhu_mingguan": 0.035,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Barat",
+    "n_hari": 908,
+    "r_hujan_harian": 0.123,
+    "r_suhu_harian": -0.052,
+    "r_hujan_mingguan": 0.252,
+    "r_suhu_mingguan": -0.112,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Selatan",
+    "n_hari": 916,
+    "r_hujan_harian": 0.195,
+    "r_suhu_harian": -0.214,
+    "r_hujan_mingguan": 0.323,
+    "r_suhu_mingguan": -0.284,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Utara",
+    "n_hari": 919,
+    "r_hujan_harian": 0.029,
+    "r_suhu_harian": -0.177,
+    "r_hujan_mingguan": 0.117,
+    "r_suhu_mingguan": -0.264,
+    "kekuatan": "lemah"
+   }
+  ]
+ },
+ {
+  "komoditas": "cabai-rawit",
+  "nama": "Cabai Rawit",
+  "provinsi": [
+   {
+    "provinsi": "Aceh",
+    "n_hari": 920,
+    "r_hujan_harian": -0.072,
+    "r_suhu_harian": -0.11,
+    "r_hujan_mingguan": -0.049,
+    "r_suhu_mingguan": -0.168,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bali",
+    "n_hari": 919,
+    "r_hujan_harian": 0.08,
+    "r_suhu_harian": -0.007,
+    "r_hujan_mingguan": 0.133,
+    "r_suhu_mingguan": 0.001,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Banten",
+    "n_hari": 915,
+    "r_hujan_harian": 0.039,
+    "r_suhu_harian": -0.23,
+    "r_hujan_mingguan": 0.054,
+    "r_suhu_mingguan": -0.284,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bengkulu",
+    "n_hari": 904,
+    "r_hujan_harian": -0.049,
+    "r_suhu_harian": 0.211,
+    "r_hujan_mingguan": -0.085,
+    "r_suhu_mingguan": 0.31,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DI Yogyakarta",
+    "n_hari": 918,
+    "r_hujan_harian": 0.025,
+    "r_suhu_harian": -0.085,
+    "r_hujan_mingguan": 0.033,
+    "r_suhu_mingguan": -0.127,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DKI Jakarta",
+    "n_hari": 912,
+    "r_hujan_harian": 0.12,
+    "r_suhu_harian": -0.288,
+    "r_hujan_mingguan": 0.176,
+    "r_suhu_mingguan": -0.35,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Gorontalo",
+    "n_hari": 919,
+    "r_hujan_harian": 0.112,
+    "r_suhu_harian": -0.259,
+    "r_hujan_mingguan": 0.25,
+    "r_suhu_mingguan": -0.368,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jambi",
+    "n_hari": 919,
+    "r_hujan_harian": 0.052,
+    "r_suhu_harian": -0.217,
+    "r_hujan_mingguan": 0.1,
+    "r_suhu_mingguan": -0.313,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Barat",
+    "n_hari": 919,
+    "r_hujan_harian": -0.077,
+    "r_suhu_harian": -0.197,
+    "r_hujan_mingguan": -0.128,
+    "r_suhu_mingguan": -0.244,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Tengah",
+    "n_hari": 919,
+    "r_hujan_harian": 0.012,
+    "r_suhu_harian": -0.353,
+    "r_hujan_mingguan": 0.023,
+    "r_suhu_mingguan": -0.398,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Timur",
+    "n_hari": 920,
+    "r_hujan_harian": 0.095,
+    "r_suhu_harian": -0.179,
+    "r_hujan_mingguan": 0.148,
+    "r_suhu_mingguan": -0.217,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Barat",
+    "n_hari": 899,
+    "r_hujan_harian": -0.025,
+    "r_suhu_harian": 0.094,
+    "r_hujan_mingguan": -0.06,
+    "r_suhu_mingguan": 0.151,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Selatan",
+    "n_hari": 903,
+    "r_hujan_harian": 0.031,
+    "r_suhu_harian": -0.072,
+    "r_hujan_mingguan": 0.064,
+    "r_suhu_mingguan": -0.102,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Tengah",
+    "n_hari": 913,
+    "r_hujan_harian": -0.051,
+    "r_suhu_harian": -0.008,
+    "r_hujan_mingguan": -0.078,
+    "r_suhu_mingguan": -0.028,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Timur",
+    "n_hari": 915,
+    "r_hujan_harian": 0.079,
+    "r_suhu_harian": -0.078,
+    "r_hujan_mingguan": 0.18,
+    "r_suhu_mingguan": -0.127,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Utara",
+    "n_hari": 894,
+    "r_hujan_harian": 0.077,
+    "r_suhu_harian": -0.154,
+    "r_hujan_mingguan": 0.133,
+    "r_suhu_mingguan": -0.238,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Bangka Belitung",
+    "n_hari": 915,
+    "r_hujan_harian": 0.152,
+    "r_suhu_harian": -0.176,
+    "r_hujan_mingguan": 0.225,
+    "r_suhu_mingguan": -0.239,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Riau",
+    "n_hari": 907,
+    "r_hujan_harian": -0.026,
+    "r_suhu_harian": -0.064,
+    "r_hujan_mingguan": -0.029,
+    "r_suhu_mingguan": -0.115,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Lampung",
+    "n_hari": 915,
+    "r_hujan_harian": 0.114,
+    "r_suhu_harian": -0.137,
+    "r_hujan_mingguan": 0.191,
+    "r_suhu_mingguan": -0.204,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku",
+    "n_hari": 899,
+    "r_hujan_harian": 0.009,
+    "r_suhu_harian": -0.039,
+    "r_hujan_mingguan": 0.011,
+    "r_suhu_mingguan": -0.039,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku Utara",
+    "n_hari": 897,
+    "r_hujan_harian": 0.15,
+    "r_suhu_harian": -0.08,
+    "r_hujan_mingguan": 0.246,
+    "r_suhu_mingguan": -0.093,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Barat",
+    "n_hari": 919,
+    "r_hujan_harian": 0.101,
+    "r_suhu_harian": -0.285,
+    "r_hujan_mingguan": 0.143,
+    "r_suhu_mingguan": -0.344,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Timur",
+    "n_hari": 918,
+    "r_hujan_harian": 0.055,
+    "r_suhu_harian": -0.248,
+    "r_hujan_mingguan": 0.068,
+    "r_suhu_mingguan": -0.27,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua",
+    "n_hari": 915,
+    "r_hujan_harian": -0.179,
+    "r_suhu_harian": -0.11,
+    "r_hujan_mingguan": -0.281,
+    "r_suhu_mingguan": -0.222,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua Barat",
+    "n_hari": 918,
+    "r_hujan_harian": -0.006,
+    "r_suhu_harian": -0.103,
+    "r_hujan_mingguan": -0.012,
+    "r_suhu_mingguan": -0.191,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Riau",
+    "n_hari": 912,
+    "r_hujan_harian": 0.068,
+    "r_suhu_harian": -0.287,
+    "r_hujan_mingguan": 0.136,
+    "r_suhu_mingguan": -0.378,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Barat",
+    "n_hari": 918,
+    "r_hujan_harian": 0.045,
+    "r_suhu_harian": -0.03,
+    "r_hujan_mingguan": 0.114,
+    "r_suhu_mingguan": -0.06,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Selatan",
+    "n_hari": 914,
+    "r_hujan_harian": 0.025,
+    "r_suhu_harian": -0.196,
+    "r_hujan_mingguan": 0.048,
+    "r_suhu_mingguan": -0.232,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tengah",
+    "n_hari": 910,
+    "r_hujan_harian": 0.072,
+    "r_suhu_harian": -0.045,
+    "r_hujan_mingguan": 0.13,
+    "r_suhu_mingguan": -0.068,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tenggara",
+    "n_hari": 918,
+    "r_hujan_harian": 0.047,
+    "r_suhu_harian": -0.214,
+    "r_hujan_mingguan": 0.073,
+    "r_suhu_mingguan": -0.278,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.018,
+    "r_suhu_harian": 0.095,
+    "r_hujan_mingguan": -0.001,
+    "r_suhu_mingguan": 0.108,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Barat",
+    "n_hari": 908,
+    "r_hujan_harian": 0.03,
+    "r_suhu_harian": -0.062,
+    "r_hujan_mingguan": 0.059,
+    "r_suhu_mingguan": -0.107,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Selatan",
+    "n_hari": 916,
+    "r_hujan_harian": 0.122,
+    "r_suhu_harian": -0.174,
+    "r_hujan_mingguan": 0.2,
+    "r_suhu_mingguan": -0.234,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.038,
+    "r_suhu_harian": -0.265,
+    "r_hujan_mingguan": -0.014,
+    "r_suhu_mingguan": -0.368,
+    "kekuatan": "lemah"
+   }
+  ]
+ },
+ {
+  "komoditas": "daging-ayam",
+  "nama": "Daging Ayam",
+  "provinsi": [
+   {
+    "provinsi": "Aceh",
+    "n_hari": 920,
+    "r_hujan_harian": 0.036,
+    "r_suhu_harian": -0.149,
+    "r_hujan_mingguan": 0.069,
+    "r_suhu_mingguan": -0.196,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bali",
+    "n_hari": 919,
+    "r_hujan_harian": 0.185,
+    "r_suhu_harian": -0.024,
+    "r_hujan_mingguan": 0.297,
+    "r_suhu_mingguan": -0.026,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Banten",
+    "n_hari": 915,
+    "r_hujan_harian": 0.08,
+    "r_suhu_harian": -0.126,
+    "r_hujan_mingguan": 0.176,
+    "r_suhu_mingguan": -0.16,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bengkulu",
+    "n_hari": 904,
+    "r_hujan_harian": -0.007,
+    "r_suhu_harian": 0.131,
+    "r_hujan_mingguan": -0.01,
+    "r_suhu_mingguan": 0.184,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DI Yogyakarta",
+    "n_hari": 918,
+    "r_hujan_harian": 0.127,
+    "r_suhu_harian": -0.038,
+    "r_hujan_mingguan": 0.207,
+    "r_suhu_mingguan": -0.053,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DKI Jakarta",
+    "n_hari": 912,
+    "r_hujan_harian": 0.074,
+    "r_suhu_harian": -0.11,
+    "r_hujan_mingguan": 0.12,
+    "r_suhu_mingguan": -0.116,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Gorontalo",
+    "n_hari": 919,
+    "r_hujan_harian": 0.019,
+    "r_suhu_harian": 0.163,
+    "r_hujan_mingguan": -0.0,
+    "r_suhu_mingguan": 0.222,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jambi",
+    "n_hari": 919,
+    "r_hujan_harian": 0.012,
+    "r_suhu_harian": -0.057,
+    "r_hujan_mingguan": 0.026,
+    "r_suhu_mingguan": -0.078,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Barat",
+    "n_hari": 919,
+    "r_hujan_harian": 0.027,
+    "r_suhu_harian": -0.085,
+    "r_hujan_mingguan": 0.05,
+    "r_suhu_mingguan": -0.09,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Tengah",
+    "n_hari": 919,
+    "r_hujan_harian": 0.078,
+    "r_suhu_harian": -0.15,
+    "r_hujan_mingguan": 0.14,
+    "r_suhu_mingguan": -0.149,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Timur",
+    "n_hari": 920,
+    "r_hujan_harian": 0.137,
+    "r_suhu_harian": 0.052,
+    "r_hujan_mingguan": 0.194,
+    "r_suhu_mingguan": 0.086,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Barat",
+    "n_hari": 899,
+    "r_hujan_harian": 0.018,
+    "r_suhu_harian": 0.072,
+    "r_hujan_mingguan": 0.111,
+    "r_suhu_mingguan": 0.078,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Selatan",
+    "n_hari": 903,
+    "r_hujan_harian": 0.184,
+    "r_suhu_harian": -0.05,
+    "r_hujan_mingguan": 0.318,
+    "r_suhu_mingguan": -0.098,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Tengah",
+    "n_hari": 913,
+    "r_hujan_harian": 0.029,
+    "r_suhu_harian": -0.035,
+    "r_hujan_mingguan": 0.062,
+    "r_suhu_mingguan": -0.072,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Timur",
+    "n_hari": 915,
+    "r_hujan_harian": 0.09,
+    "r_suhu_harian": -0.097,
+    "r_hujan_mingguan": 0.213,
+    "r_suhu_mingguan": -0.181,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Utara",
+    "n_hari": 894,
+    "r_hujan_harian": 0.025,
+    "r_suhu_harian": -0.144,
+    "r_hujan_mingguan": 0.026,
+    "r_suhu_mingguan": -0.241,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Bangka Belitung",
+    "n_hari": 915,
+    "r_hujan_harian": -0.058,
+    "r_suhu_harian": -0.015,
+    "r_hujan_mingguan": -0.071,
+    "r_suhu_mingguan": -0.031,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Riau",
+    "n_hari": 907,
+    "r_hujan_harian": -0.041,
+    "r_suhu_harian": 0.104,
+    "r_hujan_mingguan": -0.077,
+    "r_suhu_mingguan": 0.149,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Lampung",
+    "n_hari": 915,
+    "r_hujan_harian": 0.094,
+    "r_suhu_harian": 0.104,
+    "r_hujan_mingguan": 0.161,
+    "r_suhu_mingguan": 0.162,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku",
+    "n_hari": 899,
+    "r_hujan_harian": -0.159,
+    "r_suhu_harian": -0.027,
+    "r_hujan_mingguan": -0.242,
+    "r_suhu_mingguan": -0.029,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku Utara",
+    "n_hari": 897,
+    "r_hujan_harian": -0.055,
+    "r_suhu_harian": 0.026,
+    "r_hujan_mingguan": -0.09,
+    "r_suhu_mingguan": 0.032,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Barat",
+    "n_hari": 919,
+    "r_hujan_harian": 0.216,
+    "r_suhu_harian": -0.146,
+    "r_hujan_mingguan": 0.318,
+    "r_suhu_mingguan": -0.166,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Timur",
+    "n_hari": 918,
+    "r_hujan_harian": -0.005,
+    "r_suhu_harian": -0.092,
+    "r_hujan_mingguan": 0.025,
+    "r_suhu_mingguan": -0.128,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua",
+    "n_hari": 915,
+    "r_hujan_harian": -0.197,
+    "r_suhu_harian": -0.037,
+    "r_hujan_mingguan": -0.303,
+    "r_suhu_mingguan": -0.073,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua Barat",
+    "n_hari": 918,
+    "r_hujan_harian": -0.101,
+    "r_suhu_harian": 0.019,
+    "r_hujan_mingguan": -0.154,
+    "r_suhu_mingguan": 0.017,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Riau",
+    "n_hari": 912,
+    "r_hujan_harian": 0.016,
+    "r_suhu_harian": -0.027,
+    "r_hujan_mingguan": 0.041,
+    "r_suhu_mingguan": -0.029,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Barat",
+    "n_hari": 918,
+    "r_hujan_harian": 0.093,
+    "r_suhu_harian": -0.048,
+    "r_hujan_mingguan": 0.188,
+    "r_suhu_mingguan": -0.08,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Selatan",
+    "n_hari": 914,
+    "r_hujan_harian": 0.302,
+    "r_suhu_harian": -0.433,
+    "r_hujan_mingguan": 0.464,
+    "r_suhu_mingguan": -0.504,
+    "kekuatan": "sedang"
+   },
+   {
+    "provinsi": "Sulawesi Tengah",
+    "n_hari": 910,
+    "r_hujan_harian": -0.039,
+    "r_suhu_harian": -0.049,
+    "r_hujan_mingguan": -0.079,
+    "r_suhu_mingguan": -0.08,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tenggara",
+    "n_hari": 918,
+    "r_hujan_harian": 0.275,
+    "r_suhu_harian": 0.246,
+    "r_hujan_mingguan": 0.454,
+    "r_suhu_mingguan": 0.325,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.023,
+    "r_suhu_harian": -0.133,
+    "r_hujan_mingguan": -0.044,
+    "r_suhu_mingguan": -0.16,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Barat",
+    "n_hari": 908,
+    "r_hujan_harian": 0.065,
+    "r_suhu_harian": 0.09,
+    "r_hujan_mingguan": 0.095,
+    "r_suhu_mingguan": 0.14,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Selatan",
+    "n_hari": 916,
+    "r_hujan_harian": 0.063,
+    "r_suhu_harian": 0.007,
+    "r_hujan_mingguan": 0.116,
+    "r_suhu_mingguan": 0.002,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.086,
+    "r_suhu_harian": 0.105,
+    "r_hujan_mingguan": -0.138,
+    "r_suhu_mingguan": 0.133,
+    "kekuatan": "lemah"
+   }
+  ]
+ },
+ {
+  "komoditas": "daging-sapi",
+  "nama": "Daging Sapi",
+  "provinsi": [
+   {
+    "provinsi": "Aceh",
+    "n_hari": 920,
+    "r_hujan_harian": -0.064,
+    "r_suhu_harian": 0.275,
+    "r_hujan_mingguan": -0.129,
+    "r_suhu_mingguan": 0.385,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bali",
+    "n_hari": 919,
+    "r_hujan_harian": 0.107,
+    "r_suhu_harian": -0.073,
+    "r_hujan_mingguan": 0.173,
+    "r_suhu_mingguan": -0.086,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Banten",
+    "n_hari": 915,
+    "r_hujan_harian": -0.136,
+    "r_suhu_harian": 0.121,
+    "r_hujan_mingguan": -0.257,
+    "r_suhu_mingguan": 0.165,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bengkulu",
+    "n_hari": 904,
+    "r_hujan_harian": -0.111,
+    "r_suhu_harian": 0.398,
+    "r_hujan_mingguan": -0.229,
+    "r_suhu_mingguan": 0.603,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DI Yogyakarta",
+    "n_hari": 918,
+    "r_hujan_harian": -0.16,
+    "r_suhu_harian": 0.149,
+    "r_hujan_mingguan": -0.259,
+    "r_suhu_mingguan": 0.236,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DKI Jakarta",
+    "n_hari": 912,
+    "r_hujan_harian": -0.123,
+    "r_suhu_harian": 0.224,
+    "r_hujan_mingguan": -0.224,
+    "r_suhu_mingguan": 0.287,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Gorontalo",
+    "n_hari": 919,
+    "r_hujan_harian": -0.109,
+    "r_suhu_harian": 0.23,
+    "r_hujan_mingguan": -0.221,
+    "r_suhu_mingguan": 0.309,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jambi",
+    "n_hari": 919,
+    "r_hujan_harian": -0.082,
+    "r_suhu_harian": 0.119,
+    "r_hujan_mingguan": -0.145,
+    "r_suhu_mingguan": 0.173,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Barat",
+    "n_hari": 919,
+    "r_hujan_harian": -0.117,
+    "r_suhu_harian": 0.267,
+    "r_hujan_mingguan": -0.199,
+    "r_suhu_mingguan": 0.331,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Tengah",
+    "n_hari": 919,
+    "r_hujan_harian": -0.153,
+    "r_suhu_harian": 0.144,
+    "r_hujan_mingguan": -0.249,
+    "r_suhu_mingguan": 0.16,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Timur",
+    "n_hari": 920,
+    "r_hujan_harian": -0.141,
+    "r_suhu_harian": -0.016,
+    "r_hujan_mingguan": -0.213,
+    "r_suhu_mingguan": -0.015,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Barat",
+    "n_hari": 899,
+    "r_hujan_harian": -0.078,
+    "r_suhu_harian": 0.251,
+    "r_hujan_mingguan": -0.174,
+    "r_suhu_mingguan": 0.423,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Selatan",
+    "n_hari": 903,
+    "r_hujan_harian": -0.268,
+    "r_suhu_harian": 0.13,
+    "r_hujan_mingguan": -0.453,
+    "r_suhu_mingguan": 0.192,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Tengah",
+    "n_hari": 913,
+    "r_hujan_harian": -0.154,
+    "r_suhu_harian": 0.078,
+    "r_hujan_mingguan": -0.266,
+    "r_suhu_mingguan": 0.111,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Timur",
+    "n_hari": 915,
+    "r_hujan_harian": -0.079,
+    "r_suhu_harian": -0.096,
+    "r_hujan_mingguan": -0.129,
+    "r_suhu_mingguan": -0.196,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Utara",
+    "n_hari": 894,
+    "r_hujan_harian": -0.012,
+    "r_suhu_harian": 0.124,
+    "r_hujan_mingguan": -0.04,
+    "r_suhu_mingguan": 0.202,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Bangka Belitung",
+    "n_hari": 915,
+    "r_hujan_harian": -0.188,
+    "r_suhu_harian": 0.337,
+    "r_hujan_mingguan": -0.301,
+    "r_suhu_mingguan": 0.445,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Riau",
+    "n_hari": 907,
+    "r_hujan_harian": -0.074,
+    "r_suhu_harian": 0.154,
+    "r_hujan_mingguan": -0.149,
+    "r_suhu_mingguan": 0.225,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Lampung",
+    "n_hari": 915,
+    "r_hujan_harian": -0.108,
+    "r_suhu_harian": 0.228,
+    "r_hujan_mingguan": -0.182,
+    "r_suhu_mingguan": 0.359,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku",
+    "n_hari": 899,
+    "r_hujan_harian": -0.219,
+    "r_suhu_harian": 0.087,
+    "r_hujan_mingguan": -0.347,
+    "r_suhu_mingguan": 0.094,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku Utara",
+    "n_hari": 896,
+    "r_hujan_harian": -0.003,
+    "r_suhu_harian": 0.132,
+    "r_hujan_mingguan": 0.021,
+    "r_suhu_mingguan": 0.161,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Barat",
+    "n_hari": 919,
+    "r_hujan_harian": -0.053,
+    "r_suhu_harian": 0.057,
+    "r_hujan_mingguan": -0.093,
+    "r_suhu_mingguan": 0.069,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Timur",
+    "n_hari": 918,
+    "r_hujan_harian": -0.019,
+    "r_suhu_harian": -0.035,
+    "r_hujan_mingguan": -0.022,
+    "r_suhu_mingguan": -0.045,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua",
+    "n_hari": 915,
+    "r_hujan_harian": -0.187,
+    "r_suhu_harian": -0.045,
+    "r_hujan_mingguan": -0.287,
+    "r_suhu_mingguan": -0.099,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua Barat",
+    "n_hari": 918,
+    "r_hujan_harian": -0.209,
+    "r_suhu_harian": 0.19,
+    "r_hujan_mingguan": -0.381,
+    "r_suhu_mingguan": 0.31,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Riau",
+    "n_hari": 912,
+    "r_hujan_harian": -0.033,
+    "r_suhu_harian": 0.182,
+    "r_hujan_mingguan": -0.04,
+    "r_suhu_mingguan": 0.247,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Barat",
+    "n_hari": 918,
+    "r_hujan_harian": -0.123,
+    "r_suhu_harian": 0.335,
+    "r_hujan_mingguan": -0.251,
+    "r_suhu_mingguan": 0.503,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Selatan",
+    "n_hari": 914,
+    "r_hujan_harian": -0.068,
+    "r_suhu_harian": 0.146,
+    "r_hujan_mingguan": -0.15,
+    "r_suhu_mingguan": 0.212,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tengah",
+    "n_hari": 910,
+    "r_hujan_harian": -0.149,
+    "r_suhu_harian": 0.266,
+    "r_hujan_mingguan": -0.3,
+    "r_suhu_mingguan": 0.4,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tenggara",
+    "n_hari": 918,
+    "r_hujan_harian": -0.008,
+    "r_suhu_harian": -0.149,
+    "r_hujan_mingguan": 0.017,
+    "r_suhu_mingguan": -0.23,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.156,
+    "r_suhu_harian": 0.463,
+    "r_hujan_mingguan": -0.291,
+    "r_suhu_mingguan": 0.564,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Barat",
+    "n_hari": 908,
+    "r_hujan_harian": -0.036,
+    "r_suhu_harian": 0.191,
+    "r_hujan_mingguan": -0.063,
+    "r_suhu_mingguan": 0.296,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Selatan",
+    "n_hari": 916,
+    "r_hujan_harian": -0.016,
+    "r_suhu_harian": 0.06,
+    "r_hujan_mingguan": 0.013,
+    "r_suhu_mingguan": 0.068,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.064,
+    "r_suhu_harian": 0.159,
+    "r_hujan_mingguan": -0.112,
+    "r_suhu_mingguan": 0.229,
+    "kekuatan": "lemah"
+   }
+  ]
+ },
+ {
+  "komoditas": "gula-pasir",
+  "nama": "Gula Pasir",
+  "provinsi": [
+   {
+    "provinsi": "Aceh",
+    "n_hari": 920,
+    "r_hujan_harian": 0.007,
+    "r_suhu_harian": 0.142,
+    "r_hujan_mingguan": -0.032,
+    "r_suhu_mingguan": 0.227,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bali",
+    "n_hari": 919,
+    "r_hujan_harian": -0.139,
+    "r_suhu_harian": -0.186,
+    "r_hujan_mingguan": -0.22,
+    "r_suhu_mingguan": -0.226,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Banten",
+    "n_hari": 915,
+    "r_hujan_harian": -0.08,
+    "r_suhu_harian": -0.026,
+    "r_hujan_mingguan": -0.143,
+    "r_suhu_mingguan": -0.029,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bengkulu",
+    "n_hari": 904,
+    "r_hujan_harian": -0.138,
+    "r_suhu_harian": 0.279,
+    "r_hujan_mingguan": -0.264,
+    "r_suhu_mingguan": 0.428,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DI Yogyakarta",
+    "n_hari": 918,
+    "r_hujan_harian": -0.037,
+    "r_suhu_harian": 0.086,
+    "r_hujan_mingguan": -0.064,
+    "r_suhu_mingguan": 0.126,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DKI Jakarta",
+    "n_hari": 912,
+    "r_hujan_harian": -0.172,
+    "r_suhu_harian": 0.224,
+    "r_hujan_mingguan": -0.29,
+    "r_suhu_mingguan": 0.273,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Gorontalo",
+    "n_hari": 919,
+    "r_hujan_harian": 0.003,
+    "r_suhu_harian": 0.073,
+    "r_hujan_mingguan": -0.006,
+    "r_suhu_mingguan": 0.086,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jambi",
+    "n_hari": 919,
+    "r_hujan_harian": -0.103,
+    "r_suhu_harian": 0.097,
+    "r_hujan_mingguan": -0.183,
+    "r_suhu_mingguan": 0.136,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Barat",
+    "n_hari": 919,
+    "r_hujan_harian": -0.118,
+    "r_suhu_harian": 0.169,
+    "r_hujan_mingguan": -0.182,
+    "r_suhu_mingguan": 0.201,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Tengah",
+    "n_hari": 919,
+    "r_hujan_harian": -0.06,
+    "r_suhu_harian": -0.07,
+    "r_hujan_mingguan": -0.1,
+    "r_suhu_mingguan": -0.076,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Timur",
+    "n_hari": 920,
+    "r_hujan_harian": -0.025,
+    "r_suhu_harian": -0.144,
+    "r_hujan_mingguan": -0.037,
+    "r_suhu_mingguan": -0.188,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Barat",
+    "n_hari": 899,
+    "r_hujan_harian": -0.21,
+    "r_suhu_harian": 0.301,
+    "r_hujan_mingguan": -0.377,
+    "r_suhu_mingguan": 0.461,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Selatan",
+    "n_hari": 903,
+    "r_hujan_harian": -0.249,
+    "r_suhu_harian": 0.208,
+    "r_hujan_mingguan": -0.382,
+    "r_suhu_mingguan": 0.319,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Tengah",
+    "n_hari": 913,
+    "r_hujan_harian": -0.134,
+    "r_suhu_harian": 0.099,
+    "r_hujan_mingguan": -0.232,
+    "r_suhu_mingguan": 0.154,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Timur",
+    "n_hari": 915,
+    "r_hujan_harian": -0.044,
+    "r_suhu_harian": -0.158,
+    "r_hujan_mingguan": -0.095,
+    "r_suhu_mingguan": -0.26,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Utara",
+    "n_hari": 894,
+    "r_hujan_harian": -0.008,
+    "r_suhu_harian": 0.104,
+    "r_hujan_mingguan": -0.044,
+    "r_suhu_mingguan": 0.179,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Bangka Belitung",
+    "n_hari": 915,
+    "r_hujan_harian": -0.161,
+    "r_suhu_harian": 0.187,
+    "r_hujan_mingguan": -0.249,
+    "r_suhu_mingguan": 0.243,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Riau",
+    "n_hari": 907,
+    "r_hujan_harian": -0.021,
+    "r_suhu_harian": 0.041,
+    "r_hujan_mingguan": -0.032,
+    "r_suhu_mingguan": 0.073,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Lampung",
+    "n_hari": 915,
+    "r_hujan_harian": -0.152,
+    "r_suhu_harian": 0.032,
+    "r_hujan_mingguan": -0.254,
+    "r_suhu_mingguan": 0.034,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku",
+    "n_hari": 899,
+    "r_hujan_harian": 0.049,
+    "r_suhu_harian": -0.356,
+    "r_hujan_mingguan": 0.059,
+    "r_suhu_mingguan": -0.395,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku Utara",
+    "n_hari": 897,
+    "r_hujan_harian": 0.174,
+    "r_suhu_harian": -0.081,
+    "r_hujan_mingguan": 0.279,
+    "r_suhu_mingguan": -0.095,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Barat",
+    "n_hari": 919,
+    "r_hujan_harian": -0.035,
+    "r_suhu_harian": -0.092,
+    "r_hujan_mingguan": -0.056,
+    "r_suhu_mingguan": -0.109,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Timur",
+    "n_hari": 918,
+    "r_hujan_harian": -0.058,
+    "r_suhu_harian": -0.029,
+    "r_hujan_mingguan": -0.074,
+    "r_suhu_mingguan": -0.04,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua",
+    "n_hari": 915,
+    "r_hujan_harian": -0.244,
+    "r_suhu_harian": -0.029,
+    "r_hujan_mingguan": -0.371,
+    "r_suhu_mingguan": -0.057,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua Barat",
+    "n_hari": 918,
+    "r_hujan_harian": -0.02,
+    "r_suhu_harian": 0.046,
+    "r_hujan_mingguan": -0.038,
+    "r_suhu_mingguan": 0.074,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Riau",
+    "n_hari": 912,
+    "r_hujan_harian": -0.081,
+    "r_suhu_harian": 0.203,
+    "r_hujan_mingguan": -0.141,
+    "r_suhu_mingguan": 0.274,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Barat",
+    "n_hari": 918,
+    "r_hujan_harian": -0.093,
+    "r_suhu_harian": 0.286,
+    "r_hujan_mingguan": -0.192,
+    "r_suhu_mingguan": 0.429,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Selatan",
+    "n_hari": 914,
+    "r_hujan_harian": -0.254,
+    "r_suhu_harian": 0.257,
+    "r_hujan_mingguan": -0.388,
+    "r_suhu_mingguan": 0.297,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tengah",
+    "n_hari": 910,
+    "r_hujan_harian": -0.109,
+    "r_suhu_harian": 0.186,
+    "r_hujan_mingguan": -0.207,
+    "r_suhu_mingguan": 0.268,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tenggara",
+    "n_hari": 918,
+    "r_hujan_harian": -0.06,
+    "r_suhu_harian": -0.208,
+    "r_hujan_mingguan": -0.098,
+    "r_suhu_mingguan": -0.273,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.088,
+    "r_suhu_harian": 0.284,
+    "r_hujan_mingguan": -0.183,
+    "r_suhu_mingguan": 0.356,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Barat",
+    "n_hari": 908,
+    "r_hujan_harian": -0.134,
+    "r_suhu_harian": 0.235,
+    "r_hujan_mingguan": -0.228,
+    "r_suhu_mingguan": 0.362,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Selatan",
+    "n_hari": 916,
+    "r_hujan_harian": -0.287,
+    "r_suhu_harian": 0.228,
+    "r_hujan_mingguan": -0.475,
+    "r_suhu_mingguan": 0.308,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.064,
+    "r_suhu_harian": 0.209,
+    "r_hujan_mingguan": -0.128,
+    "r_suhu_mingguan": 0.271,
+    "kekuatan": "lemah"
+   }
+  ]
+ },
+ {
+  "komoditas": "minyak-goreng",
+  "nama": "Minyak Goreng",
+  "provinsi": [
+   {
+    "provinsi": "Aceh",
+    "n_hari": 920,
+    "r_hujan_harian": 0.011,
+    "r_suhu_harian": 0.051,
+    "r_hujan_mingguan": 0.011,
+    "r_suhu_mingguan": 0.072,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bali",
+    "n_hari": 919,
+    "r_hujan_harian": -0.025,
+    "r_suhu_harian": -0.117,
+    "r_hujan_mingguan": -0.039,
+    "r_suhu_mingguan": -0.14,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Banten",
+    "n_hari": 915,
+    "r_hujan_harian": -0.12,
+    "r_suhu_harian": 0.167,
+    "r_hujan_mingguan": -0.215,
+    "r_suhu_mingguan": 0.212,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bengkulu",
+    "n_hari": 904,
+    "r_hujan_harian": -0.147,
+    "r_suhu_harian": 0.306,
+    "r_hujan_mingguan": -0.278,
+    "r_suhu_mingguan": 0.459,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DI Yogyakarta",
+    "n_hari": 918,
+    "r_hujan_harian": -0.034,
+    "r_suhu_harian": 0.05,
+    "r_hujan_mingguan": -0.056,
+    "r_suhu_mingguan": 0.075,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DKI Jakarta",
+    "n_hari": 912,
+    "r_hujan_harian": -0.08,
+    "r_suhu_harian": 0.109,
+    "r_hujan_mingguan": -0.142,
+    "r_suhu_mingguan": 0.145,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Gorontalo",
+    "n_hari": 919,
+    "r_hujan_harian": -0.057,
+    "r_suhu_harian": 0.179,
+    "r_hujan_mingguan": -0.115,
+    "r_suhu_mingguan": 0.229,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jambi",
+    "n_hari": 919,
+    "r_hujan_harian": -0.074,
+    "r_suhu_harian": 0.003,
+    "r_hujan_mingguan": -0.142,
+    "r_suhu_mingguan": 0.007,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Barat",
+    "n_hari": 919,
+    "r_hujan_harian": -0.077,
+    "r_suhu_harian": 0.077,
+    "r_hujan_mingguan": -0.134,
+    "r_suhu_mingguan": 0.094,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Tengah",
+    "n_hari": 919,
+    "r_hujan_harian": -0.035,
+    "r_suhu_harian": -0.098,
+    "r_hujan_mingguan": -0.051,
+    "r_suhu_mingguan": -0.112,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Timur",
+    "n_hari": 920,
+    "r_hujan_harian": -0.079,
+    "r_suhu_harian": -0.13,
+    "r_hujan_mingguan": -0.117,
+    "r_suhu_mingguan": -0.158,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Barat",
+    "n_hari": 899,
+    "r_hujan_harian": -0.216,
+    "r_suhu_harian": 0.239,
+    "r_hujan_mingguan": -0.399,
+    "r_suhu_mingguan": 0.384,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Selatan",
+    "n_hari": 903,
+    "r_hujan_harian": -0.192,
+    "r_suhu_harian": 0.21,
+    "r_hujan_mingguan": -0.308,
+    "r_suhu_mingguan": 0.328,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Tengah",
+    "n_hari": 913,
+    "r_hujan_harian": -0.191,
+    "r_suhu_harian": 0.25,
+    "r_hujan_mingguan": -0.336,
+    "r_suhu_mingguan": 0.405,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Timur",
+    "n_hari": 915,
+    "r_hujan_harian": -0.081,
+    "r_suhu_harian": -0.1,
+    "r_hujan_mingguan": -0.168,
+    "r_suhu_mingguan": -0.177,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Utara",
+    "n_hari": 894,
+    "r_hujan_harian": 0.005,
+    "r_suhu_harian": 0.13,
+    "r_hujan_mingguan": 0.024,
+    "r_suhu_mingguan": 0.193,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Bangka Belitung",
+    "n_hari": 915,
+    "r_hujan_harian": -0.112,
+    "r_suhu_harian": 0.158,
+    "r_hujan_mingguan": -0.182,
+    "r_suhu_mingguan": 0.21,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Riau",
+    "n_hari": 907,
+    "r_hujan_harian": -0.001,
+    "r_suhu_harian": 0.079,
+    "r_hujan_mingguan": -0.019,
+    "r_suhu_mingguan": 0.113,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Lampung",
+    "n_hari": 915,
+    "r_hujan_harian": -0.064,
+    "r_suhu_harian": 0.058,
+    "r_hujan_mingguan": -0.118,
+    "r_suhu_mingguan": 0.078,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku",
+    "n_hari": 899,
+    "r_hujan_harian": -0.141,
+    "r_suhu_harian": -0.12,
+    "r_hujan_mingguan": -0.228,
+    "r_suhu_mingguan": -0.133,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku Utara",
+    "n_hari": 897,
+    "r_hujan_harian": -0.003,
+    "r_suhu_harian": 0.076,
+    "r_hujan_mingguan": -0.025,
+    "r_suhu_mingguan": 0.108,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Barat",
+    "n_hari": 919,
+    "r_hujan_harian": -0.046,
+    "r_suhu_harian": -0.115,
+    "r_hujan_mingguan": -0.065,
+    "r_suhu_mingguan": -0.144,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Timur",
+    "n_hari": 918,
+    "r_hujan_harian": -0.006,
+    "r_suhu_harian": -0.029,
+    "r_hujan_mingguan": 0.001,
+    "r_suhu_mingguan": -0.038,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua",
+    "n_hari": 915,
+    "r_hujan_harian": -0.204,
+    "r_suhu_harian": -0.032,
+    "r_hujan_mingguan": -0.315,
+    "r_suhu_mingguan": -0.062,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua Barat",
+    "n_hari": 918,
+    "r_hujan_harian": -0.105,
+    "r_suhu_harian": 0.083,
+    "r_hujan_mingguan": -0.21,
+    "r_suhu_mingguan": 0.149,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Riau",
+    "n_hari": 912,
+    "r_hujan_harian": -0.144,
+    "r_suhu_harian": 0.171,
+    "r_hujan_mingguan": -0.256,
+    "r_suhu_mingguan": 0.23,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Barat",
+    "n_hari": 918,
+    "r_hujan_harian": -0.129,
+    "r_suhu_harian": 0.325,
+    "r_hujan_mingguan": -0.249,
+    "r_suhu_mingguan": 0.482,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Selatan",
+    "n_hari": 914,
+    "r_hujan_harian": -0.093,
+    "r_suhu_harian": 0.085,
+    "r_hujan_mingguan": -0.138,
+    "r_suhu_mingguan": 0.098,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tengah",
+    "n_hari": 910,
+    "r_hujan_harian": -0.171,
+    "r_suhu_harian": 0.277,
+    "r_hujan_mingguan": -0.358,
+    "r_suhu_mingguan": 0.396,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tenggara",
+    "n_hari": 918,
+    "r_hujan_harian": -0.153,
+    "r_suhu_harian": -0.051,
+    "r_hujan_mingguan": -0.263,
+    "r_suhu_mingguan": -0.064,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.177,
+    "r_suhu_harian": 0.384,
+    "r_hujan_mingguan": -0.32,
+    "r_suhu_mingguan": 0.461,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Barat",
+    "n_hari": 908,
+    "r_hujan_harian": -0.094,
+    "r_suhu_harian": 0.266,
+    "r_hujan_mingguan": -0.166,
+    "r_suhu_mingguan": 0.41,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Selatan",
+    "n_hari": 916,
+    "r_hujan_harian": -0.102,
+    "r_suhu_harian": -0.001,
+    "r_hujan_mingguan": -0.176,
+    "r_suhu_mingguan": 0.003,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.09,
+    "r_suhu_harian": 0.239,
+    "r_hujan_mingguan": -0.165,
+    "r_suhu_mingguan": 0.3,
+    "kekuatan": "lemah"
+   }
+  ]
+ },
+ {
+  "komoditas": "telur-ayam",
+  "nama": "Telur Ayam",
+  "provinsi": [
+   {
+    "provinsi": "Aceh",
+    "n_hari": 920,
+    "r_hujan_harian": 0.05,
+    "r_suhu_harian": -0.2,
+    "r_hujan_mingguan": 0.13,
+    "r_suhu_mingguan": -0.278,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bali",
+    "n_hari": 919,
+    "r_hujan_harian": 0.022,
+    "r_suhu_harian": -0.151,
+    "r_hujan_mingguan": 0.034,
+    "r_suhu_mingguan": -0.181,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Banten",
+    "n_hari": 915,
+    "r_hujan_harian": 0.147,
+    "r_suhu_harian": -0.316,
+    "r_hujan_mingguan": 0.288,
+    "r_suhu_mingguan": -0.373,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Bengkulu",
+    "n_hari": 904,
+    "r_hujan_harian": -0.012,
+    "r_suhu_harian": 0.059,
+    "r_hujan_mingguan": -0.014,
+    "r_suhu_mingguan": 0.069,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DI Yogyakarta",
+    "n_hari": 918,
+    "r_hujan_harian": 0.205,
+    "r_suhu_harian": -0.252,
+    "r_hujan_mingguan": 0.321,
+    "r_suhu_mingguan": -0.354,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "DKI Jakarta",
+    "n_hari": 912,
+    "r_hujan_harian": 0.17,
+    "r_suhu_harian": -0.321,
+    "r_hujan_mingguan": 0.285,
+    "r_suhu_mingguan": -0.368,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Gorontalo",
+    "n_hari": 919,
+    "r_hujan_harian": 0.006,
+    "r_suhu_harian": 0.151,
+    "r_hujan_mingguan": -0.012,
+    "r_suhu_mingguan": 0.205,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jambi",
+    "n_hari": 919,
+    "r_hujan_harian": 0.057,
+    "r_suhu_harian": -0.086,
+    "r_hujan_mingguan": 0.122,
+    "r_suhu_mingguan": -0.126,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Barat",
+    "n_hari": 919,
+    "r_hujan_harian": 0.089,
+    "r_suhu_harian": -0.336,
+    "r_hujan_mingguan": 0.16,
+    "r_suhu_mingguan": -0.391,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Tengah",
+    "n_hari": 919,
+    "r_hujan_harian": 0.187,
+    "r_suhu_harian": -0.351,
+    "r_hujan_mingguan": 0.316,
+    "r_suhu_mingguan": -0.37,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Jawa Timur",
+    "n_hari": 920,
+    "r_hujan_harian": 0.234,
+    "r_suhu_harian": -0.115,
+    "r_hujan_mingguan": 0.331,
+    "r_suhu_mingguan": -0.12,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Barat",
+    "n_hari": 899,
+    "r_hujan_harian": -0.087,
+    "r_suhu_harian": 0.099,
+    "r_hujan_mingguan": -0.134,
+    "r_suhu_mingguan": 0.126,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Selatan",
+    "n_hari": 903,
+    "r_hujan_harian": 0.214,
+    "r_suhu_harian": -0.184,
+    "r_hujan_mingguan": 0.364,
+    "r_suhu_mingguan": -0.294,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Tengah",
+    "n_hari": 913,
+    "r_hujan_harian": 0.05,
+    "r_suhu_harian": 0.018,
+    "r_hujan_mingguan": 0.091,
+    "r_suhu_mingguan": 0.021,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Timur",
+    "n_hari": 915,
+    "r_hujan_harian": 0.012,
+    "r_suhu_harian": -0.016,
+    "r_hujan_mingguan": 0.011,
+    "r_suhu_mingguan": -0.037,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kalimantan Utara",
+    "n_hari": 894,
+    "r_hujan_harian": -0.016,
+    "r_suhu_harian": -0.098,
+    "r_hujan_mingguan": -0.007,
+    "r_suhu_mingguan": -0.16,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Bangka Belitung",
+    "n_hari": 915,
+    "r_hujan_harian": -0.129,
+    "r_suhu_harian": 0.209,
+    "r_hujan_mingguan": -0.18,
+    "r_suhu_mingguan": 0.266,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Kepulauan Riau",
+    "n_hari": 907,
+    "r_hujan_harian": -0.024,
+    "r_suhu_harian": 0.088,
+    "r_hujan_mingguan": -0.028,
+    "r_suhu_mingguan": 0.101,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Lampung",
+    "n_hari": 915,
+    "r_hujan_harian": 0.209,
+    "r_suhu_harian": -0.216,
+    "r_hujan_mingguan": 0.352,
+    "r_suhu_mingguan": -0.315,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku",
+    "n_hari": 899,
+    "r_hujan_harian": 0.008,
+    "r_suhu_harian": 0.22,
+    "r_hujan_mingguan": 0.009,
+    "r_suhu_mingguan": 0.258,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Maluku Utara",
+    "n_hari": 897,
+    "r_hujan_harian": -0.106,
+    "r_suhu_harian": 0.187,
+    "r_hujan_mingguan": -0.203,
+    "r_suhu_mingguan": 0.253,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Barat",
+    "n_hari": 919,
+    "r_hujan_harian": 0.029,
+    "r_suhu_harian": 0.12,
+    "r_hujan_mingguan": 0.04,
+    "r_suhu_mingguan": 0.156,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Nusa Tenggara Timur",
+    "n_hari": 918,
+    "r_hujan_harian": 0.234,
+    "r_suhu_harian": -0.353,
+    "r_hujan_mingguan": 0.327,
+    "r_suhu_mingguan": -0.397,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua",
+    "n_hari": 915,
+    "r_hujan_harian": -0.17,
+    "r_suhu_harian": 0.069,
+    "r_hujan_mingguan": -0.267,
+    "r_suhu_mingguan": 0.156,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Papua Barat",
+    "n_hari": 918,
+    "r_hujan_harian": 0.039,
+    "r_suhu_harian": -0.125,
+    "r_hujan_mingguan": 0.054,
+    "r_suhu_mingguan": -0.198,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Riau",
+    "n_hari": 912,
+    "r_hujan_harian": -0.029,
+    "r_suhu_harian": -0.04,
+    "r_hujan_mingguan": -0.019,
+    "r_suhu_mingguan": -0.069,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Barat",
+    "n_hari": 918,
+    "r_hujan_harian": 0.018,
+    "r_suhu_harian": 0.103,
+    "r_hujan_mingguan": 0.06,
+    "r_suhu_mingguan": 0.131,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Selatan",
+    "n_hari": 914,
+    "r_hujan_harian": 0.103,
+    "r_suhu_harian": -0.248,
+    "r_hujan_mingguan": 0.16,
+    "r_suhu_mingguan": -0.287,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tengah",
+    "n_hari": 910,
+    "r_hujan_harian": 0.087,
+    "r_suhu_harian": -0.079,
+    "r_hujan_mingguan": 0.165,
+    "r_suhu_mingguan": -0.11,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Tenggara",
+    "n_hari": 918,
+    "r_hujan_harian": 0.137,
+    "r_suhu_harian": 0.066,
+    "r_hujan_mingguan": 0.225,
+    "r_suhu_mingguan": 0.091,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sulawesi Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.032,
+    "r_suhu_harian": -0.087,
+    "r_hujan_mingguan": -0.065,
+    "r_suhu_mingguan": -0.105,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Barat",
+    "n_hari": 908,
+    "r_hujan_harian": 0.07,
+    "r_suhu_harian": 0.065,
+    "r_hujan_mingguan": 0.118,
+    "r_suhu_mingguan": 0.096,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Selatan",
+    "n_hari": 916,
+    "r_hujan_harian": 0.057,
+    "r_suhu_harian": -0.099,
+    "r_hujan_mingguan": 0.096,
+    "r_suhu_mingguan": -0.122,
+    "kekuatan": "lemah"
+   },
+   {
+    "provinsi": "Sumatera Utara",
+    "n_hari": 919,
+    "r_hujan_harian": -0.007,
+    "r_suhu_harian": -0.16,
+    "r_hujan_mingguan": 0.001,
+    "r_suhu_mingguan": -0.223,
+    "kekuatan": "lemah"
+   }
+  ]
+ }
+]
