@@ -1,0 +1,106 @@
+{
+ "komoditas": [
+  {
+   "id": "1",
+   "nama": "Beras",
+   "slug": "beras",
+   "satuan": "kg"
+  },
+  {
+   "id": "2",
+   "nama": "Daging Ayam",
+   "slug": "daging-ayam",
+   "satuan": "kg"
+  },
+  {
+   "id": "3",
+   "nama": "Daging Sapi",
+   "slug": "daging-sapi",
+   "satuan": "kg"
+  },
+  {
+   "id": "4",
+   "nama": "Telur Ayam",
+   "slug": "telur-ayam",
+   "satuan": "kg"
+  },
+  {
+   "id": "5",
+   "nama": "Bawang Merah",
+   "slug": "bawang-merah",
+   "satuan": "kg"
+  },
+  {
+   "id": "6",
+   "nama": "Bawang Putih",
+   "slug": "bawang-putih",
+   "satuan": "kg"
+  },
+  {
+   "id": "7",
+   "nama": "Cabai Merah",
+   "slug": "cabai-merah",
+   "satuan": "kg"
+  },
+  {
+   "id": "8",
+   "nama": "Cabai Rawit",
+   "slug": "cabai-rawit",
+   "satuan": "kg"
+  },
+  {
+   "id": "9",
+   "nama": "Minyak Goreng",
+   "slug": "minyak-goreng",
+   "satuan": "kg"
+  },
+  {
+   "id": "10",
+   "nama": "Gula Pasir",
+   "slug": "gula-pasir",
+   "satuan": "kg"
+  }
+ ],
+ "tipe_harga": [
+  {
+   "id": 1,
+   "nama": "Pasar Tradisional"
+  }
+ ],
+ "provinsi": [
+  "Aceh",
+  "Bali",
+  "Banten",
+  "Bengkulu",
+  "DI Yogyakarta",
+  "DKI Jakarta",
+  "Gorontalo",
+  "Jambi",
+  "Jawa Barat",
+  "Jawa Tengah",
+  "Jawa Timur",
+  "Kalimantan Barat",
+  "Kalimantan Selatan",
+  "Kalimantan Tengah",
+  "Kalimantan Timur",
+  "Kalimantan Utara",
+  "Kepulauan Bangka Belitung",
+  "Kepulauan Riau",
+  "Lampung",
+  "Maluku",
+  "Maluku Utara",
+  "Nusa Tenggara Barat",
+  "Nusa Tenggara Timur",
+  "Papua",
+  "Papua Barat",
+  "Riau",
+  "Sulawesi Barat",
+  "Sulawesi Selatan",
+  "Sulawesi Tengah",
+  "Sulawesi Tenggara",
+  "Sulawesi Utara",
+  "Sumatera Barat",
+  "Sumatera Selatan",
+  "Sumatera Utara"
+ ]
+}
