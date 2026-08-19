@@ -18,12 +18,27 @@ RAW = os.path.join(os.path.dirname(__file__), "..", "data", "raw")
 OUT = os.path.join(os.path.dirname(__file__), "..", "data", "processed")
 PRICE_TYPE = 1  # Pasar Tradisional
 
-# map komoditas id -> slug nama (dari GetCommoditiesTree leaf order)
+# map komoditas id -> (slug, nama asli tampilan)
 COM_NAMES = {
-    "1": "beras", "2": "daging-ayam", "3": "daging-sapi", "4": "telur-ayam",
-    "5": "bawang-merah", "6": "bawang-putih", "7": "cabai-merah",
-    "8": "cabai-rawit", "9": "minyak-goreng", "10": "gula-pasir",
+    "1": ("beras", "Beras"),
+    "2": ("daging-ayam", "Daging Ayam"),
+    "3": ("daging-sapi", "Daging Sapi"),
+    "4": ("telur-ayam", "Telur Ayam"),
+    "5": ("bawang-merah", "Bawang Merah"),
+    "6": ("bawang-putih", "Bawang Putih"),
+    "7": ("cabai-merah", "Cabai Merah"),
+    "8": ("cabai-rawit", "Cabai Rawit"),
+    "9": ("minyak-goreng", "Minyak Goreng"),
+    "10": ("gula-pasir", "Gula Pasir"),
 }
+
+
+def slug(cid):
+    return COM_NAMES.get(cid, (f"komoditas-{cid}", "Komoditas"))[0]
+
+
+def nama(cid):
+    return COM_NAMES.get(cid, (f"komoditas-{cid}", "Komoditas"))[1]
 
 
 def zscore_status(z):
@@ -35,16 +50,38 @@ def zscore_status(z):
     return "tinggi"
 
 
-def slug(cid):
-    return COM_NAMES.get(cid, f"komoditas-{cid}")
-
-
 def main():
     os.makedirs(OUT, exist_ok=True)
     files = glob.glob(os.path.join(RAW, f"pt{PRICE_TYPE}", "*.csv"))
     if not files:
         print(f"Tidak ada file CSV di {RAW}/pt{PRICE_TYPE}/. Jalankan scraper dulu.")
         return
+
+    all_provinces = set()
+    komoditas = []
+    # mapping id -> nama asli (dari header komoditas/nama) pakai slug
+    # nama asli diambil dari nama komoditas pertama di file
+    for fp in sorted(files):
+        cid = os.path.splitext(os.path.basename(fp))[0]
+        s = slug(cid)
+        # nama tampilan dari mapping; satuan default kg
+        nm = nama(cid)
+        satuan = "kg"
+        with open(fp, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                if row.get("show", "").lower() == "true":
+                    all_provinces.add(row["provinsi"])
+        komoditas.append({"id": cid, "nama": nm, "slug": s, "satuan": satuan})
+
+    meta = {
+        "komoditas": sorted(komoditas, key=lambda k: int(k["id"])),
+        "tipe_harga": [{"id": PRICE_TYPE, "nama": "Pasar Tradisional"}],
+        "provinsi": sorted(all_provinces),
+    }
+    mpath = os.path.join(OUT, "meta.json")
+    with open(mpath, "w", encoding="utf-8") as f:
+        json.dump(meta, f, ensure_ascii=False, indent=1)
+    print(f"[meta] {len(meta['komoditas'])} komoditas, {len(meta['provinsi'])} provinsi -> {os.path.relpath(mpath)}")
 
     for fp in sorted(files):
         cid = os.path.splitext(os.path.basename(fp))[0]
@@ -77,6 +114,7 @@ def main():
 
         out = {
             "komoditas_id": cid,
+            "nama": nama(cid),
             "komoditas": slug(cid),
             "tipe_harga": PRICE_TYPE,
             "provinsi": provinces,
