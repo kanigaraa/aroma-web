@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   Area,
   ComposedChart,
@@ -18,13 +19,36 @@ type Props = {
   height?: number;
 };
 
+const RANGES = [
+  { label: "30H", days: 30 },
+  { label: "90H", days: 90 },
+  { label: "1T", days: 365 },
+  { label: "Semua", days: 0 },
+];
+
 export default function PriceChart({ data, satuan, height = 340 }: Props) {
+  const [range, setRange] = useState(90);
   const riil = data.filter((d) => !d.is_future);
+  const cutoff = range === 0 ? riil[0]?.tanggal : riil[riil.length - range]?.tanggal;
+  const shown = cutoff ? data.filter((d) => d.tanggal >= cutoff) : data;
   return (
     <div className="w-full">
+      <div className="mb-2 flex items-center justify-end gap-1">
+        {RANGES.map((r) => (
+          <button
+            key={r.label}
+            onClick={() => setRange(r.days)}
+            className={`rounded-lg px-2.5 py-1 text-xs font-medium transition-colors ${
+              range === r.days ? "bg-accent text-white" : "text-secondary hover:bg-muted hover:text-primary"
+            }`}
+          >
+            {r.label}
+          </button>
+        ))}
+      </div>
       <ResponsiveContainer width="100%" height={height}>
         <ComposedChart
-          data={data}
+          data={shown}
           margin={{ top: 10, right: 20, bottom: 0, left: 10 }}
         >
           <defs>
@@ -54,7 +78,7 @@ export default function PriceChart({ data, satuan, height = 340 }: Props) {
             }}
             formatter={(value, name) => [
               value != null ? Number(value).toLocaleString("id-ID") : "-",
-              name === "harga" ? `Harga (Rp/${satuan})` : String(name),
+              name === "harga" ? `Harga (Rp/${satuan})` : name === "forecast" ? "Perkiraan 14 hari" : String(name),
             ]}
           />
           <Area

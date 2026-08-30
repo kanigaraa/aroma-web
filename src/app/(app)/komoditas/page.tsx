@@ -31,7 +31,7 @@ export default function KomoditasPage() {
         <div className="mb-6 flex items-start justify-between gap-4">
           <div>
             <h1 className="text-[28px] font-bold tracking-tight text-primary">Komoditas</h1>
-            <p className="text-sm text-secondary mt-1">{rows.length} komoditas pangan yang dipantau</p>
+            <p className="text-sm text-secondary mt-1">{rows.length} komoditas pangan yang dipantau · harga per {rows[0]?.satuan ?? "kg"}</p>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
@@ -50,6 +50,7 @@ export default function KomoditasPage() {
                 <span className="text-xl font-bold text-primary tnum">
                   Rp {k.avg != null ? k.avg.toLocaleString("id-ID") : "—"}
                 </span>
+                <span className="text-xs text-secondary">/ {k.satuan}</span>
                 {k.dir !== 0 && (
                   <span className={`inline-flex items-center gap-0.5 text-[11px] font-semibold ${k.dir > 0 ? "text-red-500" : "text-teal-600"}`}>
                     {k.dir > 0 ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}

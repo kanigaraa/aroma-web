@@ -1,13 +1,14 @@
-// Avatar bulat gradient ala contoh (icon komoditas & avatar pengguna)
-const GRADS = [
-  "from-teal-400 to-teal-600",
-  "from-orange-400 to-orange-600",
-  "from-blue-400 to-blue-600",
-  "from-amber-400 to-amber-600",
-  "from-rose-400 to-rose-600",
-  "from-emerald-400 to-emerald-600",
-  "from-violet-400 to-violet-600",
-  "from-cyan-400 to-cyan-600",
+// Avatar solid flat ala metric card (icon komoditas & avatar pengguna).
+// Solid color, rounded-xl, tanpa gradient/lingkaran — gaya datar publik.
+const SOLIDS = [
+  "bg-teal-100 text-teal-700",
+  "bg-orange-100 text-orange-700",
+  "bg-blue-100 text-blue-700",
+  "bg-amber-100 text-amber-700",
+  "bg-rose-100 text-rose-700",
+  "bg-emerald-100 text-emerald-700",
+  "bg-violet-100 text-violet-700",
+  "bg-cyan-100 text-cyan-700",
 ];
 
 export default function Avatar({
@@ -21,10 +22,10 @@ export default function Avatar({
   size?: number;
   className?: string;
 }) {
-  const g = GRADS[Math.abs(seed) % GRADS.length];
+  const c = SOLIDS[Math.abs(seed) % SOLIDS.length];
   return (
     <span
-      className={`inline-flex items-center justify-center rounded-full bg-gradient-to-br ${g} text-white shrink-0 ${className}`}
+      className={`inline-flex items-center justify-center rounded-xl ${c} shrink-0 ${className}`}
       style={{ width: size, height: size, fontSize: size * 0.42 }}
     >
       {children}

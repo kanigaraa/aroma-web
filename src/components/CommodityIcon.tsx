@@ -32,7 +32,7 @@ export default function CommodityIcon({
   if (Lucide) {
     return (
       <Avatar seed={seed} size={size}>
-        <Lucide className="text-white" style={{ width: size * 0.5, height: size * 0.5 }} strokeWidth={2} />
+        <Lucide className="text-current" style={{ width: size * 0.5, height: size * 0.5 }} strokeWidth={2} />
       </Avatar>
     );
   }

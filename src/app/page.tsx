@@ -27,7 +27,7 @@ const cards = [
 
 const features = [
   { icon: TrendingUp, title: "Prediksi 14 hari", desc: "Perkiraan harga berbasis data historis." },
-  { icon: CloudSun, title: "Insight cuaca", desc: "Pengaruh cuaca terhadap pergerakan harga." },
+  { icon: CloudSun, title: "Pengaruh cuaca", desc: "Pengaruh cuaca terhadap pergerakan harga." },
   { icon: ShieldAlert, title: "Peringatan risiko", desc: "Status stabil, waspada, hingga tinggi per provinsi." },
 ];
 

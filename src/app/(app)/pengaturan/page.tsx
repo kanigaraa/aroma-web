@@ -1,20 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { User, MapPin, Package, Bell, LogOut, Save } from "lucide-react";
-
-const KOMODITAS = [
-  { slug: "beras", nama: "Beras" },
-  { slug: "daging-ayam", nama: "Daging Ayam" },
-  { slug: "daging-sapi", nama: "Daging Sapi" },
-  { slug: "telur-ayam", nama: "Telur Ayam" },
-  { slug: "bawang-merah", nama: "Bawang Merah" },
-  { slug: "bawang-putih", nama: "Bawang Putih" },
-  { slug: "cabai-merah", nama: "Cabai Merah" },
-  { slug: "cabai-rawit", nama: "Cabai Rawit" },
-  { slug: "minyak-goreng", nama: "Minyak Goreng" },
-  { slug: "gula-pasir", nama: "Gula Pasir" },
-];
+import { User, MapPin, Bell, LogOut, Save } from "lucide-react";
 
 const PROVINSI = [
   "DKI Jakarta", "Jawa Barat", "Jawa Timur", "Jawa Tengah", "Sumatera Utara",
@@ -24,12 +11,8 @@ const PROVINSI = [
 export default function PengaturanPage() {
   const [nama, setNama] = useState("Pengguna Demo");
   const [wilayah, setWilayah] = useState("DKI Jakarta");
-  const [pilih, setPilih] = useState<string[]>(["beras", "cabai-rawit"]);
   const [notif, setNotif] = useState(true);
   const [saved, setSaved] = useState(false);
-
-  const toggleKomo = (slug: string) =>
-    setPilih((p) => (p.includes(slug) ? p.filter((s) => s !== slug) : [...p, slug]));
 
   const save = () => {
     setSaved(true);
@@ -85,31 +68,6 @@ export default function PengaturanPage() {
             <option key={p} value={p}>{p}</option>
           ))}
         </select>
-      </section>
-
-      {/* Komoditas utama */}
-      <section className="mt-5 rounded-2xl border border-border bg-surface p-5">
-        <div className="mb-1 flex items-center gap-2">
-          <Package className="h-4 w-4 text-accent" />
-          <h2 className="text-sm font-semibold text-primary">Komoditas Utama</h2>
-        </div>
-        <p className="mb-3 text-xs text-secondary">Pilih komoditas yang paling Anda pantau.</p>
-        <div className="flex flex-wrap gap-2">
-          {KOMODITAS.map((k) => {
-            const on = pilih.includes(k.slug);
-            return (
-              <button
-                key={k.slug}
-                onClick={() => toggleKomo(k.slug)}
-                className={`rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors ${
-                  on ? "border-accent bg-accent/10 text-accent-strong" : "border-border bg-background text-secondary hover:bg-muted"
-                }`}
-              >
-                {k.nama}
-              </button>
-            );
-          })}
-        </div>
       </section>
 
       {/* Notifikasi */}
