@@ -9,6 +9,7 @@ import {
 } from "@/lib/data";
 import CommodityDetail from "@/components/CommodityDetail";
 import CommodityIcon from "@/components/CommodityIcon";
+import ForecastAlert from "@/components/ForecastAlert";
 import type { ForecastPoint } from "@/lib/types";
 
 export const dynamic = "force-static";
@@ -45,9 +46,17 @@ export default async function KomoditasDetailPage({
           <div>
             <h1 className="text-[26px] font-bold tracking-tight text-primary">{k.nama}</h1>
             <p className="text-sm text-secondary mt-0.5">
-              Perkiraan 14 hari · {meta.provinsi.length} provinsi
+              Perkiraan 14 hari · {meta.provinsi.length} provinsi · harga per {k.satuan}
             </p>
           </div>
+        </div>
+        <div className="mb-5">
+          <ForecastAlert
+            nama={k.nama}
+            satuan={k.satuan}
+            seri={fc.provinsi[meta.provinsi[0]]?.seri ?? []}
+            horizonDays={fc.horizon_days}
+          />
         </div>
         <CommodityDetail
           nama={k.nama}

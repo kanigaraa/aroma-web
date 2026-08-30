@@ -15,7 +15,7 @@ export function RiskBadge({ status }: { status: Status }) {
   );
 }
 
-// ringkas status dari seri terakhir (rata-rata provinsi)
+// ringkas status dari seri terakhir (paling ketat: ada provinsi tinggi/waspada => ikut)
 export function summarizeStatus(
   data: { tanggal: string; data: Record<string, { status: Status }> }[]
 ): Status {
@@ -25,9 +25,7 @@ export function summarizeStatus(
     .map((d) => d.status)
     .filter(Boolean);
   if (!statuses.length) return "stabil";
-  const score = { stabil: 0, waspada: 1, tinggi: 2 };
-  const avg = statuses.reduce((a, s) => a + score[s], 0) / statuses.length;
-  if (avg >= 1.5) return "tinggi";
-  if (avg >= 0.5) return "waspada";
+  if (statuses.includes("tinggi")) return "tinggi";
+  if (statuses.includes("waspada")) return "waspada";
   return "stabil";
 }
