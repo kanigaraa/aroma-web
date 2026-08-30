@@ -2,7 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Bell, User, Settings, LogOut, CheckCircle2 } from "lucide-react";
+import { Bell, User, Settings, LogOut, CheckCircle2, Bot } from "lucide-react";
+import AIChat from "./AIChat";
 
 export type Notif = {
   id: string;
@@ -12,7 +13,7 @@ export type Notif = {
 };
 
 export default function Topbar() {
-  const [open, setOpen] = useState<null | "notif" | "user">(null);
+  const [open, setOpen] = useState<null | "notif" | "user" | "chat">(null);
   const ref = useRef<HTMLDivElement>(null);
 
   // notifikasi contoh (nanti dari alert harga)
@@ -29,11 +30,20 @@ export default function Topbar() {
     return () => document.removeEventListener("mousedown", h);
   }, []);
 
-  const toggle = (k: "notif" | "user") => setOpen((o) => (o === k ? null : k));
+  const toggle = (k: "notif" | "user" | "chat") => setOpen((o) => (o === k ? null : k));
 
   return (
     <header className="relative flex h-16 shrink-0 items-center justify-end gap-2 border-b border-border bg-surface px-6">
       <div ref={ref} className="flex items-center gap-2">
+        {/* AI chat */}
+        <button
+          onClick={() => toggle("chat")}
+          className={`flex h-9 w-9 items-center justify-center rounded-xl border border-border transition-colors hover:bg-muted ${open === "chat" ? "bg-muted text-primary" : "text-secondary hover:text-primary"}`}
+          aria-label="Asisten AI"
+        >
+          <Bot className="h-4.5 w-4.5" />
+        </button>
+
         {/* Notif bell */}
         <button
           onClick={() => toggle("notif")}
@@ -95,6 +105,7 @@ export default function Topbar() {
             </div>
           </div>
         )}
+        {open === "chat" && <AIChat />}
       </div>
     </header>
   );
