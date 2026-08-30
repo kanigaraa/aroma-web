@@ -221,7 +221,7 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
             wheel={{ step: 0.12 }}
             panning={{ velocityDisabled: true }}
             doubleClick={{ disabled: true }}
-            zoomAnimation={{ animationTime: 0.3, animationType: "easeOut" }}
+            zoomAnimation={{ animationTime: 0.4, animationType: "easeOut" }}
           >
             {({ resetTransform, zoomIn, zoomOut }) => (
               <>
@@ -348,9 +348,15 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
                   <CloudSun className="h-3 w-3 text-accent" /> Pengaruh Cuaca
                 </div>
                 <div className="text-2xl font-bold text-primary tnum mt-1">
-                  {d.rCuaca != null ? d.rCuaca.toFixed(2) : "—"}
+                  {d.rCuaca != null
+                    ? `${Math.abs(d.rCuaca) >= 0.5 ? "Kuat" : Math.abs(d.rCuaca) >= 0.3 ? "Sedang" : "Lemah"}`
+                    : "—"}
                 </div>
-                <div className="text-[11px] text-secondary">Korelasi Hujan Harian</div>
+                <div className="text-[11px] text-secondary">
+                  {d.rCuaca != null
+                    ? `hujan ${d.rCuaca > 0 ? "mendorong" : "menurunkan"} harga`
+                    : "tidak ada data cuaca"}
+                </div>
               </div>
 
               {/* ALERT AMBANG HARGA */}
@@ -422,28 +428,45 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
             {/* RANGKING TOP 5 */}
             <div className="mt-3 grid grid-cols-2 gap-3">
               {[
-                { title: "Termahal", items: topMahal, icon: "▲" },
-                { title: "Termurah", items: topMurah, icon: "▼" },
-              ].map(({ title, items, icon }) => (
+                { title: "Termahal", items: topMahal },
+                { title: "Termurah", items: topMurah },
+                ].map(({ title, items }) => (
                 <div key={title} className="rounded-xl bg-muted/60 p-4">
                   <div className="text-xs text-secondary mb-2">{title}</div>
                   {items.length === 0 ? (
                     <div className="text-[11px] text-secondary">Tidak ada data.</div>
                   ) : (
                     <ol className="space-y-1.5">
-                      {items.map(([prov, v], i) => (
-                        <li key={prov} className="flex items-center justify-between gap-1 text-[11px]">
-                          <span className="flex min-w-0 items-center gap-1.5">
-                            <span className={`font-bold tnum ${i === 0 ? "text-accent" : "text-secondary"}`}>
-                              {i + 1}
+                      {items.map(([prov, v], i) => {
+                        const rank = i + 1;
+                        const rankCls =
+                          rank === 1
+                            ? "bg-amber-400 text-white"
+                            : rank === 2
+                              ? "bg-slate-300 text-white"
+                              : rank === 3
+                                ? "bg-orange-300 text-white"
+                                : "bg-transparent text-secondary";
+                        const up = v.status !== "stabil";
+                        return (
+                          <li key={prov} className="flex items-center justify-between gap-1 text-[11px]">
+                            <span className="flex min-w-0 items-center gap-1.5">
+                              <span
+                                className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[9px] font-bold ${rankCls}`}
+                              >
+                                {rank}
+                              </span>
+                              <span className="truncate text-primary">{prov}</span>
                             </span>
-                            <span className="truncate text-primary">{prov}</span>
-                          </span>
-                          <span className="tnum font-semibold text-primary shrink-0">
-                            {icon} {v.harga.toLocaleString("id-ID")}
-                          </span>
-                        </li>
-                      ))}
+                            <span className="flex shrink-0 items-center gap-1">
+                              <span className={up ? "text-red-500" : "text-emerald-500"}>{up ? "▲" : "▼"}</span>
+                              <span className="tnum font-semibold text-primary">
+                                {v.harga.toLocaleString("id-ID")}
+                              </span>
+                            </span>
+                          </li>
+                        );
+                      })}
                     </ol>
                   )}
                 </div>

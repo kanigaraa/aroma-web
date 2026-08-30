@@ -6,6 +6,7 @@ import {
   getInsight,
 } from "@/lib/data";
 import MapExplorer from "@/components/MapExplorer";
+import MapTimelineSection from "@/components/MapTimelineSection";
 import { getMapData } from "@/lib/mapData";
 import type { Status } from "@/lib/types";
 
@@ -88,6 +89,9 @@ export default function PetaPage() {
           </div>
         </div>
         <MapExplorer komoditas={meta.komoditas} dataset={dataset} paths={paths} centroids={centroids} />
+        <div className="mt-5">
+          <MapTimelineSection slug="beras" nama="Beras" />
+        </div>
     </main>
   );
 }
