@@ -200,11 +200,7 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
             />
           </div>
         </div>
-
-        <div className="flex items-center gap-3 text-[11px] font-medium text-secondary">
-          <span className="text-secondary">Pilih provinsi</span>
         </div>
-      </div>
 
       {/* MAP HERO */}
       <div className="relative rounded-2xl border border-border bg-surface p-3">
@@ -217,11 +213,18 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
             minScale={0.6}
             maxScale={10}
             centerOnInit
-            limitToBounds={false}
-            wheel={{ step: 0.12 }}
-            panning={{ velocityDisabled: true }}
+            limitToBounds
+            wheel={{ step: 0.15 }}
+            panning={{ disabled: false }}
             doubleClick={{ disabled: true }}
-            zoomAnimation={{ animationTime: 0.4, animationType: "easeOut" }}
+            zoomAnimation={{ animationTime: 0.3, animationType: "easeOut" }}
+            velocityAnimation={{
+              disabled: false,
+              sensitivityMouse: 1,
+              maxStrengthMouse: 0.5,
+              animationTime: 0.4,
+              animationType: "easeOut",
+            }}
           >
             {({ resetTransform, zoomIn, zoomOut }) => (
               <>
@@ -472,10 +475,6 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
                 </div>
               ))}
             </div>
-            <p className="mt-3 text-[11px] text-secondary">
-              Pilih provinsi di peta untuk melihat detail harga dan perkiraan.
-            </p>
-
             {/* PERBANDINGAN PROVINSI */}
             <div className="mt-3 rounded-xl bg-muted/60 p-4">
               <div className="text-xs text-secondary font-medium mb-2">Perbandingan Provinsi</div>

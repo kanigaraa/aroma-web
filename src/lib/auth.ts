@@ -2,10 +2,10 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { drizzle } from "drizzle-orm/d1";
 
-export function createAuth(db: CloudflareD1Database) {
-  const drizzleDb = drizzle(db);
+// ponytail: singleton per request — upgrade to module-level if edge runtime supports it
+export function createAuth(db: D1Database) {
   return betterAuth({
-    database: drizzleAdapter(drizzleDb, { provider: "sqlite" }),
+    database: drizzleAdapter(drizzle(db), { provider: "sqlite" }),
     baseURL: process.env.BETTER_AUTH_URL ?? "https://aroma.my.id",
     secret: process.env.BETTER_AUTH_SECRET!,
     socialProviders: {
@@ -19,6 +19,5 @@ export function createAuth(db: CloudflareD1Database) {
 }
 
 export type Auth = ReturnType<typeof createAuth>;
-
-// ponytail: D1 type from wrangler runtime — upgrade to typed schema when migrations added
-type CloudflareD1Database = import("@cloudflare/workers-types").D1Database;
+declare global { const D1Database: unknown; }
+type D1Database = import("@cloudflare/workers-types").D1Database;

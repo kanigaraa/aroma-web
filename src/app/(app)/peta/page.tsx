@@ -6,7 +6,6 @@ import {
   getInsight,
 } from "@/lib/data";
 import MapExplorer from "@/components/MapExplorer";
-import MapTimelineSection from "@/components/MapTimelineSection";
 import { getMapData } from "@/lib/mapData";
 import type { Status } from "@/lib/types";
 
@@ -52,6 +51,16 @@ export default function PetaPage() {
     meta.provinsi.forEach((prov) => {
       const d = last?.data[prov];
       status[prov] = d?.status ?? "stabil";
+      // Harga terakhir yang diketahui: data harian kadang bolong (None) utk sebagian
+      // provinsi (mis. Riau, Kalbar). Kalau kosong pd tgl terakhir, pakai harga
+      // terdekat yg ada dari riwayat 90 hari utk hindari "0" palsu di peta.
+      let lastKnown = d?.harga ?? 0;
+      if (!lastKnown) {
+        for (let i = last90.length - 1; i >= 0; i--) {
+          const h = last90[i].data[prov]?.harga;
+          if (h) { lastKnown = h; break; }
+        }
+      }
       const fcSeri = fc.provinsi[prov]?.seri ?? [];
       const fcLast = fcSeri.filter((f) => f.is_future).at(-1);
       const ins = insight?.provinsi.find(
@@ -59,7 +68,7 @@ export default function PetaPage() {
       );
       detail[prov] = {
         nama: k.nama,
-        harga: d?.harga ?? 0,
+        harga: lastKnown,
         satuan: k.satuan ?? "kg",
         status: d?.status ?? "stabil",
         forecast: fcLast ? String(fcLast.forecast) : "0",
@@ -79,9 +88,6 @@ export default function PetaPage() {
             <h1 className="text-[28px] font-bold tracking-tight text-primary">
               Peta Risiko Nasional
             </h1>
-            <p className="text-sm text-secondary mt-1">
-              Status harga per provinsi · Geser untuk pindah, scroll untuk zoom
-            </p>
           </div>
           <div className="hidden sm:flex items-center gap-2 rounded-full border border-border bg-surface px-3.5 py-2 text-xs text-secondary">
             <CalendarDays className="h-3.5 w-3.5 text-accent" />
@@ -89,9 +95,6 @@ export default function PetaPage() {
           </div>
         </div>
         <MapExplorer komoditas={meta.komoditas} dataset={dataset} paths={paths} centroids={centroids} />
-        <div className="mt-5">
-          <MapTimelineSection slug="beras" nama="Beras" />
-        </div>
     </main>
   );
 }

@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { Bell, User, Settings, LogOut, CheckCircle2 } from "lucide-react";
+import { useAuth } from "@/components/auth/AuthContext";
 
 export type Notif = {
   id: string;
@@ -14,6 +15,7 @@ export type Notif = {
 export default function Topbar() {
   const [open, setOpen] = useState<null | "notif" | "user">(null);
   const ref = useRef<HTMLDivElement>(null);
+  const { logout } = useAuth();
 
   // notifikasi contoh (nanti dari alert harga)
   const notifs: Notif[] = [
@@ -89,7 +91,7 @@ export default function Topbar() {
               <Link href="/pengaturan" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-sm text-secondary transition-colors hover:bg-muted hover:text-primary">
                 <Settings className="h-4 w-4" /> Pengaturan
               </Link>
-              <button onClick={() => alert("Logout (demo)")} className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-sm text-red-500 transition-colors hover:bg-red-50">
+              <button onClick={logout} className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-sm text-red-500 transition-colors hover:bg-red-50">
                 <LogOut className="h-4 w-4" /> Keluar
               </button>
             </div>

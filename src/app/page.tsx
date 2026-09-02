@@ -73,43 +73,36 @@ export default function LandingPage() {
       </header>
 
       {/* HERO */}
-      <section className="flex min-h-[calc(100vh-4rem)] items-center justify-center px-6 py-16 text-center">
-        <div className="w-full max-w-[1100px]">
-          {/* Eyebrow */}
-          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.12em] text-[#14b8a6]">
-            Pemantauan &amp; Prediksi Harga Pangan
-          </p>
-
-          {/* Headline — 2 baris eksplisit */}
-          <h1 className="text-[clamp(2rem,4.5vw+0.5rem,3.75rem)] font-bold leading-[1.02] tracking-[-0.04em] text-[#0d1b2a]">
-            <span className="block">
-              Harga pangan bakal naik{" "}
-              <BubbleIcon
-                colorA="#fb923c" colorB="#f97316"
-                glyph={<TrendingUp className="h-4 w-4 text-white sm:h-5 sm:w-5" />}
-                className="mx-1 inline-block h-8 w-8 translate-y-0.5 align-middle sm:h-10 sm:w-10"
-              />
-              {" "}atau turun?{" "}
-              <BubbleIcon
-                colorA="#0ea5e9" colorB="#0369a1"
-                glyph={<TrendingDown className="h-4 w-4 text-white sm:h-5 sm:w-5" />}
-                className="mx-1 inline-block h-8 w-8 translate-y-0.5 align-middle sm:h-10 sm:w-10"
-              />
-            </span>
-            <span className="block">
-              AROMA prediksi{" "}
-              <span className="whitespace-nowrap text-[#14b8a6]">14 hari</span>{" "}
-              ke depan
-            </span>
+      <section className="flex flex-col items-center justify-center px-6 pb-0 pt-20 text-center">
+        <div className="max-w-[900px]">
+          {/* Line 1 — larger */}
+          <h1 className="text-[64px] font-[750] leading-[1.02] tracking-[-0.045em] text-[#0d1b2a]">
+            Harga pangan bakal naik{" "}
+            <BubbleIcon
+              colorA="#fb923c" colorB="#f97316"
+              glyph={<TrendingUp className="h-4 w-4 text-white sm:h-5 sm:w-5" />}
+              className="mx-0.5 inline-block h-9 w-9 translate-y-0.5 align-middle"
+            />
+            {" "}atau turun?{" "}
+            <BubbleIcon
+              colorA="#0ea5e9" colorB="#0369a1"
+              glyph={<TrendingDown className="h-4 w-4 text-white sm:h-5 sm:w-5" />}
+              className="mx-0.5 inline-block h-9 w-9 translate-y-0.5 align-middle"
+            />
           </h1>
 
+          {/* Line 2 — slightly smaller */}
+          <p className="mt-1 text-[56px] font-bold leading-[1.04] tracking-[-0.045em] text-[#0d1b2a]">
+            Kami bantu memprediksinya
+          </p>
+
           {/* Subtitle */}
-          <p className="mx-auto mt-6 max-w-[480px] text-[15px] leading-relaxed text-[#4b5e6d]">
-            10 komoditas · 34 provinsi · data harian · proyeksi 14 hari ke depan
+          <p className="mx-auto mt-5 max-w-[700px] text-[18px] leading-relaxed text-[#64748b]">
+            AROMA memprediksi harga 10 komoditas di 34 provinsi hingga 14 hari ke depan.
           </p>
 
           {/* CTA */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/register"
               className="inline-flex items-center gap-2 rounded-full bg-[#0d1b2a] px-6 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-80"
@@ -119,26 +112,22 @@ export default function LandingPage() {
             </Link>
             <Link
               href="#cara-kerja"
-              className="inline-flex items-center gap-2 rounded-full border border-[#d1d9e0] px-6 py-2.5 text-sm font-semibold text-[#0d1b2a] transition-colors hover:bg-[#f5f7fa]"
+              className="inline-flex items-center gap-2 rounded-full border border-[#e2e8f0] bg-white px-6 py-2.5 text-sm font-semibold text-[#0d1b2a] transition-colors hover:bg-[#f8fafc]"
             >
               Lihat Cara Kerja
             </Link>
           </div>
         </div>
-      </section>
 
-      {/* DATA STRIP */}
-      <div className="border-y border-[#e8edf2] py-4 text-center text-sm font-medium text-[#4b5e6d]">
-        <span className="inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
-          <span>10 Komoditas</span>
-          <span className="text-[#d1d9e0]">·</span>
-          <span>34 Provinsi</span>
-          <span className="text-[#d1d9e0]">·</span>
-          <span>Prediksi 14 Hari</span>
-          <span className="text-[#d1d9e0]">·</span>
-          <span>Data diperbarui berkala</span>
-        </span>
-      </div>
+        {/* Dashboard screenshot */}
+        <div className="mt-16 w-full max-w-[1120px]">
+          <img
+            src="/dashboard-preview.png"
+            alt="Dashboard AROMA"
+            className="w-full rounded-2xl border border-[#e2e8f0] shadow-[0_4px_32px_-4px_rgba(13,27,42,0.08)]"
+          />
+        </div>
+      </section>
 
       {/* FITUR — layout 3 kartu */}
       <section className="mx-auto max-w-6xl px-6 py-20">

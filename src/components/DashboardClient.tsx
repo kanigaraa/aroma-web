@@ -5,15 +5,15 @@ import Link from "next/link";
 import {
   Package,
   MapPin,
+  Map,
   TrendingUp,
   TrendingDown,
+  ArrowUpRight,
+  ArrowDownRight,
   ChevronRight,
   CalendarDays,
   CloudSun,
-  Sprout,
   Wallet,
-  ArrowUpRight,
-  ArrowDownRight,
   Download,
 } from "lucide-react";
 
@@ -149,7 +149,6 @@ export default function DashboardClient({
           </span>
           <div className="text-3xl font-bold text-primary tnum">{rows.length}</div>
           <div className="mt-1 text-xs text-secondary">Komoditas dipantau</div>
-          <div className="mt-2 text-[11px] text-secondary/80">Seluruh Indonesia · 34 provinsi</div>
         </div>
         {/* Rata-rata harga */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -158,7 +157,6 @@ export default function DashboardClient({
           </span>
           <div className="text-3xl font-bold text-primary tnum">Rp {fmt(avgNasional)}</div>
           <div className="mt-1 text-xs text-secondary">Rata-rata harga nasional</div>
-          <div className="mt-2 text-[11px] text-secondary/80">· {formatTanggal(lastTanggal)}</div>
         </div>
         {/* Komoditas naik */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -167,7 +165,6 @@ export default function DashboardClient({
           </span>
           <div className="text-3xl font-bold text-primary tnum">{naik}</div>
           <div className="mt-1 text-xs text-secondary">Komoditas Naik</div>
-          <div className="mt-2 text-[11px] text-red-500">Dibanding hari sebelumnya</div>
         </div>
         {/* Komoditas turun */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -176,7 +173,6 @@ export default function DashboardClient({
           </span>
           <div className="text-3xl font-bold text-primary tnum">{turun}</div>
           <div className="mt-1 text-xs text-secondary">Komoditas Turun</div>
-          <div className="mt-2 text-[11px] text-emerald-600">Dibanding hari sebelumnya</div>
         </div>
         {/* Pergerakan terbesar */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -188,9 +184,6 @@ export default function DashboardClient({
           </div>
           <div className="mt-1 text-xs text-secondary truncate">
             {moving ? `${moving.nama} (pergerakan terbesar)` : "Harga Cenderung Stabil"}
-          </div>
-          <div className={`mt-2 text-[11px] ${moving && moving.dir > 0 ? "text-red-500" : "text-emerald-600"}`}>
-            {moving ? `${moving.dir > 0 ? "Naik" : "Turun"} dibanding hari sebelumnya` : "Tidak ada lonjakan"}
           </div>
         </div>
       </div>
@@ -276,7 +269,7 @@ export default function DashboardClient({
           <Link href="/peta" className="group rounded-2xl border border-border bg-surface p-5 transition-colors hover:border-accent/40">
             <div className="mb-3 flex items-center justify-between">
               <h3 className="text-sm font-semibold text-primary flex items-center gap-1.5">
-                <Sprout className="h-4 w-4 text-accent" /> Peta Risiko
+                <Map className="h-4 w-4 text-accent" /> Peta Risiko
               </h3>
               <ChevronRight className="h-4 w-4 text-secondary transition-transform group-hover:translate-x-0.5" />
             </div>

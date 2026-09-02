@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { User, MapPin, Bell, LogOut, Save } from "lucide-react";
+import { User, MapPin, Bell, Save } from "lucide-react";
 
 const PROVINSI = [
   "DKI Jakarta", "Jawa Barat", "Jawa Timur", "Jawa Tengah", "Sumatera Utara",
@@ -99,12 +99,6 @@ export default function PengaturanPage() {
           <Save className="h-4 w-4" /> Simpan Perubahan
         </button>
         {saved && <span className="text-sm font-medium text-teal-600">Tersimpan ✓</span>}
-        <button
-          onClick={() => alert("Logout (demo)")}
-          className="ml-auto flex items-center gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-2.5 text-sm font-semibold text-red-600 transition-colors hover:bg-red-100"
-        >
-          <LogOut className="h-4 w-4" /> Keluar
-        </button>
       </div>
     </main>
   );
