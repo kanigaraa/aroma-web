@@ -74,34 +74,30 @@ export default function LandingPage() {
 
       {/* HERO */}
       <section className="flex flex-col items-center justify-center px-6 pb-0 pt-20 text-center">
-        <div className="max-w-[900px]">
-          {/* Line 1 — larger */}
-          <h1 className="text-[64px] font-[750] leading-[1.02] tracking-[-0.045em] text-[#0d1b2a]">
+        <div className="max-w-[1100px]">
+          <h1 className="text-[60px] font-[750] leading-[1.02] tracking-[-0.04em] text-[#0d1b2a]">
             Harga pangan bakal naik{" "}
             <BubbleIcon
               colorA="#fb923c" colorB="#f97316"
-              glyph={<TrendingUp className="h-4 w-4 text-white sm:h-5 sm:w-5" />}
-              className="mx-0.5 inline-block h-9 w-9 translate-y-0.5 align-middle"
+              glyph={<TrendingUp className="h-3.5 w-3.5 text-white" />}
+              className="mx-0.5 inline-block h-8 w-8 translate-y-0.5 align-middle"
             />
             {" "}atau turun?{" "}
             <BubbleIcon
               colorA="#0ea5e9" colorB="#0369a1"
-              glyph={<TrendingDown className="h-4 w-4 text-white sm:h-5 sm:w-5" />}
-              className="mx-0.5 inline-block h-9 w-9 translate-y-0.5 align-middle"
+              glyph={<TrendingDown className="h-3.5 w-3.5 text-white" />}
+              className="mx-0.5 inline-block h-8 w-8 translate-y-0.5 align-middle"
             />
           </h1>
 
-          {/* Line 2 — slightly smaller */}
-          <p className="mt-1 text-[56px] font-bold leading-[1.04] tracking-[-0.045em] text-[#0d1b2a]">
+          <p className="mt-2 text-[48px] font-[650] leading-[1.04] tracking-[-0.04em] text-[#0d1b2a]/75">
             Kami bantu memprediksinya
           </p>
 
-          {/* Subtitle */}
-          <p className="mx-auto mt-5 max-w-[700px] text-[18px] leading-relaxed text-[#64748b]">
+          <p className="mx-auto mt-6 max-w-[680px] text-[17px] leading-relaxed text-[#475569]">
             AROMA memprediksi harga 10 komoditas di 34 provinsi hingga 14 hari ke depan.
           </p>
 
-          {/* CTA */}
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/register"
@@ -120,11 +116,11 @@ export default function LandingPage() {
         </div>
 
         {/* Dashboard screenshot */}
-        <div className="mt-16 w-full max-w-[1120px]">
+        <div className="mt-16 w-full max-w-[1240px]">
           <img
             src="/dashboard-preview.png"
             alt="Dashboard AROMA"
-            className="w-full rounded-2xl border border-[#e2e8f0] shadow-[0_4px_32px_-4px_rgba(13,27,42,0.08)]"
+            className="w-full rounded-[18px] border border-[#e2e8f0] shadow-[0_2px_24px_-4px_rgba(13,27,42,0.07)]"
           />
         </div>
       </section>
