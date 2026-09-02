@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Logo from "@/components/Logo";
+import HeroSection6 from "@/components/ui/hero-section-6";
 import {
   ArrowRight,
   TrendingUp,
@@ -72,58 +73,7 @@ export default function LandingPage() {
         </div>
       </header>
 
-      {/* HERO */}
-      <section className="flex flex-col items-center justify-center px-6 pb-0 pt-20 text-center">
-        <div className="max-w-[1100px]">
-          <h1 className="text-[60px] font-[750] leading-[1.02] tracking-[-0.04em] text-[#0d1b2a]">
-            Harga pangan bakal naik{" "}
-            <BubbleIcon
-              colorA="#fb923c" colorB="#f97316"
-              glyph={<TrendingUp className="h-3.5 w-3.5 text-white" />}
-              className="mx-0.5 inline-block h-8 w-8 translate-y-0.5 align-middle"
-            />
-            {" "}atau turun?{" "}
-            <BubbleIcon
-              colorA="#0ea5e9" colorB="#0369a1"
-              glyph={<TrendingDown className="h-3.5 w-3.5 text-white" />}
-              className="mx-0.5 inline-block h-8 w-8 translate-y-0.5 align-middle"
-            />
-          </h1>
-
-          <p className="mt-2 text-[48px] font-[650] leading-[1.04] tracking-[-0.04em] text-[#0d1b2a]/75">
-            Kami bantu memprediksinya
-          </p>
-
-          <p className="mx-auto mt-6 max-w-[680px] text-[17px] leading-relaxed text-[#475569]">
-            AROMA memprediksi harga 10 komoditas di 34 provinsi hingga 14 hari ke depan.
-          </p>
-
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/register"
-              className="inline-flex items-center gap-2 rounded-full bg-[#0d1b2a] px-6 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-80"
-            >
-              Mulai Sekarang
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="#cara-kerja"
-              className="inline-flex items-center gap-2 rounded-full border border-[#e2e8f0] bg-white px-6 py-2.5 text-sm font-semibold text-[#0d1b2a] transition-colors hover:bg-[#f8fafc]"
-            >
-              Lihat Cara Kerja
-            </Link>
-          </div>
-        </div>
-
-        {/* Dashboard screenshot */}
-        <div className="mt-16 w-full max-w-[1240px]">
-          <img
-            src="/dashboard-preview.png"
-            alt="Dashboard AROMA"
-            className="w-full rounded-[18px] border border-[#e2e8f0] shadow-[0_2px_24px_-4px_rgba(13,27,42,0.07)]"
-          />
-        </div>
-      </section>
+      <HeroSection6 />
 
       {/* FITUR — layout 3 kartu */}
       <section className="mx-auto max-w-6xl px-6 py-20">
