@@ -1,8 +1,9 @@
 name = "aroma-web"
+pages_project_name = "aroma-web"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 account_id = "a5d203aa2e154370938c8dc572e3bd08"
-pages_build_output_dir = ".vercel/output/static"
+pages_build_output_dir = ".next"
 
 [[d1_databases]]
 binding = "DB"
