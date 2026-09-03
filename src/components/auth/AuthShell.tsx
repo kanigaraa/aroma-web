@@ -11,7 +11,7 @@ export default function AuthShell({ mode, children }: Props) {
   const isLogin = mode === "login";
 
   const illustration = (
-    <div className="relative hidden overflow-hidden lg:block lg:w-[42%] xl:w-[38%]">
+    <div className="relative hidden overflow-hidden lg:block lg:w-[42%] xl:w-[38%] lg:min-h-screen">
       <Image
         src={isLogin ? "/auth-login.jpg" : "/auth-register.jpg"}
         alt={isLogin ? "Lanjut lihat lebih jauh" : "Mulai lihat lebih jauh"}

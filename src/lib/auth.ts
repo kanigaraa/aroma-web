@@ -64,14 +64,15 @@ export function createAuth(db: D1Database) {
   });
 }
 
-// Dev: better-sqlite3 local file
+// Dev: Kysely + better-sqlite3 local file
 export function createAuthDev() {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { Kysely, SqliteDialect } = require("kysely");
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const Database = require("better-sqlite3");
-  const db = new Database(".dev.db");
-  return betterAuth({
-    ...makeCommon(),
-    database: { type: "sqlite", db },
-  });
+  const db = new Kysely({ dialect: new SqliteDialect({ database: new Database(".dev.db") }) });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return betterAuth({ ...makeCommon(), database: { db, type: "sqlite" } as any });
 }
 
 export type Auth = ReturnType<typeof createAuth>;
