@@ -3,7 +3,69 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { AnimatedGroup } from "@/components/ui/animated-group";
-import { ArrowRight, TrendingUp, TrendingDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
+function TrendBadge({ direction }: { direction: "up" | "down" }) {
+  const up = direction === "up";
+  const bg = up ? "#f97316" : "#0ea5e9";
+
+  return (
+    <span
+      aria-label={up ? "naik" : "turun"}
+      className="relative inline-block translate-y-[-0.06em] align-middle"
+      style={{ width: 38, height: 34 }}
+    >
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 38 34"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ width: 38, height: 34 }}
+      >
+        {/* bubble body */}
+        <rect x="0" y="0" width="38" height="28" rx="9" fill={bg} />
+        {/* tail notch bottom-left */}
+        <path d="M8 28 L5 34 L14 28 Z" fill={bg} />
+        {/* chart line */}
+        {up ? (
+          <polyline
+            points="7,20 13,14 19,17 25,10 31,6"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        ) : (
+          <polyline
+            points="7,6 13,12 19,9 25,16 31,22"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        )}
+        {/* arrowhead */}
+        {up ? (
+          <polyline
+            points="27,6 31,6 31,10"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        ) : (
+          <polyline
+            points="27,22 31,22 31,18"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        )}
+      </svg>
+    </span>
+  );
+}
 
 const textVariants: Variants = {
   hidden: { opacity: 0, filter: "blur(8px)", y: 16 },
@@ -17,9 +79,9 @@ const textVariants: Variants = {
 
 export default function HeroSection6() {
   return (
-    <section className="flex flex-col items-center px-6 pb-0 pt-20 text-center">
+    <section className="flex flex-col items-center px-6 pb-0 pt-28 text-center">
       <AnimatedGroup
-        className="flex max-w-[1050px] flex-col items-center"
+        className="flex max-w-[1120px] flex-col items-center"
         variants={{
           container: { visible: { transition: { staggerChildren: 0.07 } } },
           item: textVariants,
@@ -27,34 +89,35 @@ export default function HeroSection6() {
       >
         {/* Main headline */}
         <h1
-          style={{ letterSpacing: "-0.045em" }}
-          className="text-[56px] font-bold leading-[1.02] text-[#0d1b2a]"
+          style={{
+            letterSpacing: "-0.045em",
+            fontSize: "clamp(48px, 4.2vw, 64px)",
+            lineHeight: 1.02,
+            fontWeight: 700,
+          }}
+          className="text-center text-[#0d1b2a]"
         >
           Harga pangan bakal naik{" "}
-          <span className="inline-flex h-[30px] w-[30px] translate-y-[3px] items-center justify-center rounded-full bg-orange-500 align-middle">
-            <TrendingUp className="h-[13px] w-[13px] text-white" />
-          </span>
+          <TrendBadge direction="up" />
           {" "}atau turun?{" "}
-          <span className="inline-flex h-[30px] w-[30px] translate-y-[3px] items-center justify-center rounded-full bg-sky-500 align-middle">
-            <TrendingDown className="h-[13px] w-[13px] text-white" />
-          </span>
+          <TrendBadge direction="down" />
         </h1>
 
         {/* Secondary headline */}
         <p
           style={{ letterSpacing: "-0.03em" }}
-          className="mt-2 text-[41px] font-[625] leading-[1.05] text-[#475569]"
+          className="mt-[13px] text-[42px] font-[600] leading-[1.05] text-[#475569]"
         >
           Kami bantu memprediksinya
         </p>
 
         {/* Subtitle */}
-        <p className="mx-auto mt-6 max-w-[680px] text-[17px] leading-[1.6] text-[#64748b]">
+        <p className="mx-auto mt-[27px] max-w-[700px] text-[17px] leading-[1.6] text-[#64748b]">
           AROMA memprediksi harga 10 komoditas di 34 provinsi hingga 14 hari ke depan.
         </p>
 
         {/* CTA */}
-        <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-[28px] flex flex-wrap items-center justify-center gap-[12px]">
           <Link
             href="/register"
             className="inline-flex h-[46px] items-center gap-2 rounded-[13px] bg-[#0d1b2a] px-6 text-sm font-semibold text-white transition-opacity hover:opacity-80"
@@ -76,7 +139,7 @@ export default function HeroSection6() {
         initial={{ opacity: 0, y: 28 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
-        className="relative mt-16 w-[calc(100%-80px)] max-w-[1200px]"
+        className="relative mt-20 w-[calc(100%-80px)] max-w-[1200px]"
       >
         {/* subtle teal glow behind screenshot only */}
         <div

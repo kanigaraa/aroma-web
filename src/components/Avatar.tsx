@@ -22,10 +22,10 @@ export default function Avatar({
   size?: number;
   className?: string;
 }) {
-  const c = SOLIDS[Math.abs(seed) % SOLIDS.length];
+  const c = className || SOLIDS[Math.abs(seed) % SOLIDS.length];
   return (
     <span
-      className={`inline-flex items-center justify-center rounded-xl ${c} shrink-0 ${className}`}
+      className={`inline-flex items-center justify-center rounded-xl ${c} shrink-0`}
       style={{ width: size, height: size, fontSize: size * 0.42 }}
     >
       {children}

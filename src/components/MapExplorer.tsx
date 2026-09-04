@@ -202,7 +202,6 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
         </div>
 
         <div className="flex items-center gap-3 text-[11px] font-medium text-secondary">
-          <span className="text-secondary">Pilih provinsi</span>
         </div>
       </div>
 

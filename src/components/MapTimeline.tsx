@@ -56,7 +56,7 @@ export default function MapTimeline({
     <div className="rounded-2xl border border-border bg-surface p-5">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
         <div>
-          <h3 className="text-sm font-semibold text-primary">Pergerakan Risiko · {nama}</h3>
+          <h3 className="text-sm font-semibold text-primary">Peta Risiko · {nama}</h3>
           <p className="mt-0.5 text-xs text-secondary">
             Animasikan 30 hari terakhir · {day?.tanggal ?? ""}
           </p>
