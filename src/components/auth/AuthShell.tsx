@@ -11,24 +11,29 @@ export default function AuthShell({ mode, children }: Props) {
   const isLogin = mode === "login";
 
   const illustration = (
-    <div className="relative hidden overflow-hidden lg:block lg:w-[42%] xl:w-[38%] lg:min-h-screen">
+    <div className="sticky top-0 hidden h-screen overflow-hidden bg-white lg:block lg:w-[58%]">
       <Image
-        src={isLogin ? "/auth-login.jpg" : "/auth-register.jpg"}
+        src={isLogin ? "/auth-login.webp" : "/auth-register.webp"}
         alt={isLogin ? "Lanjut lihat lebih jauh" : "Mulai lihat lebih jauh"}
         fill
-        className="object-cover object-center"
+        sizes="(min-width: 1024px) 58vw, 0px"
+        className="object-cover object-left"
         priority
       />
     </div>
   );
 
   const form = (
-    <div className="flex w-full flex-col items-center justify-center px-6 py-10 lg:flex-1 lg:px-12">
-      <div className="w-full max-w-md">
-        <div className="mb-8 flex items-center gap-2.5">
+    <div className="flex w-full flex-col items-center justify-center bg-[#f4f7f5] px-4 py-8 lg:w-[42%] lg:px-8">
+      <div className="w-full max-w-[340px]">
+        <Link
+          href="/"
+          aria-label="Kembali ke beranda AROMA"
+          className="mb-8 flex w-fit items-center gap-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/40"
+        >
           <Logo size={36} />
           <span className="text-lg font-bold tracking-tight text-primary">AROMA</span>
-        </div>
+        </Link>
 
         <h1 className="text-[28px] font-bold tracking-tight text-primary">
           {isLogin ? "Selamat Datang Kembali" : "Buat Akun Baru"}
