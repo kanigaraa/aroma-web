@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { TrendingUp, TrendingDown, ChevronRight, MapPin } from "lucide-react";
-import { getMeta, getKomoditasProcessed } from "@/lib/data";
+import { getMeta, getKomoditasProcessedSlim } from "@/lib/data";
 import { RiskBadge, summarizeStatus } from "@/components/RiskBadge";
 import CommodityIcon from "@/components/CommodityIcon";
 
@@ -9,7 +9,7 @@ export const dynamic = "force-static";
 export default function KomoditasPage() {
   const meta = getMeta();
   const rows = meta.komoditas.map((k, i) => {
-    const p = getKomoditasProcessed(k.slug);
+    const p = getKomoditasProcessedSlim(k.slug, 2);
     const last = p.seri[p.seri.length - 1];
     const vals = last ? Object.values(last.data).map((d) => d.harga) : [];
     const avg = vals.length

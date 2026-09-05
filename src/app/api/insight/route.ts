@@ -59,7 +59,7 @@ export async function POST(req: Request) {
         temperature: 0.3,
       }),
     });
-    const data = await res.json();
+    const data = (await res.json()) as { choices?: Array<{ message?: { content?: string } }> };
     const text: string | undefined = data?.choices?.[0]?.message?.content;
 
     if (!text) return NextResponse.json({ text: null, error: "groq empty" }, { status: 502 });

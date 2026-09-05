@@ -1,80 +1,96 @@
 import { betterAuth } from "better-auth";
+import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { emailOTP } from "better-auth/plugins";
-import { Resend } from "resend";
+import { drizzle } from "drizzle-orm/d1";
+import { SqliteDialect } from "kysely";
+import { authSchema } from "@/lib/auth-schema";
 
-function makeResend() {
-  return new Resend(process.env.RESEND_API_KEY);
+// ponytail: getEnv covers both Node (dev) and Workers (prod) runtimes
+function getEnv(key: string): string {
+  const v =
+    (typeof process !== "undefined" && process.env?.[key]) ||
+    (typeof globalThis !== "undefined" && (globalThis as Record<string, unknown>)[key]);
+  if (!v) throw new Error(`Missing env: ${key}`);
+  return v as string;
 }
 
-function makePlugins() {
-  const resend = makeResend();
-  return [
-    emailOTP({
-      async sendVerificationOTP({ email, otp, type }) {
-        const subjects: Record<string, string> = {
-          "sign-in": "Kode masuk AROMA",
-          "email-verification": "Verifikasi email AROMA",
-          "forget-password": "Kode reset kata sandi AROMA",
-        };
-        await resend.emails.send({
+function otpPlugin() {
+  return emailOTP({
+    otpLength: 6,
+    expiresIn: 300,
+    sendVerificationOTP: async ({ email, otp, type }) => {
+      const resendKey = getEnv("RESEND_API_KEY");
+      const subject =
+        type === "email-verification"
+          ? "Verifikasi email AROMA"
+          : type === "forget-password"
+          ? "Reset kata sandi AROMA"
+          : "Kode masuk AROMA";
+      await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${resendKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
           from: "AROMA <noreply@aroma.my.id>",
-          to: email,
-          subject: subjects[type] ?? "Kode AROMA",
-          html: `<p>Kode OTP kamu:</p><h1 style="font-size:40px;letter-spacing:8px;font-family:monospace;color:#0d1b2a">${otp}</h1><p>Berlaku 10 menit.</p>`,
-        });
-      },
-      expiresIn: 600,
-    }),
-  ];
-}
-
-function makeCommon() {
-  const resend = makeResend();
-  return {
-    baseURL: process.env.BETTER_AUTH_URL ?? "https://aroma.my.id",
-    secret: process.env.BETTER_AUTH_SECRET!,
-    socialProviders: {
-      google: {
-        clientId: process.env.GOOGLE_CLIENT_ID!,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-      },
+          to: [email],
+          subject,
+          html: `<p>Kode OTP kamu: <strong style="font-size:24px;letter-spacing:4px">${otp}</strong></p><p>Berlaku 5 menit.</p>`,
+        }),
+      });
     },
-    emailAndPassword: {
-      enabled: true,
-      sendResetPassword: async ({ user, url }: { user: { name: string; email?: string }; url: string }) => {
-        await resend.emails.send({
-          from: "AROMA <noreply@aroma.my.id>",
-          to: user.email ?? "",
-          subject: "Reset kata sandi AROMA",
-          html: `<p>Halo ${user.name},</p><p>Klik link berikut untuk mereset kata sandi:</p><a href="${url}" style="background:#0d1b2a;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;display:inline-block;">Reset Kata Sandi</a><p>Link berlaku 15 menit.</p>`,
-        });
-      },
-    },
-    plugins: makePlugins(),
-  };
-}
-
-// Production: D1 via Drizzle adapter
-export function createAuth(db: D1Database) {
-  const { drizzleAdapter } = require("better-auth/adapters/drizzle");
-  const { drizzle } = require("drizzle-orm/d1");
-  return betterAuth({
-    ...makeCommon(),
-    database: drizzleAdapter(drizzle(db), { provider: "sqlite" }),
   });
 }
 
-// Dev: Kysely + better-sqlite3 local file
+export function createAuth(db: D1Database) {
+  return betterAuth({
+    database: drizzleAdapter(drizzle(db, { schema: authSchema }), {
+      provider: "sqlite",
+      schema: authSchema,
+    }),
+    baseURL: getEnv("BETTER_AUTH_URL"),
+    secret: getEnv("BETTER_AUTH_SECRET"),
+    trustedOrigins: [
+      "https://aroma.my.id",
+      "http://localhost:3000",
+      "http://127.0.0.1:8787",
+    ],
+    emailAndPassword: {
+      enabled: true,
+      requireEmailVerification: true,
+    },
+    socialProviders: {
+      google: {
+        clientId: getEnv("GOOGLE_CLIENT_ID"),
+        clientSecret: getEnv("GOOGLE_CLIENT_SECRET"),
+      },
+    },
+    plugins: [otpPlugin()],
+  });
+}
+
 export function createAuthDev() {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const { Kysely, SqliteDialect } = require("kysely");
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const Database = require("better-sqlite3");
-  const db = new Kysely({ dialect: new SqliteDialect({ database: new Database(".dev.db") }) });
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return betterAuth({ ...makeCommon(), database: { db, type: "sqlite" } as any });
+  const dbFile = new Database(".dev.db");
+  return betterAuth({
+    database: {
+      dialect: new SqliteDialect({ database: dbFile }),
+      type: "sqlite",
+    },
+    baseURL: process.env.BETTER_AUTH_URL ?? "http://localhost:3000",
+    secret: process.env.BETTER_AUTH_SECRET ?? "dev-secret-change-me",
+    trustedOrigins: ["http://localhost:3000", "http://127.0.0.1:8787"],
+    emailAndPassword: { enabled: true, requireEmailVerification: false },
+    socialProviders: {
+      google: {
+        clientId: process.env.GOOGLE_CLIENT_ID ?? "",
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
+      },
+    },
+    plugins: [otpPlugin()],
+  });
 }
 
 export type Auth = ReturnType<typeof createAuth>;
-declare global { const D1Database: unknown; }
-type D1Database = import("@cloudflare/workers-types").D1Database;

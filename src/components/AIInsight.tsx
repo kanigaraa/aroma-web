@@ -23,7 +23,7 @@ export default function AIInsight({ rows, lastTanggal, provinsi }: Props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ rows, lastTanggal, provinsi }),
       });
-      const d = await r.json();
+      const d = (await r.json()) as { text?: string };
       setText(d.text || null);
       if (!d.text) setErr(true);
     } catch {

@@ -1,4 +1,4 @@
-import { getMeta, getKomoditasProcessed, getKomoditasForecast, getInsight } from "@/lib/data";
+import { getMeta, getKomoditasProcessedSlim, getKomoditasForecastSlim, getInsight } from "@/lib/data";
 import DashboardClient, { type KomoRow } from "@/components/DashboardClient";
 import { summarizeStatus } from "@/components/RiskBadge";
 import { getMapData } from "@/lib/mapData";
@@ -20,7 +20,7 @@ export default function Home() {
   const meta = getMeta();
 
   const rows: KomoRow[] = meta.komoditas.map((k) => {
-    const p = getKomoditasProcessed(k.slug);
+    const p = getKomoditasProcessedSlim(k.slug);
     const last = p.seri[p.seri.length - 1];
     const st = summarizeStatus(p.seri);
     const { dir, delta } = trendFrom(p.seri);
@@ -38,8 +38,8 @@ export default function Home() {
   const statusNasional: Record<string, Status> = {};
   const statusPerProv: Record<string, Record<string, Status>> = {};
   meta.komoditas.forEach((k) => {
-    const p = getKomoditasProcessed(k.slug);
-    const fc = getKomoditasForecast(k.slug);
+    const p = getKomoditasProcessedSlim(k.slug);
+    const fc = getKomoditasForecastSlim(k.slug);
     const inner: Record<string, ForecastPoint[]> = {};
     const last = p.seri[p.seri.length - 1];
     const perProv: Record<string, Status> = {};
@@ -58,7 +58,7 @@ export default function Home() {
   const { paths: mapPaths, centroids: mapCentroids } = getMapData();
 
   const insights = getInsight();
-  const pBeras = getKomoditasProcessed("beras");
+  const pBeras = getKomoditasProcessedSlim("beras", 1);
   const lastTanggal = pBeras.seri[pBeras.seri.length - 1]?.tanggal ?? "";
 
   return (

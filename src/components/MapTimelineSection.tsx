@@ -1,5 +1,5 @@
 import MapTimeline from "./MapTimeline";
-import { getKomoditasProcessed, getMeta } from "@/lib/data";
+import { getKomoditasProcessedSlim, getMeta } from "@/lib/data";
 import { getMapData } from "@/lib/mapData";
 import type { Status } from "@/lib/types";
 
@@ -12,7 +12,7 @@ export default function MapTimelineSection({
   nama: string;
 }) {
   const meta = getMeta();
-  const p = getKomoditasProcessed(slug);
+  const p = getKomoditasProcessedSlim(slug, 30);
   const { paths, centroids } = getMapData();
   const last30 = p.seri.slice(-30);
 

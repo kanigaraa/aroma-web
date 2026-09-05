@@ -70,7 +70,23 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "AI belum dikonfigurasi." }, { status: 500 });
   }
   try {
-    const { messages } = await req.json();
+    const body = (await req.json()) as { messages?: unknown };
+    if (
+      !Array.isArray(body.messages) ||
+      !body.messages.every(
+        (message): message is { role: "user" | "assistant"; content: string } =>
+          typeof message === "object" &&
+          message !== null &&
+          (message.role === "user" || message.role === "assistant") &&
+          typeof message.content === "string"
+      )
+    ) {
+      return NextResponse.json({ error: "Format pesan tidak valid." }, { status: 400 });
+    }
+    const messages = body.messages.slice(-20).map((message) => ({
+      ...message,
+      content: message.content.slice(0, 2_000),
+    }));
     const sys = [
       "Kamu asisten data harga pangan AROMA. Jawab dalam Bahasa Indonesia, ringkas, faktual, pakai angka dari data yang diberikan.",
       "Kalau data tak mendukung, bilang jujur 'tidak ada data itu'. Jangan mengarang.",
@@ -89,13 +105,13 @@ export async function POST(req: Request) {
       }),
     });
     if (!r.ok) {
-      const e = await r.json().catch(() => null);
+      const e = (await r.json().catch(() => null)) as { error?: { message?: string } } | null;
       return NextResponse.json(
         { error: e?.error?.message || "Layanan AI sedang sibuk, coba lagi." },
         { status: 502 }
       );
     }
-    const d = await r.json();
+    const d = (await r.json()) as { choices?: Array<{ message?: { content?: string } }> };
     const text = d.choices?.[0]?.message?.content ?? "";
     return NextResponse.json({ text });
   } catch {

@@ -30,7 +30,7 @@ export default function FloatingChat() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: [...msgs, { role: "user", content: q }] }),
       });
-      const d = await r.json();
+      const d = (await r.json()) as { text?: string; error?: string };
       setMsgs((m) => [...m, { role: "assistant", content: d.text || d.error || "Maaf, tidak ada respons." }]);
     } catch {
       setMsgs((m) => [...m, { role: "assistant", content: "Gagal terhubung ke AI." }]);
