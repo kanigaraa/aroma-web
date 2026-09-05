@@ -1,8 +1,8 @@
 import { CalendarDays } from "lucide-react";
 import {
   getMeta,
-  getKomoditasProcessed,
-  getKomoditasForecast,
+  getKomoditasProcessedSlim,
+  getKomoditasForecastSlim,
   getInsight,
 } from "@/lib/data";
 import MapExplorer from "@/components/MapExplorer";
@@ -26,7 +26,7 @@ type ProvHistory = { tanggal: string; harga: number }[];
 
 export default function PetaPage() {
   const meta = getMeta();
-  const lastTanggal = getKomoditasProcessed("beras").seri.at(-1)?.tanggal;
+  const lastTanggal = getKomoditasProcessedSlim("beras", 1).seri.at(-1)?.tanggal;
   const { paths, centroids } = getMapData();
 
   // data per komoditas -> { status: Record<prov,Status>, detail: Record<prov,ProvDetail> }
@@ -40,8 +40,8 @@ export default function PetaPage() {
   > = {};
 
   meta.komoditas.forEach((k) => {
-    const p = getKomoditasProcessed(k.slug);
-    const fc = getKomoditasForecast(k.slug);
+    const p = getKomoditasProcessedSlim(k.slug, 90);
+    const fc = getKomoditasForecastSlim(k.slug);
     const insight = getInsight().find((i) => i.komoditas === k.slug);
     const status: Record<string, Status> = {};
     const detail: Record<string, ProvDetail> = {};

@@ -1,8 +1,32 @@
 name = "aroma-web"
-compatibility_date = "2024-09-23"
-compatibility_flags = ["nodejs_compat"]
+account_id = "9443475c4960408e2ea6d2012d290a5b"
+main = ".open-next/worker.js"
+compatibility_date = "2026-08-30"
+compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
+routes = [
+  { pattern = "aroma.my.id", custom_domain = true },
+  { pattern = "*.aroma.my.id/*", zone_name = "aroma.my.id" },
+]
+
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+[[services]]
+binding = "WORKER_SELF_REFERENCE"
+service = "aroma-web"
 
 [[d1_databases]]
 binding = "DB"
 database_name = "aroma-db"
-database_id = "0400df7e-7dc4-462f-a86c-47601378d185"
+database_id = "f5045b0c-3f90-49e7-8843-dbef447ee55d"
+
+[vars]
+BETTER_AUTH_URL = "https://aroma.my.id"
+GROQ_MODEL = "qwen/qwen3.8-27b"

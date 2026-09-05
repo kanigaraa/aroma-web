@@ -1,4 +1,5 @@
 import { betterAuth } from "better-auth";
+import { authSchema } from "@/lib/auth-schema";
 import { emailOTP } from "better-auth/plugins";
 import { Resend } from "resend";
 
@@ -60,7 +61,10 @@ export function createAuth(db: D1Database) {
   const { drizzle } = require("drizzle-orm/d1");
   return betterAuth({
     ...makeCommon(),
-    database: drizzleAdapter(drizzle(db), { provider: "sqlite" }),
+    database: drizzleAdapter(drizzle(db, { schema: authSchema }), {
+      provider: "sqlite",
+      schema: authSchema,
+    }),
   });
 }
 
@@ -76,5 +80,3 @@ export function createAuthDev() {
 }
 
 export type Auth = ReturnType<typeof createAuth>;
-declare global { const D1Database: unknown; }
-type D1Database = import("@cloudflare/workers-types").D1Database;
