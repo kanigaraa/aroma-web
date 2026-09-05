@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { LayoutDashboard, Map, Package, Settings, Sprout, ChevronRight } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { LayoutDashboard, Map, Package, Settings, ChevronRight, LogOut } from "lucide-react";
+import Logo from "@/components/Logo";
+import { authClient } from "@/lib/auth-client";
 
 const NAV = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -13,17 +15,22 @@ const NAV = [
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await authClient.signOut();
+    router.replace("/login");
+  };
+
   return (
-    <aside className="hidden lg:flex w-60 shrink-0 flex-col border-r border-border bg-surface sticky top-0 h-screen">
+    <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-border bg-surface lg:flex">
+      {/* Logo */}
       <div className="flex h-16 shrink-0 items-center gap-2.5 px-5">
-        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white">
-          <Sprout className="h-5 w-5" />
-        </span>
-        <div>
-          <div className="text-base font-bold tracking-tight text-primary leading-none">AROMA</div>
-        </div>
+        <Logo size={36} />
+        <div className="text-base font-bold leading-none tracking-tight text-primary">AROMA</div>
       </div>
 
+      {/* Nav */}
       <nav className="flex-1 space-y-1 overflow-hidden px-3 py-2">
         {NAV.map((item) => {
           const active = pathname === item.href;
@@ -49,6 +56,19 @@ export default function Sidebar() {
           );
         })}
       </nav>
+
+      {/* Logout */}
+      <div className="shrink-0 border-t border-border px-3 py-3">
+        <button
+          onClick={handleLogout}
+          className="group flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-secondary transition-colors hover:bg-red-50 hover:text-red-600"
+        >
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-muted transition-colors group-hover:bg-red-100 group-hover:text-red-600">
+            <LogOut className="h-4 w-4" />
+          </span>
+          Keluar
+        </button>
+      </div>
     </aside>
   );
 }

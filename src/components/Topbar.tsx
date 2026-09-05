@@ -2,7 +2,9 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Bell, User, Settings, LogOut, CheckCircle2 } from "lucide-react";
+import { Bell, Settings, LogOut, CheckCircle2 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useSession, signOut } from "@/lib/auth-client";
 
 export type Notif = {
   id: string;
@@ -14,8 +16,13 @@ export type Notif = {
 export default function Topbar() {
   const [open, setOpen] = useState<null | "notif" | "user">(null);
   const ref = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+  const { data: session } = useSession();
 
-  // notifikasi contoh (nanti dari alert harga)
+  const name = session?.user?.name ?? "–";
+  const email = session?.user?.email ?? "";
+  const initial = name.charAt(0).toUpperCase();
+
   const notifs: Notif[] = [
     { id: "1", title: "Cabai Rawit naik", body: "Cabai Rawit naik 4% di 6 provinsi.", time: "2 jam lalu" },
     { id: "2", title: "Beras stabil", body: "Harga beras nasional stabil pekan ini.", time: "Kemarin" },
@@ -30,6 +37,11 @@ export default function Topbar() {
   }, []);
 
   const toggle = (k: "notif" | "user") => setOpen((o) => (o === k ? null : k));
+
+  const handleLogout = async () => {
+    await signOut();
+    router.replace("/login");
+  };
 
   return (
     <header className="relative flex h-16 shrink-0 items-center justify-end gap-2 border-b border-border bg-surface px-6">
@@ -46,13 +58,13 @@ export default function Topbar() {
           </span>
         </button>
 
-        {/* Avatar / pengaturan akun */}
+        {/* Avatar */}
         <button
           onClick={() => toggle("user")}
           className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-600 text-sm font-bold text-white"
           aria-label="Akun"
         >
-          A
+          {initial}
         </button>
 
         {open === "notif" && (
@@ -79,17 +91,14 @@ export default function Topbar() {
         {open === "user" && (
           <div className="absolute right-6 top-16 z-50 w-60 overflow-hidden rounded-2xl border border-border bg-surface shadow-xl">
             <div className="border-b border-border px-4 py-3">
-              <div className="text-sm font-bold text-primary">Pengguna Demo</div>
-              <div className="text-xs text-secondary">pengguna@aroma.id</div>
+              <div className="text-sm font-bold text-primary">{name}</div>
+              <div className="text-xs text-secondary">{email}</div>
             </div>
             <div className="p-1.5">
               <Link href="/pengaturan" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-sm text-secondary transition-colors hover:bg-muted hover:text-primary">
-                <User className="h-4 w-4" /> Profil
-              </Link>
-              <Link href="/pengaturan" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-sm text-secondary transition-colors hover:bg-muted hover:text-primary">
                 <Settings className="h-4 w-4" /> Pengaturan
               </Link>
-              <button onClick={() => alert("Logout (demo)")} className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-sm text-red-500 transition-colors hover:bg-red-50">
+              <button onClick={handleLogout} className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-sm text-red-500 transition-colors hover:bg-red-50">
                 <LogOut className="h-4 w-4" /> Keluar
               </button>
             </div>
