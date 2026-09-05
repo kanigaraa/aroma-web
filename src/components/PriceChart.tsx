@@ -17,6 +17,7 @@ type Props = {
   data: ForecastPoint[];
   satuan: string;
   height?: number;
+  compact?: boolean;
 };
 
 const RANGES = [
@@ -26,14 +27,14 @@ const RANGES = [
   { label: "Semua", days: 0 },
 ];
 
-export default function PriceChart({ data, satuan, height = 340 }: Props) {
+export default function PriceChart({ data, satuan, height = 340, compact = false }: Props) {
   const [range, setRange] = useState(90);
   const riil = data.filter((d) => !d.is_future);
   const cutoff = range === 0 ? riil[0]?.tanggal : riil[riil.length - range]?.tanggal;
   const shown = cutoff ? data.filter((d) => d.tanggal >= cutoff) : data;
   return (
     <div className="w-full">
-      <div className="mb-2 flex items-center justify-end gap-1">
+      {!compact && <div className="mb-2 flex items-center justify-end gap-1">
         {RANGES.map((r) => (
           <button
             key={r.label}
@@ -45,11 +46,11 @@ export default function PriceChart({ data, satuan, height = 340 }: Props) {
             {r.label}
           </button>
         ))}
-      </div>
+      </div>}
       <ResponsiveContainer width="100%" height={height}>
         <ComposedChart
           data={shown}
-          margin={{ top: 10, right: 20, bottom: 0, left: 10 }}
+          margin={compact ? { top: 10, right: 8, bottom: 0, left: 0 } : { top: 10, right: 20, bottom: 0, left: 10 }}
         >
           <defs>
             <linearGradient id="band" x1="0" y1="0" x2="0" y2="1">
@@ -59,15 +60,15 @@ export default function PriceChart({ data, satuan, height = 340 }: Props) {
           </defs>
           <XAxis
             dataKey="tanggal"
-            tick={{ fontSize: 11, fill: "#64748b" }}
+            tick={{ fontSize: compact ? 10 : 11, fill: "#64748b" }}
             tickFormatter={(v: string) => v.slice(5)}
-            minTickGap={40}
+            minTickGap={compact ? 55 : 40}
           />
           <YAxis
-            tick={{ fontSize: 11, fill: "#64748b" }}
+            tick={{ fontSize: compact ? 10 : 11, fill: "#64748b" }}
             domain={["dataMin - 500", "dataMax + 500"]}
             tickFormatter={(v: number) => v.toLocaleString("id-ID")}
-            width={70}
+            width={compact ? 54 : 70}
           />
           <Tooltip
             contentStyle={{
@@ -123,7 +124,7 @@ export default function PriceChart({ data, satuan, height = 340 }: Props) {
           />
         </ComposedChart>
       </ResponsiveContainer>
-      <div className="mt-2 flex items-center gap-4 text-xs text-secondary">
+      {!compact && <div className="mt-2 flex items-center gap-4 text-xs text-secondary">
         <span className="flex items-center gap-1.5">
           <span className="h-0.5 w-5 bg-accent inline-block" /> Harga terbaru
         </span>
@@ -133,7 +134,7 @@ export default function PriceChart({ data, satuan, height = 340 }: Props) {
         <span className="flex items-center gap-1.5">
           <span className="h-3 w-5 bg-coral/20 inline-block rounded-sm" /> Rentang kemungkinan
         </span>
-      </div>
+      </div>}
     </div>
   );
 }

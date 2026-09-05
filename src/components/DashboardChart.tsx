@@ -9,6 +9,8 @@ type Props = {
   chart: Record<string, Record<string, ForecastPoint[]>>; // komoditas -> provinsi -> seri
   komo: string; // komoditas aktif (parent pegang, sync ke peta risiko)
   prov: string; // wilayah tetap dari akun
+  height?: number;
+  compact?: boolean;
 };
 
 export default function DashboardChart({
@@ -16,6 +18,8 @@ export default function DashboardChart({
   chart,
   komo,
   prov,
+  height = 320,
+  compact = false,
 }: Props) {
   const k = komoditas.find((x) => x.slug === komo);
   const data = useMemo(() => chart[komo]?.[prov] ?? [], [komo, prov, chart]);
@@ -23,7 +27,7 @@ export default function DashboardChart({
   return (
     <div>
       <div className="mt-3">
-        <PriceChart data={data} satuan={k?.satuan ?? "kg"} height={320} />
+        <PriceChart data={data} satuan={k?.satuan ?? "kg"} height={height} compact={compact} />
       </div>
     </div>
   );

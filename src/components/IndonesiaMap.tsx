@@ -40,12 +40,13 @@ export default function IndonesiaMap({
   onSelect,
   className = "",
 }: Props) {
+  const interactive = Boolean(onHover || onSelect);
   return (
     <svg
       viewBox={`0 0 ${MAP_W} ${MAP_H}`}
       preserveAspectRatio="xMidYMid meet"
       role="img"
-      aria-label="Peta Indonesia status risiko"
+      aria-label={`Peta Indonesia status risiko untuk ${Object.keys(centroids).length} provinsi`}
       className={className}
       style={{ display: "block", width: "100%", height: "100%" }}
       onMouseLeave={() => onHover?.(null)}
@@ -81,7 +82,7 @@ export default function IndonesiaMap({
             fillOpacity={opacity}
             stroke={stroke}
             strokeWidth={strokeWidth}
-            className={filteredOut ? "cursor-default" : "cursor-pointer transition-all duration-150"}
+            className={filteredOut || !interactive ? "cursor-default" : "cursor-pointer transition-all duration-150"}
             onMouseEnter={(e) => {
               if (filteredOut) return;
               onHover?.(name, { clientX: e.clientX, clientY: e.clientY });
