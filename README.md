@@ -4,10 +4,7 @@
 
 ## Demo
 
-> Video demo akan ditempatkan di `public/demo.mp4`.
->
-> Setelah file tersedia, unggah video ke GitHub Release atau YouTube lalu ganti tautan ini agar dapat diputar dari README:
-> `[Tonton video demo AROMA](LINK_VIDEO_DEMO)`
+Video demo belum tersedia di repository. Simpan rekaman sebagai `public/demo.mp4`, lalu unggah salinannya ke GitHub Release atau YouTube dan tambahkan tautannya di bagian ini. GitHub README tidak memutar MP4 lokal secara inline.
 
 ## Fitur
 
