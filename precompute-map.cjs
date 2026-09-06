@@ -5,8 +5,12 @@ function flatten(geo) {
   const out = [];
   function push(c) { out.push([c[0], c[1]]); }
   function walk(t) {
-    if (Array.isArray(t[0]) && typeof t[0][0] === "number") { t.forEach(ring => ring.forEach(push)); }
-    else t.forEach(walk);
+    if (!Array.isArray(t)) return;
+    if (typeof t[0]?.[0] === "number") {
+      t.forEach(push);
+      return;
+    }
+    t.forEach(walk);
   }
   walk(geo.coordinates);
   return out;
