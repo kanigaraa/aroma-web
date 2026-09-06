@@ -429,9 +429,12 @@ Pengujian unit, integrasi, E2E, dan laporan coverage belum dikonfigurasi pada `p
 
 ## 📄 Lisensi
 
-Hak cipta (c) 2026 AkaliDev. Semua hak dilindungi.
+Proyek ini dilisensikan di bawah **MIT License**.
 
-Repository ini belum menyertakan lisensi open source. Penggunaan, penyalinan, atau distribusi kode memerlukan izin dari pemegang hak cipta.
+Hak cipta (c) 2026 **AkaliDev**.
+
+Lihat file [`LICENSE`](./LICENSE) untuk informasi selengkapnya.
+
 
 ---
 
