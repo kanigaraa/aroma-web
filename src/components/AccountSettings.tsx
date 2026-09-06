@@ -56,8 +56,8 @@ function SettingsForm({ user, provinces }: { user: SettingsUser; provinces: stri
   };
 
   const logout = async () => {
-    await signOut();
-    router.replace("/login");
+    const result = await signOut();
+    if (!result.error) window.location.assign("/");
   };
 
   return (

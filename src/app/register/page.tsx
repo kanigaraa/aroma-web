@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Mail, Lock, ArrowRight } from "lucide-react";
 import AuthShell from "@/components/auth/AuthShell";
-import { signUp, authClient } from "@/lib/auth-client";
+import { signUp, signIn, authClient } from "@/lib/auth-client";
 
 const PROVINCES = [
   { id: 11, name: "Aceh" }, { id: 12, name: "Sumatera Utara" },
@@ -73,8 +73,10 @@ export default function RegisterPage() {
     if (otp.length < 6) { setErr("Masukkan kode 6 digit."); return; }
     setLoading(true); setErr("");
     const res = await authClient.emailOtp.verifyEmail({ email, otp });
+    if (res.error) { setLoading(false); setErr(res.error.message ?? "Kode tidak valid."); return; }
+    const login = await signIn.email({ email, password: pw });
     setLoading(false);
-    if (res.error) { setErr(res.error.message ?? "Kode tidak valid."); return; }
+    if (login.error) { setErr(login.error.message ?? "Silakan masuk kembali."); return; }
     setStep("province");
   };
 

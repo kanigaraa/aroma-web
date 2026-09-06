@@ -34,7 +34,7 @@ def forecast_province(dates, prices, horizon=HORIZON_DAYS):
     df = pd.DataFrame({"ds": pd.to_datetime(dates), "y": prices})
     # paksa utk data harian
     try:
-        m = Prophet(daily_seasonality=False)
+        m = Prophet(daily_seasonality=False, uncertainty_samples=0)
         m.fit(df)
     except Exception:
         return None
@@ -50,8 +50,8 @@ def forecast_province(dates, prices, horizon=HORIZON_DAYS):
             "tanggal": d,
             "harga": float(row["yhat"]) if is_future else (float(df.loc[df["ds"] == row["ds"], "y"].iloc[0]) if len(df.loc[df["ds"] == row["ds"]]) else None),
             "forecast": float(row["yhat"]),
-            "lower": float(row["yhat_lower"]),
-            "upper": float(row["yhat_upper"]),
+            "lower": float(row.get("yhat_lower", row["yhat"])),
+            "upper": float(row.get("yhat_upper", row["yhat"])),
             "is_future": is_future,
         })
     return {"horizon": horizon, "last_date": last_date.date().isoformat(), "seri": series}

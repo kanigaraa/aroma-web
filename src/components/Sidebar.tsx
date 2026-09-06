@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { ChevronRight, LogOut } from "lucide-react";
 import Logo from "@/components/Logo";
 import { authClient } from "@/lib/auth-client";
@@ -9,11 +9,10 @@ import { NAV } from "@/lib/nav";
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const router = useRouter();
 
   const handleLogout = async () => {
-    await authClient.signOut();
-    router.push("/");
+    const result = await authClient.signOut();
+    if (!result.error) window.location.assign("/");
   };
 
   return (
