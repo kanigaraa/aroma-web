@@ -24,7 +24,6 @@ const RANGES = [
   { label: "30H", days: 30 },
   { label: "90H", days: 90 },
   { label: "1T", days: 365 },
-  { label: "Semua", days: 0 },
 ];
 
 export default function PriceChart({ data, satuan, height = 340, compact = false }: Props) {
@@ -38,7 +37,9 @@ export default function PriceChart({ data, satuan, height = 340, compact = false
         {RANGES.map((r) => (
           <button
             key={r.label}
+            type="button"
             onClick={() => setRange(r.days)}
+            aria-pressed={range === r.days}
             className={`rounded-lg px-2.5 py-1 text-xs font-medium transition-colors ${
               range === r.days ? "bg-accent text-white" : "text-secondary hover:bg-muted hover:text-primary"
             }`}
