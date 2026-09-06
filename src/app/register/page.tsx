@@ -12,7 +12,7 @@ const PROVINCES = [
   { id: 13, name: "Sumatera Barat" }, { id: 14, name: "Riau" },
   { id: 15, name: "Jambi" }, { id: 16, name: "Sumatera Selatan" },
   { id: 17, name: "Bengkulu" }, { id: 18, name: "Lampung" },
-  { id: 19, name: "Kep. Bangka Belitung" }, { id: 21, name: "Kep. Riau" },
+  { id: 19, name: "Kepulauan Bangka Belitung" }, { id: 21, name: "Kepulauan Riau" },
   { id: 31, name: "DKI Jakarta" }, { id: 32, name: "Jawa Barat" },
   { id: 33, name: "Jawa Tengah" }, { id: 34, name: "DI Yogyakarta" },
   { id: 35, name: "Jawa Timur" }, { id: 36, name: "Banten" },
@@ -138,12 +138,12 @@ export default function RegisterPage() {
               if (!selectedProvince) return;
               setLoading(true); setErr("");
               try {
-                const res = await fetch("/api/user/province", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ provinceId: selectedProvince.id, provinceName: selectedProvince.name }),
+                const res = await authClient.updateUser({
+                  provinceId: selectedProvince.id,
+                  provinceName: selectedProvince.name,
+                  region: selectedProvince.name,
                 });
-                if (!res.ok) throw new Error();
+                if (res.error) throw new Error(res.error.message);
                 router.replace("/dashboard");
               } catch {
                 setErr("Gagal menyimpan. Coba lagi.");

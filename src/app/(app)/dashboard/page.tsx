@@ -1,11 +1,10 @@
-import { getMeta, getKomoditasProcessedSlim, getKomoditasForecast, getInsight } from "@/lib/data";
+import { getMeta, getKomoditasProcessedSlim, getDashboardChart, getInsight } from "@/lib/data";
 import DashboardClient, { type KomoRow } from "@/components/DashboardClient";
 import { summarizeStatus } from "@/components/RiskBadge";
 import { getMapData } from "@/lib/mapData";
-import type { ForecastPoint, Status } from "@/lib/types";
+import type { Status } from "@/lib/types";
 
-// ISR: revalidate tiap 6 jam — data PIHPS tidak berubah sering
-export const revalidate = 21600;
+export const dynamic = "force-static";
 
 function trendFrom(seri: { data: Record<string, { harga: number }> }[]) {
   if (seri.length < 2) return { delta: 0, dir: 0 as 0 | 1 | -1 };
@@ -37,23 +36,16 @@ export default function Home() {
 
   const moving = rows.filter((r) => r.dir !== 0).sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))[0];
 
-  const chart: Record<string, Record<string, ForecastPoint[]>> = {};
+  const chart = getDashboardChart(defaultProv);
   const statusNasional: Record<string, Status> = {};
   const statusPerProv: Record<string, Record<string, Status>> = {};
   meta.komoditas.forEach((k) => {
     const p = getKomoditasProcessedSlim(k.slug);
-    const fc = getKomoditasForecast(k.slug);
-    const inner: Record<string, ForecastPoint[]> = {};
     const last = p.seri[p.seri.length - 1];
     const perProv: Record<string, Status> = {};
     meta.provinsi.forEach((prov) => {
       perProv[prov] = last?.data[prov]?.status ?? "stabil";
     });
-    const series = fc.provinsi[defaultProv]?.seri ?? [];
-    const history = series.filter((point) => !point.is_future).slice(-365);
-    const future = series.filter((point) => point.is_future);
-    inner[defaultProv] = [...history, ...future];
-    chart[k.slug] = inner;
     statusNasional[k.slug] = rows.find((r) => r.slug === k.slug)?.status ?? "stabil";
     statusPerProv[k.slug] = perProv;
   });

@@ -2,8 +2,10 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { emailOTP } from "better-auth/plugins";
 import { drizzle } from "drizzle-orm/d1";
-import { SqliteDialect } from "kysely";
 import { authSchema } from "@/lib/auth-schema";
+import { userAdditionalFields } from "@/lib/auth-fields";
+
+const userOptions = { additionalFields: userAdditionalFields };
 
 // ponytail: getEnv covers both Node (dev) and Workers (prod) runtimes
 function getEnv(key: string): string {
@@ -26,7 +28,7 @@ function otpPlugin() {
           : type === "forget-password"
           ? "Reset kata sandi AROMA"
           : "Kode masuk AROMA";
-      const res = await fetch("https://api.resend.com/emails", {
+      const response = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${resendKey}`,
@@ -39,9 +41,8 @@ function otpPlugin() {
           html: `<p>Kode OTP kamu: <strong style="font-size:24px;letter-spacing:4px">${otp}</strong></p><p>Berlaku 5 menit.</p>`,
         }),
       });
-      if (!res.ok) {
-        const body = await res.text();
-        throw new Error(`Resend failed ${res.status}: ${body}`);
+      if (!response.ok) {
+        throw new Error(`Resend failed ${response.status}: ${await response.text()}`);
       }
     },
   });
@@ -55,6 +56,7 @@ export function createAuth(db: D1Database) {
     }),
     baseURL: getEnv("BETTER_AUTH_URL"),
     secret: getEnv("BETTER_AUTH_SECRET"),
+    user: userOptions,
     trustedOrigins: [
       "https://aroma.my.id",
       "http://localhost:3000",
@@ -64,11 +66,10 @@ export function createAuth(db: D1Database) {
       enabled: true,
       requireEmailVerification: true,
       sendResetPassword: async ({ user, url }) => {
-        const resendKey = getEnv("RESEND_API_KEY");
-        const res = await fetch("https://api.resend.com/emails", {
+        const response = await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
-            Authorization: `Bearer ${resendKey}`,
+            Authorization: `Bearer ${getEnv("RESEND_API_KEY")}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
@@ -78,9 +79,8 @@ export function createAuth(db: D1Database) {
             html: `<p>Klik tautan berikut untuk reset kata sandi kamu:</p><p><a href="${url}" style="color:#0d9488;font-weight:600">Reset Kata Sandi</a></p><p>Tautan berlaku 1 jam. Abaikan jika tidak merasa meminta reset.</p>`,
           }),
         });
-        if (!res.ok) {
-          const body = await res.text();
-          throw new Error(`Resend failed ${res.status}: ${body}`);
+        if (!response.ok) {
+          throw new Error(`Resend failed ${response.status}: ${await response.text()}`);
         }
       },
     },
@@ -94,31 +94,4 @@ export function createAuth(db: D1Database) {
   });
 }
 
-export function createAuthDev() {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const Database = require("better-sqlite3");
-  const dbFile = new Database(".dev.db");
-  return betterAuth({
-    database: {
-      dialect: new SqliteDialect({ database: dbFile }),
-      type: "sqlite",
-    },
-    baseURL: process.env.BETTER_AUTH_URL ?? "http://localhost:3000",
-    secret: process.env.BETTER_AUTH_SECRET ?? "dev-secret-change-me",
-    trustedOrigins: ["http://localhost:3000", "http://127.0.0.1:8787"],
-    emailAndPassword: { enabled: true, requireEmailVerification: false },
-    socialProviders: {
-      google: {
-        clientId: process.env.GOOGLE_CLIENT_ID ?? "",
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
-      },
-    },
-    plugins: [otpPlugin()],
-  });
-}
-
-export function getAuth() {
-  if (process.env.NODE_ENV === "development") return createAuthDev();
-  const { env } = getCloudflareContext();
-  return createAuth((env as CloudflareEnv).DB);
-}
+export type Auth = ReturnType<typeof createAuth>;

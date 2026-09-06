@@ -6,6 +6,8 @@ export const user = sqliteTable("user", {
   email: text("email").notNull().unique(),
   emailVerified: integer("emailVerified", { mode: "boolean" }).notNull().default(false),
   image: text("image"),
+  region: text("region").notNull().default("DKI Jakarta"),
+  notifications: integer("notifications", { mode: "boolean" }).notNull().default(true),
   provinceId: integer("provinceId"),
   provinceName: text("provinceName"),
   createdAt: integer("createdAt", { mode: "timestamp" }).notNull(),
