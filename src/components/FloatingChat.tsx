@@ -59,8 +59,8 @@ export default function FloatingChat() {
   const onPointerMove = (e: React.PointerEvent) => {
     if (!dragging.current) return;
     moved.current = true;
-    const x = e.clientX - offset.current.x;
-    const y = e.clientY - offset.current.y;
+    const x = Math.min(Math.max(12, e.clientX - offset.current.x), window.innerWidth - 68);
+    const y = Math.min(Math.max(12, e.clientY - offset.current.y), window.innerHeight - 68);
     setPos({ x, y });
   };
 
@@ -76,10 +76,8 @@ export default function FloatingChat() {
   // Chat panel: follow button or default bottom-right
   const panelStyle = pos
     ? {
-        left: pos.x + 56 > window.innerWidth - 340
-          ? pos.x - 328
-          : pos.x,
-        top: pos.y - 390 < 12 ? pos.y + 70 : pos.y - 390,
+        left: Math.min(Math.max(12, pos.x + 68), window.innerWidth - 396),
+        top: Math.min(Math.max(12, pos.y - 310), window.innerHeight - 372),
         right: "auto",
         bottom: "auto",
       }
