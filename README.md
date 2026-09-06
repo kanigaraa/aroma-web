@@ -8,7 +8,7 @@
 
   [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-success?style=for-the-badge)](https://aroma.my.id)
   [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/kanigaraa/aroma-web)
-  [![License](https://img.shields.io/badge/License-All_Rights_Reserved-blue?style=for-the-badge)](#-lisensi)
+  [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](#-lisensi)
 
   **Submission for ITECHNO CUP 2026 - Web Development**
 
