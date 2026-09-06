@@ -14,6 +14,12 @@ export default function FloatingChat() {
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
 
+  // Drag state
+  const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
+  const dragging = useRef(false);
+  const offset = useRef({ x: 0, y: 0 });
+  const btnRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     if (open) bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [msgs, open]);
@@ -39,12 +45,50 @@ export default function FloatingChat() {
     }
   };
 
+  // Pointer-based drag
+  const onPointerDown = (e: React.PointerEvent) => {
+    if (open) return; // jangan drag saat chat terbuka
+    dragging.current = true;
+    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+    offset.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+  };
+
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (!dragging.current) return;
+    const x = e.clientX - offset.current.x;
+    const y = e.clientY - offset.current.y;
+    setPos({ x, y });
+  };
+
+  const onPointerUp = () => {
+    dragging.current = false;
+  };
+
+  // Button position style
+  const btnStyle = pos
+    ? { left: pos.x, top: pos.y, right: "auto", bottom: "auto" }
+    : {};
+
+  // Chat panel: follow button or default bottom-right
+  const panelStyle = pos
+    ? {
+        left: pos.x + 56 > window.innerWidth - 340
+          ? pos.x - 328
+          : pos.x,
+        top: pos.y - 320 < 0 ? pos.y + 60 : pos.y - 320,
+        right: "auto",
+        bottom: "auto",
+      }
+    : {};
+
   return (
     <>
-      {/* Panel chat */}
       {open && (
-        <div className="fixed bottom-20 right-5 z-50 flex w-80 flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-2xl sm:w-96">
-          {/* Header */}
+        <div
+          className="fixed z-50 flex w-80 flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-2xl sm:w-96"
+          style={Object.keys(panelStyle).length ? panelStyle : { bottom: "5.5rem", right: "1.25rem" }}
+        >
           <div className="flex items-center justify-between border-b border-border bg-teal-600 px-4 py-3">
             <div className="flex items-center gap-2">
               <Bot className="h-4 w-4 text-white" />
@@ -54,15 +98,12 @@ export default function FloatingChat() {
               <X className="h-4 w-4" />
             </button>
           </div>
-          {/* Messages */}
-          <div className="flex max-h-80 flex-col gap-2 overflow-y-auto p-3">
+          <div className="flex max-h-72 flex-col gap-2 overflow-y-auto p-3">
             {msgs.map((m, i) => (
               <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                 <div
                   className={`max-w-[85%] rounded-2xl px-3 py-2 text-[13px] leading-relaxed ${
-                    m.role === "user"
-                      ? "bg-teal-600 text-white"
-                      : "bg-muted text-primary"
+                    m.role === "user" ? "bg-teal-600 text-white" : "bg-muted text-primary"
                   }`}
                 >
                   {m.content}
@@ -78,7 +119,6 @@ export default function FloatingChat() {
             )}
             <div ref={bottomRef} />
           </div>
-          {/* Input */}
           <div className="flex items-center gap-2 border-t border-border p-3">
             <input
               value={input}
@@ -99,13 +139,22 @@ export default function FloatingChat() {
         </div>
       )}
 
-      {/* Floating button */}
+      {/* Floating button — draggable, mobile-safe position */}
       <button
-        onClick={() => setOpen((o) => !o)}
+        ref={btnRef}
+        onClick={() => !dragging.current && setOpen((o) => !o)}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
         aria-label="Asisten AI"
-        className={`fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all hover:scale-105 active:scale-95 ${
+        className={`fixed z-50 flex h-14 w-14 touch-none items-center justify-center rounded-full shadow-lg transition-all hover:scale-105 active:scale-95 ${
           open ? "bg-teal-700" : "bg-teal-600"
         }`}
+        style={
+          Object.keys(btnStyle).length
+            ? btnStyle
+            : { bottom: "5.5rem", right: "1.25rem" }
+        }
       >
         {open ? <X className="h-5 w-5 text-white" /> : <Bot className="h-6 w-6 text-white" />}
       </button>

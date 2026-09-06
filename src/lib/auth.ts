@@ -63,6 +63,26 @@ export function createAuth(db: D1Database) {
     emailAndPassword: {
       enabled: true,
       requireEmailVerification: true,
+      sendResetPassword: async ({ user, url }) => {
+        const resendKey = getEnv("RESEND_API_KEY");
+        const res = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${resendKey}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: "AROMA <noreply@aroma.my.id>",
+            to: [user.email],
+            subject: "Reset kata sandi AROMA",
+            html: `<p>Klik tautan berikut untuk reset kata sandi kamu:</p><p><a href="${url}" style="color:#0d9488;font-weight:600">Reset Kata Sandi</a></p><p>Tautan berlaku 1 jam. Abaikan jika tidak merasa meminta reset.</p>`,
+          }),
+        });
+        if (!res.ok) {
+          const body = await res.text();
+          throw new Error(`Resend failed ${res.status}: ${body}`);
+        }
+      },
     },
     socialProviders: {
       google: {
