@@ -23,9 +23,16 @@ const minL = Math.min(...lngs), maxL = Math.max(...lngs);
 const minLa = Math.min(...lats), maxLa = Math.max(...lats);
 const m = 0.06;
 const W = 680, H = 450;
+const drawableW = W * (1 - 2 * m);
+const drawableH = H * (1 - 2 * m);
+const scale = Math.min(drawableW / (maxL - minL), drawableH / (maxLa - minLa));
+const mapW = (maxL - minL) * scale;
+const mapH = (maxLa - minLa) * scale;
+const offsetX = (W - mapW) / 2;
+const offsetY = (H - mapH) / 2;
 
-function px(v) { return (m + (v - minL) / (maxL - minL) * (1 - 2 * m)) * W; }
-function py(v) { return (1 - m - (v - minLa) / (maxLa - minLa) * (1 - 2 * m)) * H; }
+function px(v) { return offsetX + (v - minL) * scale; }
+function py(v) { return offsetY + (maxLa - v) * scale; }
 
 function toPath(geo) {
   function ring(r) {
