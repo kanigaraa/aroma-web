@@ -43,6 +43,74 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Teal cursors keep pointer state consistent with the AROMA interaction color. */
+@media (pointer: fine) {
+  html,
+  body,
+  body * {
+    cursor: url("/cursors/default.svg") 2 2, default;
+  }
+
+  :is(
+    a[href],
+    button:not(:disabled),
+    select:not(:disabled),
+    summary,
+    label[for],
+    input[type="button"]:not(:disabled),
+    input[type="submit"]:not(:disabled),
+    input[type="reset"]:not(:disabled),
+    input[type="checkbox"]:not(:disabled),
+    input[type="radio"]:not(:disabled),
+    [role="button"]:not([aria-disabled="true"]),
+    [role="link"]:not([aria-disabled="true"]),
+    [onclick],
+    .cursor-pointer
+  ) {
+    cursor: url("/cursors/pointer.svg") 7 2, pointer !important;
+  }
+
+  :is(
+    input:not([type]),
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="number"],
+    textarea,
+    [contenteditable="true"],
+    .cursor-text
+  ):not(:disabled) {
+    cursor: url("/cursors/text.svg") 16 16, text !important;
+    caret-color: var(--accent-strong);
+  }
+
+  :is([draggable="true"], .cursor-grab) {
+    cursor: url("/cursors/grab.svg") 16 16, grab !important;
+  }
+
+  :is([draggable="true"]:active, .cursor-grabbing) {
+    cursor: url("/cursors/grabbing.svg") 16 16, grabbing !important;
+  }
+
+  :is(
+    button:disabled,
+    input:disabled,
+    select:disabled,
+    textarea:disabled,
+    [aria-disabled="true"],
+    .cursor-not-allowed
+  ) {
+    cursor: url("/cursors/not-allowed.svg") 16 16, not-allowed !important;
+  }
+
+  .cursor-default {
+    cursor: url("/cursors/default.svg") 2 2, default !important;
+  }
+}
+
 .tnum {
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.01em;
