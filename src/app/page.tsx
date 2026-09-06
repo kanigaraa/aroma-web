@@ -6,6 +6,7 @@ import TerraceBackdrop from "@/components/landing/TerraceBackdrop";
 import FeatureShowcase from "@/components/landing/FeatureShowcase";
 import CoverageShowcase from "@/components/landing/CoverageShowcase";
 import LandingFaq from "@/components/landing/LandingFaq";
+import LandingNav from "@/components/LandingNav";
 import { getKomoditasForecast, getKomoditasProcessed, getMeta } from "@/lib/data";
 import { getMapData, MAP_H, MAP_W } from "@/lib/mapData";
 import styles from "./landing.module.css";
@@ -60,14 +61,8 @@ export default function LandingPage() {
     <LandingMotion>
       <a className={styles.skipLink} href="#konten">Langsung ke konten</a>
       <header className={styles.header}>
-        <div className={`${styles.container} ${styles.navbar}`}>
-          <Link href="/" className={styles.brand} aria-label="AROMA, beranda"><Logo size={34} /><span>AROMA</span></Link>
-          <nav aria-label="Navigasi utama" className={styles.desktopNav}>
-            <a href="#analisis">Analisis</a><a href="#fitur">Fitur</a><a href="#cakupan">Cakupan data</a>
-          </nav>
-          <div className={styles.accountNav}><Link href="/login" className={styles.navCta}>Masuk</Link></div>
-        </div>
-      </header>
+              <LandingNav />
+            </header>
       <main id="konten">
         <section className={styles.hero} aria-labelledby="hero-heading" data-hero>
           <div className={styles.heroLandscape} data-landscape aria-hidden="true"><TerraceBackdrop /></div>

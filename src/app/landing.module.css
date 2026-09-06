@@ -233,6 +233,53 @@
   .chartPanel { padding: 25px 28px 12px; }
   .workflow { padding-block: 115px; gap: 100px; }
 }
+.hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  color: var(--primary);
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.hamburger:hover { background: var(--muted); }
+.mobileMenu {
+  border-top: 1px solid var(--border);
+  padding: 12px 15px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mobileLink {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--copy);
+  border-radius: 8px;
+}
+.mobileLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 8px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+}
+@media (min-width: 900px) {
+  .hamburger { display: none; }
+  .mobileMenu { display: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   .landing *, .landing *::before, .landing *::after { transition: none !important; scroll-behavior: auto !important; }
   .primaryButton:hover, .secondaryButton:hover { transform: none; }
