@@ -2,7 +2,7 @@ name = "aroma-web"
 account_id = "9443475c4960408e2ea6d2012d290a5b"
 main = ".open-next/worker.js"
 compatibility_date = "2026-08-30"
-compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
+compatibility_flags = ["nodejs_compat"]
 routes = [
   { pattern = "aroma.my.id", custom_domain = true },
   { pattern = "*.aroma.my.id/*", zone_name = "aroma.my.id" },
