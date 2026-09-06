@@ -48,9 +48,9 @@ export default function PetaPage() {
     const history: Record<string, ProvHistory> = {};
     // 90 hari terakhir utk semua provinsi (satu pass)
     const last90 = p.seri.slice(-90);
-    const last = p.seri[p.seri.length - 1];
     meta.provinsi.forEach((prov) => {
-      const d = last?.data[prov];
+      const latest = [...p.seri].reverse().find((point) => point.data[prov]?.harga > 0);
+      const d = latest?.data[prov];
       status[prov] = d?.status ?? "stabil";
       const fcSeri = fc.provinsi[prov]?.seri ?? [];
       const fcLast = fcSeri.filter((f) => f.is_future).at(-1);
