@@ -28,22 +28,21 @@ export default function CommodityIcon({
 }) {
   const hasIcon = ICON_SLUGS.includes(slug);
   const colorClass = COLORS[slug];
-  const iconSize = Math.round(size * 0.75);
+  const iconSize = Math.round(size * 0.68);
 
   return (
-    <Avatar seed={seed} size={size} className={colorClass ?? ""}>
+    <Avatar seed={seed} size={size} className={`${colorClass ?? ""} overflow-hidden`}>
       {hasIcon ? (
         <Image
           src={`/icons/${slug}.svg`}
           alt={slug}
-          width={size}
-          height={size}
+          width={iconSize}
+          height={iconSize}
           style={{
-            width: size,
-            height: size,
+            width: iconSize,
+            height: iconSize,
             objectFit: "contain",
             display: "block",
-            transform: "scale(1.1)",
           }}
           unoptimized
         />
