@@ -96,7 +96,7 @@ export default function AuthShell({ mode, children }: Props) {
             : "Daftar untuk memantau harga dan risiko komoditas."}
         </p>
 
-        {children}
+        <div className="mt-6">{children}</div>
       </div>
     </div>
   );
