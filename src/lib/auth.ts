@@ -5,7 +5,6 @@ import { drizzle } from "drizzle-orm/d1";
 import { SqliteDialect } from "kysely";
 import { authSchema } from "@/lib/auth-schema";
 
-// ponytail: getEnv covers both Node (dev) and Workers (prod) runtimes
 function getEnv(key: string): string {
   const v =
     (typeof process !== "undefined" && process.env?.[key]) ||
@@ -62,7 +61,7 @@ export function createAuth(db: D1Database) {
     ],
     emailAndPassword: {
       enabled: true,
-      requireEmailVerification: true,
+      requireEmailVerification: false,
     },
     socialProviders: {
       google: {
@@ -71,6 +70,18 @@ export function createAuth(db: D1Database) {
       },
     },
     plugins: [otpPlugin()],
+    additionalSessions: {
+      fields: {
+        role: {
+          type: "string",
+          defaultValue: "user",
+        },
+        province: {
+          type: "string",
+          defaultValue: "",
+        },
+      },
+    },
   });
 }
 
@@ -94,6 +105,12 @@ export function createAuthDev() {
       },
     },
     plugins: [otpPlugin()],
+    additionalSessions: {
+      fields: {
+        role: { type: "string", defaultValue: "user" },
+        province: { type: "string", defaultValue: "" },
+      },
+    },
   });
 }
 
