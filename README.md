@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AROMA
 
-## Getting Started
+**Analisis Risiko Optimasi Masa Depan Agrikultur** — aplikasi web untuk membaca harga pangan, risiko wilayah, dan prediksi harga 14 hari berbasis arsip PIHPS.
 
-First, run the development server:
+## Demo
+
+> Video demo akan ditempatkan di `public/demo.mp4`.
+>
+> Setelah file tersedia, unggah video ke GitHub Release atau YouTube lalu ganti tautan ini agar dapat diputar dari README:
+> `[Tonton video demo AROMA](LINK_VIDEO_DEMO)`
+
+## Fitur
+
+- Peta risiko harga antarwilayah dengan status data yang jujur.
+- Riwayat harga dan prediksi 14 hari.
+- Dashboard wilayah utama, perbandingan komoditas, dan ekspor CSV.
+- Alert ambang harga per akun.
+- Asisten AI terbatas pada data pangan AROMA, dengan batas input, origin check, dan rate limit.
+- Autentikasi email OTP dan Google OAuth.
+
+## Sumber data dan batasan
+
+Harga berasal dari arsip PIHPS. Tanggal sumber selalu ditampilkan di aplikasi. Prediksi bersifat estimasi, bukan jaminan harga pasar. Detail: [/metodologi](https://aroma.my.id/metodologi).
+
+## Menjalankan lokal
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Validasi
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run test:chat
+npx tsc --noEmit
+npm run build
+```
 
-## Learn More
+## Deploy
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy dilakukan melalui GitHub Actions saat merge ke `main`. Secrets Cloudflare, Better Auth, Google OAuth, Resend, dan Groq hanya disimpan server-side.
