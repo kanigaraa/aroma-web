@@ -33,7 +33,7 @@ function otpPlugin() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "AROMA <noreply@aroma.my.id>",
+          from: "AROMA <support@aroma.my.id>",
           to: [email],
           subject,
           html: `<p>Kode OTP kamu: <strong style="font-size:24px;letter-spacing:4px">${otp}</strong></p><p>Berlaku 5 menit.</p>`,
@@ -72,7 +72,7 @@ export function createAuth(db: D1Database) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            from: "AROMA <noreply@aroma.my.id>",
+            from: "AROMA <support@aroma.my.id>",
             to: [user.email],
             subject: "Reset kata sandi AROMA",
             html: `<p>Klik tautan berikut untuk reset kata sandi kamu:</p><p><a href="${url}" style="color:#0d9488;font-weight:600">Reset Kata Sandi</a></p><p>Tautan berlaku 1 jam. Abaikan jika tidak merasa meminta reset.</p>`,
