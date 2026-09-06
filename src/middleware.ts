@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 const PROTECTED = ["/dashboard", "/peta", "/komoditas", "/pengaturan"];
 const AUTH_PAGES = ["/login", "/register"];
-const ADMIN_ONLY = ["/admin"];
 
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
@@ -10,23 +9,9 @@ export async function middleware(req: NextRequest) {
     req.cookies.get("better-auth.session_token")?.value ??
     req.cookies.get("__Secure-better-auth.session_token")?.value;
 
-  // RBAC: /admin requires admin role
-  if (ADMIN_ONLY.some((p) => pathname.startsWith(p))) {
+  // /admin requires authentication (role check done client-side via useSession)
+  if (pathname.startsWith("/admin")) {
     if (!sessionToken) {
-      const url = req.nextUrl.clone();
-      url.pathname = "/login";
-      return NextResponse.redirect(url);
-    }
-    // Verify admin role from session cookie payload
-    const isAdmin = req.cookies.get("better-auth.session_data")?.value;
-    try {
-      const sessionData = isAdmin ? JSON.parse(decodeURIComponent(isAdmin)) : null;
-      if (!sessionData?.user?.role || sessionData.user.role !== "admin") {
-        const url = req.nextUrl.clone();
-        url.pathname = "/dashboard";
-        return NextResponse.redirect(url);
-      }
-    } catch {
       const url = req.nextUrl.clone();
       url.pathname = "/login";
       return NextResponse.redirect(url);

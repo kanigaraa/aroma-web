@@ -70,15 +70,11 @@ export function createAuth(db: D1Database) {
       },
     },
     plugins: [otpPlugin()],
-    additionalSessions: {
-      fields: {
-        role: {
-          type: "string",
-          defaultValue: "user",
-        },
-        province: {
-          type: "string",
-          defaultValue: "",
+    schema: {
+      user: {
+        additionalFields: {
+          role: { type: "string", defaultValue: "user" },
+          province: { type: "string", defaultValue: "" },
         },
       },
     },
@@ -105,10 +101,12 @@ export function createAuthDev() {
       },
     },
     plugins: [otpPlugin()],
-    additionalSessions: {
-      fields: {
-        role: { type: "string", defaultValue: "user" },
-        province: { type: "string", defaultValue: "" },
+    schema: {
+      user: {
+        additionalFields: {
+          role: { type: "string", defaultValue: "user" },
+          province: { type: "string", defaultValue: "" },
+        },
       },
     },
   });

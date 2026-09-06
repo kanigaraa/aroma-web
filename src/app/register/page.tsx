@@ -81,7 +81,7 @@ export default function RegisterPage() {
       <div className="flex flex-1 items-center justify-center bg-[#f4f7f5] px-6 py-12">
         <div className="w-full max-w-[340px] flex flex-col gap-6">
           <Link href="/" className="flex items-center gap-2">
-            <CommodityIcon slug="beras" nama="AROMA" size={28} />
+            <CommodityIcon slug="beras" size={28} />
             <span className="font-semibold text-lg tracking-tight">AROMA</span>
           </Link>
 

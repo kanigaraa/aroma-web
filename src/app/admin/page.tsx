@@ -1,9 +1,26 @@
 "use client";
 
 import { useSession } from "@/lib/auth-client";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function AdminPage() {
-  const { data: session } = useSession();
+  const { data: session, isPending } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isPending && session?.user?.role !== "admin") {
+      router.replace("/dashboard");
+    }
+  }, [session, isPending, router]);
+
+  if (isPending || session?.user?.role !== "admin") {
+    return (
+      <div className="p-6">
+        <p className="text-muted-foreground">Memuat...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="p-6">

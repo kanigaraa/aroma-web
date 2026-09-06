@@ -19,8 +19,9 @@ function trendFrom(seri: { data: Record<string, { harga: number }> }[]) {
 export default function Home() {
   const meta = getMeta();
 
+  // 365 hari utk chart filter 30H/90H/1T/Semua
   const rows: KomoRow[] = meta.komoditas.map((k) => {
-    const p = getKomoditasProcessedSlim(k.slug);
+    const p = getKomoditasProcessedSlim(k.slug, 365);
     const last = p.seri[p.seri.length - 1];
     const st = summarizeStatus(p.seri);
     const { dir, delta } = trendFrom(p.seri);
@@ -38,7 +39,7 @@ export default function Home() {
   const statusNasional: Record<string, Status> = {};
   const statusPerProv: Record<string, Record<string, Status>> = {};
   meta.komoditas.forEach((k) => {
-    const p = getKomoditasProcessedSlim(k.slug);
+    const p = getKomoditasProcessedSlim(k.slug, 365);
     const fc = getKomoditasForecastSlim(k.slug);
     const inner: Record<string, ForecastPoint[]> = {};
     const last = p.seri[p.seri.length - 1];
@@ -51,9 +52,6 @@ export default function Home() {
     statusNasional[k.slug] = rows.find((r) => r.slug === k.slug)?.status ?? "stabil";
     statusPerProv[k.slug] = perProv;
   });
-
-  // wilayah default akun (sementara DKI, nanti via setting akun)
-  const defaultProv = meta.provinsi.includes("DKI Jakarta") ? "DKI Jakarta" : meta.provinsi[0];
 
   const { paths: mapPaths, centroids: mapCentroids } = getMapData();
 
@@ -71,7 +69,7 @@ export default function Home() {
       statusPerProv={statusPerProv}
       mapPaths={mapPaths}
       mapCentroids={mapCentroids}
-      defaultProv={defaultProv}
+      defaultProv={meta.provinsi.includes("DKI Jakarta") ? "DKI Jakarta" : meta.provinsi[0]}
       lastTanggal={lastTanggal}
       insights={insights.map((i) => ({ komoditas: i.komoditas, nama: i.nama }))}
       moving={moving}
