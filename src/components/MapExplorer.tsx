@@ -72,8 +72,9 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
   const [thresholds, setThresholds] = useState<Record<string, number>>({});
   useEffect(() => {
     if (!session?.user) return;
-    fetch("/api/alerts").then((response) => response.ok ? response.json() : { alerts: [] }).then((data: { alerts?: { commoditySlug: string; province: string; threshold: number }[] }) => {
-      setThresholds(Object.fromEntries((data.alerts ?? []).map((alert: { commoditySlug: string; province: string; threshold: number }) => [`${alert.commoditySlug}:${alert.province}`, alert.threshold])));
+    fetch("/api/alerts").then((response) => response.ok ? response.json() : { alerts: [] }).then((data) => {
+      const alerts = (data as { alerts?: { commoditySlug: string; province: string; threshold: number }[] }).alerts ?? [];
+      setThresholds(Object.fromEntries(alerts.map((alert) => [`${alert.commoditySlug}:${alert.province}`, alert.threshold])));
     }).catch(() => {});
   }, [session?.user?.id]);
   const setThreshold = (key: string, value: number | null) => {
