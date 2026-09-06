@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Mail, Lock, ArrowRight, User, ShieldCheck } from "lucide-react";
 import AuthShell from "@/components/auth/AuthShell";
@@ -16,6 +16,13 @@ export default function RegisterPage() {
   const [step, setStep] = useState<"form" | "otp">("form");
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(false);
+  const [cooldown, setCooldown] = useState(0);
+
+  useEffect(() => {
+    if (cooldown <= 0) return;
+    const t = setTimeout(() => setCooldown((c) => c - 1), 1000);
+    return () => clearTimeout(t);
+  }, [cooldown]);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,6 +38,7 @@ export default function RegisterPage() {
     // lanjut ke step verifikasi OTP
     await authClient.emailOtp.sendVerificationOtp({ email, type: "email-verification" });
     setLoading(false);
+    setCooldown(60);
     setStep("otp");
   };
 
@@ -46,7 +54,9 @@ export default function RegisterPage() {
 
   const resendOtp = async () => {
     setErr("");
-    await authClient.emailOtp.sendVerificationOtp({ email, type: "email-verification" });
+    const res = await authClient.emailOtp.sendVerificationOtp({ email, type: "email-verification" });
+    if (res.error) setErr(res.error.message ?? "Gagal mengirim ulang OTP");
+    else setCooldown(60);
   };
 
   // ==== step OTP: layar verifikasi, style konsisten dengan AuthShell ====
@@ -83,9 +93,10 @@ export default function RegisterPage() {
           <button
             type="button"
             onClick={resendOtp}
-            className="w-full text-center text-sm text-secondary underline-offset-2 hover:underline"
+            disabled={cooldown > 0}
+            className="w-full text-center text-sm text-secondary underline-offset-2 hover:underline disabled:cursor-not-allowed disabled:opacity-60"
           >
-            Kirim ulang kode
+            {cooldown > 0 ? `Kirim ulang dalam ${cooldown}s` : "Kirim ulang kode"}
           </button>
         </form>
       </AuthShell>
