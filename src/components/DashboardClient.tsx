@@ -179,8 +179,8 @@ export default function DashboardClient({
           <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
             <Package className="h-4.5 w-4.5" />
           </span>
-          <div className="text-3xl font-bold text-primary tnum">{rows.length}</div>
-          <div className="mt-1 text-base font-semibold text-secondary">Komoditas dipantau</div>
+          <div className="text-2xl font-bold text-primary tnum">{rows.length}</div>
+          <div className="mt-1 text-xs text-secondary">Komoditas dipantau</div>
         </div>
         {/* Rata-rata harga */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -198,7 +198,7 @@ export default function DashboardClient({
             <ArrowUpRight className="h-4.5 w-4.5" />
           </span>
           <div className="text-3xl font-bold text-primary tnum">{naik}</div>
-          <div className="mt-1 text-xs text-secondary">Naik · 7 hari</div>
+          <div className="mt-1 text-xs text-secondary">Komoditas naik dalam 7 hari</div>
         </div>
         {/* Komoditas turun */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -206,7 +206,7 @@ export default function DashboardClient({
             <ArrowDownRight className="h-4.5 w-4.5" />
           </span>
           <div className="text-3xl font-bold text-primary tnum">{turun}</div>
-          <div className="mt-1 text-xs text-secondary">Turun · 7 hari</div>
+          <div className="mt-1 text-xs text-secondary">Komoditas turun dalam 7 hari</div>
         </div>
         {/* Pergerakan terbesar */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -214,10 +214,10 @@ export default function DashboardClient({
             {moving && moving.dir < 0 ? <TrendingDown className="h-4.5 w-4.5" /> : <TrendingUp className="h-4.5 w-4.5" />}
           </span>
           <div className="text-3xl font-bold text-primary tnum">
-            {moving ? `${moving.dir > 0 ? "+" : "−"}${Math.abs(moving.delta).toLocaleString("id-ID")}` : "—"}
+            {moving ? `Rp ${fmt(Math.abs(moving.delta))}` : "—"}
           </div>
           <div className="mt-1 text-xs text-secondary truncate">
-            {moving ? `${moving.nama} · 7 hari` : "Tidak ada perubahan tercatat"}
+            {moving ? `${moving.nama} ${moving.dir > 0 ? "naik" : "turun"} paling besar dalam 7 hari` : "Tidak ada perubahan tercatat"}
           </div>
         </div>
       </div>
