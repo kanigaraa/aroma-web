@@ -11,6 +11,7 @@ type SettingsUser = {
   email: string;
   region?: string | null;
   notifications?: boolean | null;
+  provinceName?: string | null;
 };
 
 export default function AccountSettings({ provinces }: { provinces: string[] }) {
@@ -29,7 +30,8 @@ export default function AccountSettings({ provinces }: { provinces: string[] }) 
 function SettingsForm({ user, provinces }: { user: SettingsUser; provinces: string[] }) {
   const router = useRouter();
   const [name, setName] = useState(user.name);
-  const [region, setRegion] = useState(provinces.includes(user.region ?? "") ? user.region! : "DKI Jakarta");
+  const savedRegion = user.provinceName ?? user.region;
+  const [region, setRegion] = useState(provinces.includes(savedRegion ?? "") ? savedRegion! : "DKI Jakarta");
   const [notifications, setNotifications] = useState(user.notifications ?? true);
   const [status, setStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [error, setError] = useState("");
@@ -43,7 +45,7 @@ function SettingsForm({ user, provinces }: { user: SettingsUser; provinces: stri
     }
     setStatus("saving");
     setError("");
-    const result = await authClient.updateUser({ name: cleanName, region, notifications });
+    const result = await authClient.updateUser({ name: cleanName, region, provinceName: region, notifications });
     if (result.error) {
       setError(result.error.message ?? "Perubahan belum dapat disimpan.");
       setStatus("error");

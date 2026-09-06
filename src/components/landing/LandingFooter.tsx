@@ -9,6 +9,10 @@ export default function LandingFooter() {
         <Link href="/" className={styles.brand}><Logo size={28} /><span>AROMA</span></Link>
         <p>Analisis Risiko Optimasi Masa depan Agrikultur</p>
         <p>© 2026 AkaliDev. Semua hak dilindungi.</p>
+        <div className={styles.footerLinks}>
+          <a href="/privacy">Kebijakan Privasi</a>
+          <a href="/terms">Ketentuan Layanan</a>
+        </div>
       </div>
     </footer>
   );

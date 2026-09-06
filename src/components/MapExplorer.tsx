@@ -25,7 +25,7 @@ import {
   TrendChart,
   type ProvHistory,
 } from "./MapExplorerCharts";
-import { MAP_W, MAP_H, type MapProvince } from "@/lib/mapData";
+import { MAP_W, MAP_H, type MapProvince } from "@/lib/mapConst";
 import type { Status } from "@/lib/types";
 
 type ProvDetail = {
@@ -452,7 +452,7 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
                               >
                                 {rank}
                               </span>
-                              <span className="truncate text-primary">{prov}</span>
+                              <span className="truncate text-primary">{prov.length > 14 ? prov.substring(0, 12) + ".." : prov}</span>
                             </span>
                             <span className="flex shrink-0 items-center gap-1">
                               <span className={up ? "text-red-500" : "text-emerald-500"}>{up ? "▲" : "▼"}</span>

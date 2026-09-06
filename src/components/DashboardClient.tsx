@@ -79,7 +79,7 @@ export default function DashboardClient({
   const [komo, setKomo] = useState("beras");
   const [regional, setRegional] = useState<{ province: string; chart: Record<string, ForecastPoint[]> } | null>(null);
   const [chartError, setChartError] = useState<{ province: string; message: string } | null>(null);
-  const preferredProvince = session?.user?.region;
+  const preferredProvince = session?.user?.provinceName ?? session?.user?.region;
   const matchingRegional = regional?.province === preferredProvince ? regional : null;
   const activeProvince = matchingRegional?.province ?? defaultProv;
   const activeChart = matchingRegional?.chart ?? chart;

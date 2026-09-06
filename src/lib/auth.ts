@@ -28,19 +28,22 @@ function otpPlugin() {
           : type === "forget-password"
           ? "Reset kata sandi AROMA"
           : "Kode masuk AROMA";
-      await fetch("https://api.resend.com/emails", {
+      const response = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${resendKey}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "AROMA <noreply@aroma.my.id>",
+          from: "AROMA <support@aroma.my.id>",
           to: [email],
           subject,
           html: `<p>Kode OTP kamu: <strong style="font-size:24px;letter-spacing:4px">${otp}</strong></p><p>Berlaku 5 menit.</p>`,
         }),
       });
+      if (!response.ok) {
+        throw new Error(`Resend failed ${response.status}: ${await response.text()}`);
+      }
     },
   });
 }
@@ -62,6 +65,24 @@ export function createAuth(db: D1Database) {
     emailAndPassword: {
       enabled: true,
       requireEmailVerification: true,
+      sendResetPassword: async ({ user, url }) => {
+        const response = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${getEnv("RESEND_API_KEY")}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: "AROMA <support@aroma.my.id>",
+            to: [user.email],
+            subject: "Reset kata sandi AROMA",
+            html: `<p>Klik tautan berikut untuk reset kata sandi kamu:</p><p><a href="${url}" style="color:#0d9488;font-weight:600">Reset Kata Sandi</a></p><p>Tautan berlaku 1 jam. Abaikan jika tidak merasa meminta reset.</p>`,
+          }),
+        });
+        if (!response.ok) {
+          throw new Error(`Resend failed ${response.status}: ${await response.text()}`);
+        }
+      },
     },
     socialProviders: {
       google: {

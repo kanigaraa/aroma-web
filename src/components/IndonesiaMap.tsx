@@ -1,6 +1,6 @@
 "use client";
 
-import { MAP_W, MAP_H, type MapProvince } from "@/lib/mapData";
+import { MAP_W, MAP_H, type MapProvince } from "@/lib/mapConst";
 import type { Status } from "@/lib/types";
 
 const STATUS_FILL: Record<Status, string> = {

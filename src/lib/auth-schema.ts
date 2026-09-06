@@ -8,6 +8,8 @@ export const user = sqliteTable("user", {
   image: text("image"),
   region: text("region").notNull().default("DKI Jakarta"),
   notifications: integer("notifications", { mode: "boolean" }).notNull().default(true),
+  provinceId: integer("provinceId"),
+  provinceName: text("provinceName"),
   createdAt: integer("createdAt", { mode: "timestamp" }).notNull(),
   updatedAt: integer("updatedAt", { mode: "timestamp" }).notNull(),
 });
