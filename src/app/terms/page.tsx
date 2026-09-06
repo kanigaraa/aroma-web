@@ -15,37 +15,48 @@ export default function TermsPage() {
           <section className="space-y-8 text-sm text-copy">
             <div>
               <h2 className="mb-2 text-lg font-semibold text-primary">1. Penerimaan Syarat</h2>
-              <p>Dengan mengakses dan menggunakan AROMA, Anda bersedia terikat dengan ketentuan ini. Jika tidak setuju, jangan gunakan layanan ini.</p>
+              <p>Dengan mengakses dan menggunakan AROMA, Anda bersedia terikat dengan ketentuan layanan ini. Jika tidak setuju dengan salah satu ketentuan, segera hentikan penggunaan aplikasi.</p>
             </div>
 
             <div>
-              <h2 className="mb-2 text-lg font-semibold text-primary">2. Deskripsi Layanan</h2>
-              <p>AROMA menyediakan informasi harga pangan dari sumber resmi (PIHPS) untuk tujuan edukasi dan analisis. Data disajikan apa adanya tanpa jaminan akurasi mutlak.</p>
+              <h2 className="mb-2 text-lg font-semibold text-primary">2. Tentang AROMA</h2>
+              <p>AROMA adalah aplikasi web yang menyediakan informasi dan prediksi harga pangan di Indonesia. Data harga berasal dari sumber resmi PIHPS (Pusat Informasi Harga Pangan Swalayan). Informasi yang disajikan bertujuan untuk edukasi dan analisis, bukan nasihat finansial atau perdagangan.</p>
             </div>
 
             <div>
-              <h2 className="mb-2 text-lg font-semibold text-primary">3. Penggunaan yang Dilarang</h2>
-              <p>Anda tidak boleh menggunakan AROMA untuk mencuri data secara sistematis, menggunakan untuk tujuan komersial tanpa izin, atau做任何 hal yang melanggar hukum yang berlaku di Indonesia.</p>
+              <h2 className="mb-2 text-lg font-semibold text-primary">3. Akun Pengguna</h2>
+              <p>Anda harus berusia minimal 17 tahun untuk membuat akun AROMA. Anda bertanggung jawab menjaga kerahasiaan akun dan aktivitas yang terjadi di bawah akun Anda.</p>
             </div>
 
             <div>
-              <h2 className="mb-2 text-lg font-semibold text-primary">4. Tidak Ada Jaminan</h2>
-              <p>Informasi harga pangan disediakan "apa adanya". Kami tidak menjamin data selalu akurat atau tersedia setiap saat.</p>
+              <h2 className="mb-2 text-lg font-semibold text-primary">4. Penggunaan yang Dilarang</h2>
+              <p>Anda tidak diperkenankan:</p>
+              <ul className="ml-4 mt-2 list-disc space-y-1">
+                <li>Menggunakan AROMA untuk tujuan komersial tanpa izin tertulis dari kami.</li>
+                <li>Mengambil atau mencuri data secara sistematis (web scraping).</li>
+                <li>Menggunakan bot atau alat otomatis untuk mengakses layanan.</li>
+                <li>Melanggar hukum yang berlaku di Indonesia.</li>
+              </ul>
             </div>
 
             <div>
-              <h2 className="mb-2 text-lg font-semibold text-primary">5. Batasan Tanggung Jawab</h2>
-              <p>Kami tidak bertanggung jawab atas kerugian yang timbul dari penggunaan data di AROMA. Gunakan informasi ini sebagai referensi, bukan nasihat finansial.</p>
+              <h2 className="mb-2 text-lg font-semibold text-primary">5. Ketidakpastian dan Keterbatasan</h2>
+              <p>Data harga pangan disediakan apa adanya tanpa jaminan akurasi atau ketersediaan penuh. Prediksi harga bersifat estimasi dan tidak menjamin nilai aktual di pasar. AROMA tidak bertanggung jawab atas kerugian yang timbul dari penggunaan informasi di aplikasi ini.</p>
             </div>
 
             <div>
               <h2 className="mb-2 text-lg font-semibold text-primary">6. Perubahan Ketentuan</h2>
-              <p>Ketentuan dapat berubah sewaktu-waktu. Penggunaan berkelanjutan berarti penerimaan terhadap ketentuan yang berlaku.</p>
+              <p>Ketentuan layanan dapat berubah sewaktu-waktu tanpa pemberitahuan terlebih dahulu. Penggunaan berkelanjutan terhadap AROMA berarti Anda menerima ketentuan yang berlaku.</p>
             </div>
 
             <div>
-              <h2 className="mb-2 text-lg font-semibold text-primary">7. Kontak</h2>
-              <p>Pertanyaan? Hubungi <a href="mailto:adlafayyaz@aroma.my.id" className="text-accent hover:underline">adlafayyaz@aroma.my.id</a></p>
+              <h2 className="mb-2 text-lg font-semibold text-primary">7. Hukum yang Berlaku</h2>
+              <p>Ketentuan ini diatur oleh hukum Republik Indonesia. Setiap sengketa akan diselesaikan secara musyawarah terlebih dahulu.</p>
+            </div>
+
+            <div>
+              <h2 className="mb-2 text-lg font-semibold text-primary">8. Hubungi Kami</h2>
+              <p>Pertanyaan? Kirim email ke <a href="mailto:kanigaraa@gmail.com" className="text-accent hover:underline">kanigaraa@gmail.com</a>.</p>
             </div>
           </section>
 
