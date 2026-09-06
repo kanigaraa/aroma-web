@@ -27,6 +27,7 @@ import {
 } from "./MapExplorerCharts";
 import { MAP_W, MAP_H, type MapProvince } from "@/lib/mapConst";
 import type { Status } from "@/lib/types";
+import { useSession } from "@/lib/auth-client";
 
 type ProvDetail = {
   nama: string;
@@ -67,24 +68,27 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
   const [filter, setFilter] = useState<Filter>("semua");
   const [q, setQ] = useState("");
   const [compare, setCompare] = useState<string[]>([]);
-  // Ambang harga tersimpan di browser ini.
-  const [thresholds, setThresholds] = useState<Record<string, number>>(() => {
-    try {
-      return JSON.parse(localStorage.getItem("aroma-alerts") ?? "{}");
-    } catch {
-      return {};
-    }
-  });
+  const { data: session } = useSession();
+  const [thresholds, setThresholds] = useState<Record<string, number>>({});
+  useEffect(() => {
+    if (!session?.user) return;
+    fetch("/api/alerts").then((response) => response.ok ? response.json() : { alerts: [] }).then((data) => {
+      setThresholds(Object.fromEntries((data.alerts ?? []).map((alert: { commoditySlug: string; province: string; threshold: number }) => [`${alert.commoditySlug}:${alert.province}`, alert.threshold])));
+    }).catch(() => {});
+  }, [session?.user?.id]);
   const setThreshold = (key: string, value: number | null) => {
-    setThresholds((prev) => {
-      const next = { ...prev };
-      if (value == null || value <= 0) delete next[key];
-      else next[key] = value;
-      try {
-        localStorage.setItem("aroma-alerts", JSON.stringify(next));
-      } catch {}
-      return next;
-    });
+    if (!session?.user) return;
+    const [commoditySlug, province] = key.split(":");
+    const method = value == null ? "DELETE" : "POST";
+    fetch("/api/alerts", { method, headers: { "Content-Type": "application/json" }, body: JSON.stringify(value == null ? { commoditySlug, province } : { commoditySlug, province, threshold: value }) })
+      .then((response) => {
+        if (!response.ok) throw new Error("Gagal menyimpan ambang");
+        setThresholds((previous) => {
+          const next = { ...previous };
+          if (value == null) delete next[key]; else next[key] = value;
+          return next;
+        });
+      }).catch(() => {});
   };
   const { status, detail, history } = dataset[slug] ?? { status: {}, detail: {}, history: {} };
 
@@ -354,7 +358,7 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
               {/* ALERT AMBANG HARGA */}
               {d.harga != null && <div className="rounded-xl bg-muted/60 p-4">
                 <div className="text-xs text-secondary flex items-center gap-1 mb-2">
-                  <BellRing className="h-3 w-3 text-accent" /> Ambang Harga Browser
+                  <BellRing className="h-3 w-3 text-accent" /> Ambang Harga
                 </div>
                 <AlertControl
                   current={d.harga}
@@ -453,10 +457,10 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
 
             <div className="mt-3 rounded-xl bg-muted/60 p-4">
               <div className="flex items-center gap-2 text-sm font-semibold text-primary">
-                <BellRing className="h-4 w-4 text-accent" /> Ambang Harga Browser
+                <BellRing className="h-4 w-4 text-accent" /> Ambang Harga
               </div>
               <p className="mt-1 text-xs leading-relaxed text-secondary">
-                Pilih provinsi di peta untuk menetapkan ambang pada browser ini.
+                Pilih provinsi di peta untuk menetapkan ambang harga komoditas ini.
               </p>
             </div>
 

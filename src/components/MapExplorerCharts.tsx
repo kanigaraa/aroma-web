@@ -61,7 +61,7 @@ export function AlertControl({
         </div>
       ) : (
         <div className="mt-1.5 text-[10px] text-secondary">
-          Status ambang diperbarui saat halaman dibuka. Belum dikirim sebagai notifikasi perangkat.
+          Ambang tersimpan pada akun. Status diperbarui saat halaman dibuka; notifikasi perangkat belum dikirim.
         </div>
       )}
       {threshold != null && (
