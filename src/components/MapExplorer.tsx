@@ -30,10 +30,10 @@ import type { Status } from "@/lib/types";
 
 type ProvDetail = {
   nama: string;
-  harga: number;
+  harga: number | null;
   satuan: string;
   status: Status;
-  forecast: string;
+  forecast: string | null;
   rCuaca: number | null;
 };
 
@@ -67,7 +67,7 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
   const [filter, setFilter] = useState<Filter>("semua");
   const [q, setQ] = useState("");
   const [compare, setCompare] = useState<string[]>([]);
-  // ambang harga alert per komoditas+provinsi (localStorage)
+  // Ambang harga tersimpan di browser ini.
   const [thresholds, setThresholds] = useState<Record<string, number>>(() => {
     try {
       return JSON.parse(localStorage.getItem("aroma-alerts") ?? "{}");
@@ -103,15 +103,15 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
   const waspadaCount = names.filter((p) => status[p] === "waspada").length;
   const tinggiCount = names.filter((p) => status[p] === "tinggi").length;
   // ringkasan nasional utk panel default
-  const details = Object.values(detail).filter(Boolean);
+  const details = Object.values(detail).filter((item): item is ProvDetail => item.harga != null);
   const nationalAvg = details.length
-    ? Math.round(details.reduce((s, d) => s + (d.harga || 0), 0) / details.length)
+    ? Math.round(details.reduce((s, d) => s + d.harga!, 0) / details.length)
     : 0;
   const firstSatuan = details[0]?.satuan ?? "kg";
   // rangking top 5 termahal & termurah dari detail (harga > 0)
   const ranked = Object.entries(detail)
-    .filter(([, v]) => v?.harga > 0)
-    .sort((a, b) => b[1].harga - a[1].harga);
+    .filter(([, v]) => v?.harga != null && v.harga > 0)
+    .sort((a, b) => b[1].harga! - a[1].harga!);
   const topMahal = ranked.slice(0, 5);
   const topMurah = [...ranked].reverse().slice(0, 5);
   const nationalStatus: Status =
@@ -271,7 +271,7 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
                       <RiskBadge status={tipDetail.status} />
                     </div>
                     <div className="mt-1.5 text-lg font-bold text-primary tnum">
-                      Rp {Math.round(tipDetail.harga).toLocaleString("id-ID")}
+                      {tipDetail.harga == null ? "Data belum tersedia" : `Rp ${Math.round(tipDetail.harga).toLocaleString("id-ID")}`}
                     </div>
                     <div className="text-[10px] text-secondary">per {tipDetail.satuan}</div>
                   </div>
@@ -305,7 +305,7 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
                   <h3 className="text-lg font-semibold text-primary leading-tight">{selKey}</h3>
                   <div className="text-[11px] text-secondary">Provinsi · {slug}</div>
                 </div>
-              </div>
+                </div>
               <div className="flex items-center gap-2">
                 <RiskBadge status={d.status} />
                 <button
@@ -322,7 +322,7 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
               <div className="rounded-xl bg-muted/60 p-4">
                 <div className="text-xs text-secondary">Harga Saat Ini</div>
                 <div className="text-2xl font-bold text-primary tnum mt-1">
-                  Rp {Math.round(d.harga).toLocaleString("id-ID")}
+                  {d.harga == null ? "Data belum tersedia" : `Rp ${Math.round(d.harga).toLocaleString("id-ID")}`}
                 </div>
                 <div className="text-[11px] text-secondary">per {d.satuan}</div>
               </div>
@@ -331,7 +331,7 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
                   <TrendingUp className="h-3 w-3 text-coral" /> Perkiraan 14 Hari
                 </div>
                 <div className="text-2xl font-bold text-primary tnum mt-1">
-                  Rp {Math.round(Number(d.forecast)).toLocaleString("id-ID")}
+                  {d.forecast == null ? "Data belum tersedia" : `Rp ${Math.round(Number(d.forecast)).toLocaleString("id-ID")}`}
                 </div>
                 <div className="text-[11px] text-secondary">Akhir perkiraan</div>
               </div>
@@ -352,9 +352,9 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
               </div>
 
               {/* ALERT AMBANG HARGA */}
-              <div className="rounded-xl bg-muted/60 p-4">
+              {d.harga != null && <div className="rounded-xl bg-muted/60 p-4">
                 <div className="text-xs text-secondary flex items-center gap-1 mb-2">
-                  <BellRing className="h-3 w-3 text-accent" /> Pengingat Harga
+                  <BellRing className="h-3 w-3 text-accent" /> Ambang Harga Browser
                 </div>
                 <AlertControl
                   current={d.harga}
@@ -362,7 +362,7 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
                   threshold={thresholds[`${slug}:${selKey}`]}
                   onSet={(v) => setThreshold(`${slug}:${selKey}`, v)}
                 />
-              </div>
+              </div>}
 
               {/* TREN HARGA 30 HARI */}
               <div className="rounded-xl bg-muted/60 p-4">
@@ -424,7 +424,6 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
                               : rank === 3
                                 ? "bg-orange-300 text-white"
                                 : "bg-transparent text-secondary";
-                        const up = v.status !== "stabil";
                         return (
                           <li key={prov} className="flex items-center justify-between gap-1 text-[11px]">
                             <span className="flex min-w-0 items-center gap-1.5">
@@ -436,9 +435,8 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
                               <span className="truncate text-primary" title={prov}>{prov}</span>
                             </span>
                             <span className="flex shrink-0 items-center gap-1">
-                              <span className={up ? "text-red-500" : "text-emerald-500"}>{up ? "▲" : "▼"}</span>
                               <span className="tnum font-semibold text-primary">
-                                {v.harga.toLocaleString("id-ID")}
+                                {v.harga == null ? "—" : v.harga.toLocaleString("id-ID")}
                               </span>
                             </span>
                           </li>
@@ -455,10 +453,10 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
 
             <div className="mt-3 rounded-xl bg-muted/60 p-4">
               <div className="flex items-center gap-2 text-sm font-semibold text-primary">
-                <BellRing className="h-4 w-4 text-accent" /> Pengingat Harga
+                <BellRing className="h-4 w-4 text-accent" /> Ambang Harga Browser
               </div>
               <p className="mt-1 text-xs leading-relaxed text-secondary">
-                Pilih provinsi di peta untuk menetapkan ambang harga komoditas ini.
+                Pilih provinsi di peta untuk menetapkan ambang pada browser ini.
               </p>
             </div>
 

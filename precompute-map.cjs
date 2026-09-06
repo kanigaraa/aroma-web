@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require("fs");
 const g = JSON.parse(fs.readFileSync("src/data/idn.json", "utf-8"));
 
