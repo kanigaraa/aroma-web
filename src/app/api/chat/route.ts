@@ -1,10 +1,28 @@
 import { NextResponse } from "next/server";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 import context from "@/lib/generated/chat-context.json";
 import { AIError, completeChat, type ChatMessage } from "@/lib/groq";
+import { normalizeChat, safeOutput, validOrigin } from "@/lib/chat-guard";
 
 export const runtime = "nodejs";
 
+type RateLimiter = { limit(input: { key: string }): Promise<{ success: boolean }> };
+
+async function allowed(request: Request) {
+  try {
+    const { env } = getCloudflareContext();
+    const limiter = (env as unknown as { CHAT_RATE_LIMIT?: RateLimiter }).CHAT_RATE_LIMIT;
+    if (!limiter) return true;
+    const key = request.headers.get("cf-connecting-ip") ?? "anonymous";
+    return (await limiter.limit({ key })).success;
+  } catch {
+    return true;
+  }
+}
+
 export async function POST(req: Request) {
+  if (!validOrigin(req)) return NextResponse.json({ error: "Origin tidak diizinkan." }, { status: 403 });
+  if (!await allowed(req)) return NextResponse.json({ error: "Terlalu banyak permintaan AI. Coba lagi sebentar." }, { status: 429 });
   let body: unknown;
   try {
     const raw = await req.text();
@@ -21,8 +39,10 @@ export async function POST(req: Request) {
   ) || messages.at(-1)?.role !== "user") {
     return NextResponse.json({ error: "Pesan harus berisi pertanyaan, maksimal 2.000 karakter per pesan." }, { status: 400 });
   }
+  const normalized = normalizeChat(messages);
+  if (normalized.error || !normalized.messages) return NextResponse.json({ error: normalized.error }, { status: 400 });
   try {
-    const question = messages.at(-1)!.content.toLowerCase();
+    const question = normalized.messages.at(-1)!.content.toLowerCase();
     const selectedContext = context.map(({ harga_provinsi, prediksi, ...summary }) => {
       const commoditySelected = question.includes(summary.nama.toLowerCase());
       const provinces = Object.keys(harga_provinsi).filter((name) => question.includes(name.toLowerCase()));
@@ -34,7 +54,7 @@ export async function POST(req: Request) {
     });
     const history: ChatMessage[] = [];
     let characters = 0;
-    for (const { role, content } of messages.slice(-20).reverse()) {
+    for (const { role, content } of normalized.messages.slice(-10).reverse()) {
       characters += content.length;
       if (characters > 8_000) break;
       history.unshift({ role, content: content.trim() });
@@ -49,7 +69,7 @@ export async function POST(req: Request) {
       ].join("\n\n") },
       ...history,
     ]);
-    return NextResponse.json({ text });
+    return NextResponse.json({ text: safeOutput(text) });
   } catch (error) {
     return NextResponse.json({ error: error instanceof AIError ? error.message : "Gagal memproses permintaan." },
       { status: error instanceof AIError ? error.status : 500 });

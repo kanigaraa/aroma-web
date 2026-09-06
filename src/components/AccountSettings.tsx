@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Bell, MapPin, Save, User } from "lucide-react";
 import { authClient, useSession } from "@/lib/auth-client";
+import { provinceIdFor } from "@/lib/provinces";
 
 type SettingsUser = {
   id: string;
@@ -45,9 +46,20 @@ function SettingsForm({ user, provinces }: { user: SettingsUser; provinces: stri
     }
     setStatus("saving");
     setError("");
-    const result = await authClient.updateUser({ name: cleanName, region, provinceName: region, notifications });
-    if (result.error) {
-      setError(result.error.message ?? "Perubahan belum dapat disimpan.");
+    const provinceId = provinceIdFor(region);
+    if (!provinceId) {
+      setError("Wilayah tidak valid.");
+      setStatus("error");
+      return;
+    }
+    const response = await fetch("/api/account/preferences", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: cleanName, province: region, notifications }),
+    });
+    const result = await response.json() as { error?: string };
+    if (!response.ok) {
+      setError(result.error ?? "Perubahan belum dapat disimpan.");
       setStatus("error");
       return;
     }
@@ -100,7 +112,7 @@ function SettingsForm({ user, provinces }: { user: SettingsUser; provinces: stri
             <Bell className="h-4 w-4 text-accent" />
             <div>
               <h2 className="text-sm font-semibold text-primary">Notifikasi</h2>
-              <p className="text-xs text-secondary">Peringatan saat harga melewati ambang batas.</p>
+              <p className="text-xs text-secondary">Preferensi notifikasi akun untuk fitur pengingat yang tersinkron.</p>
             </div>
           </div>
           <button type="button" onClick={() => setNotifications((value) => !value)}

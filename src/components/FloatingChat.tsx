@@ -4,15 +4,28 @@ import { useState, useRef, useEffect } from "react";
 import { Bot, Send, Loader2, X } from "lucide-react";
 
 type Msg = { role: "user" | "assistant"; content: string };
+const INITIAL_MESSAGE: Msg = { role: "assistant", content: "Halo! Tanya apa saja soal harga pangan AROMA. Contoh: \"Berapa harga cabai rawit sekarang?\"" };
+const HISTORY_KEY = "aroma-chat-history-v1";
+
+function readHistory(): Msg[] {
+  if (typeof window === "undefined") return [INITIAL_MESSAGE];
+  try {
+    const stored: unknown = JSON.parse(localStorage.getItem(HISTORY_KEY) ?? "[]");
+    if (!Array.isArray(stored)) return [INITIAL_MESSAGE];
+    const valid = stored.filter((message): message is Msg => Boolean(message) && typeof message === "object" && ((message as Msg).role === "user" || (message as Msg).role === "assistant") && typeof (message as Msg).content === "string" && (message as Msg).content.length <= 2_000).slice(-20);
+    return valid.length ? valid : [INITIAL_MESSAGE];
+  } catch { return [INITIAL_MESSAGE]; }
+}
 
 export default function FloatingChat() {
   const [open, setOpen] = useState(false);
-  const [msgs, setMsgs] = useState<Msg[]>([
-    { role: "assistant", content: "Halo! Tanya apa saja soal harga pangan AROMA. Contoh: \"Berapa harga cabai rawit sekarang?\"" },
-  ]);
+  const [msgs, setMsgs] = useState<Msg[]>(readHistory);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    try { localStorage.setItem(HISTORY_KEY, JSON.stringify(msgs.slice(-20))); } catch {}
+  }, [msgs]);
 
   // Drag state
   const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
@@ -59,8 +72,8 @@ export default function FloatingChat() {
   const onPointerMove = (e: React.PointerEvent) => {
     if (!dragging.current) return;
     moved.current = true;
-    const x = e.clientX - offset.current.x;
-    const y = e.clientY - offset.current.y;
+    const x = Math.min(Math.max(12, e.clientX - offset.current.x), window.innerWidth - 68);
+    const y = Math.min(Math.max(12, e.clientY - offset.current.y), window.innerHeight - 68);
     setPos({ x, y });
   };
 
@@ -76,10 +89,8 @@ export default function FloatingChat() {
   // Chat panel: follow button or default bottom-right
   const panelStyle = pos
     ? {
-        left: pos.x + 56 > window.innerWidth - 340
-          ? pos.x - 328
-          : pos.x,
-        top: pos.y - 390 < 12 ? pos.y + 70 : pos.y - 390,
+        left: Math.min(Math.max(12, pos.x + 68), window.innerWidth - 396),
+        top: Math.min(Math.max(12, pos.y - 310), window.innerHeight - 372),
         right: "auto",
         bottom: "auto",
       }

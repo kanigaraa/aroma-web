@@ -56,7 +56,11 @@ export default function LandingPage() {
     const statuses = Object.values(entry.data).map((item) => item.status);
     return statuses.includes("waspada") && statuses.includes("tinggi");
   }) ?? lastRice;
-  const featureRiskStatus = Object.fromEntries(meta.provinsi.map((province) => [province, featureRiskSnapshot?.data[province]?.status ?? "stabil"]));
+  const featureRiskStatus = Object.fromEntries(
+    Object.entries(featureRiskSnapshot?.data ?? {})
+      .filter(([, point]) => Number.isFinite(point.harga) && point.harga > 0)
+      .map(([province, point]) => [province, point.status])
+  );
   return (
     <LandingMotion>
       <a className={styles.skipLink} href="#konten">Langsung ke konten</a>

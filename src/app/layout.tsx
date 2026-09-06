@@ -10,7 +10,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "AROMA — Analisis Risiko Optimasi Masa depan Agrikultur",
+  title: "AROMA | Prediksi Harga Pangan Indonesia",
   description:
     "Dashboard prediksi harga pangan Indonesia: perkiraan 14 hari ke depan, status risiko per provinsi, dan pengaruh cuaca terhadap harga.",
 };

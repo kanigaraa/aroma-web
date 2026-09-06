@@ -7,9 +7,10 @@ import type { Status } from "@/lib/types";
 export const dynamic = "force-static";
 
 function trendFrom(seri: { data: Record<string, { harga: number }> }[]) {
-  if (seri.length < 2) return { delta: 0, dir: 0 as 0 | 1 | -1 };
+  // Bandingkan tujuh hari agar arsip yang berulang antarhari tidak menghasilkan kartu 0.
+  if (seri.length < 8) return { delta: 0, dir: 0 as 0 | 1 | -1 };
   const last = Object.values(seri.at(-1)!.data);
-  const prev = Object.values(seri.at(-2)!.data);
+  const prev = Object.values(seri.at(-8)!.data);
   const a = last.reduce((s, d) => s + d.harga, 0) / last.length;
   const b = prev.reduce((s, d) => s + d.harga, 0) / prev.length;
   const delta = a - b;

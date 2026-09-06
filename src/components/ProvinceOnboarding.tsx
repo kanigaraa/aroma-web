@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import AuthShell from "@/components/auth/AuthShell";
 import { authClient, useSession } from "@/lib/auth-client";
+import { provinceIdFor } from "@/lib/provinces";
 
 export default function ProvinceOnboarding({ provinces }: { provinces: string[] }) {
   const router = useRouter();
@@ -25,8 +26,14 @@ export default function ProvinceOnboarding({ provinces }: { provinces: string[] 
     if (!province) return;
     setSaving(true);
     setError("");
+    const provinceId = provinceIdFor(province);
+    if (!provinceId) {
+      setError("Provinsi tidak valid.");
+      setSaving(false);
+      return;
+    }
     const result = await authClient.updateUser({
-      provinceId: provinces.indexOf(province) + 1,
+      provinceId,
       provinceName: province,
       region: province,
     });

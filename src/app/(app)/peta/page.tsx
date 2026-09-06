@@ -13,10 +13,10 @@ export const dynamic = "force-static";
 
 type ProvDetail = {
   nama: string;
-  harga: number;
+  harga: number | null;
   satuan: string;
   status: Status;
-  forecast: string;
+  forecast: string | null;
   rCuaca: number | null;
 };
 
@@ -50,7 +50,7 @@ export default function PetaPage() {
     meta.provinsi.forEach((prov) => {
       const latest = [...p.seri].reverse().find((point) => point.data[prov]?.harga > 0);
       const d = latest?.data[prov];
-      status[prov] = d?.status ?? "stabil";
+      if (d) status[prov] = d.status;
       const fcSeri = fc.provinsi[prov]?.seri ?? [];
       const fcLast = fcSeri.filter((f) => f.is_future).at(-1);
       const ins = insight?.provinsi.find(
@@ -58,10 +58,10 @@ export default function PetaPage() {
       );
       detail[prov] = {
         nama: k.nama,
-        harga: d?.harga ?? 0,
+        harga: d?.harga ?? null,
         satuan: k.satuan ?? "kg",
         status: d?.status ?? "stabil",
-        forecast: fcLast ? String(fcLast.forecast) : "0",
+        forecast: fcLast && Number.isFinite(fcLast.forecast) ? String(fcLast.forecast) : null,
         rCuaca: ins?.r_hujan_harian ?? null,
       };
       history[prov] = last30

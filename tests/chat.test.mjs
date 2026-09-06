@@ -54,10 +54,13 @@ test("empty response and timeout produce actionable errors", async () => {
 
 const context = JSON.parse(readFileSync(new URL("../src/lib/generated/chat-context.json", import.meta.url), "utf8"));
 function route(completeChat) {
+  const guard = load("../src/lib/chat-guard.ts", { "./groq": {} });
   return load("../src/app/api/chat/route.ts", {
     "next/server": { NextResponse: Response },
+    "@opennextjs/cloudflare": { getCloudflareContext: () => ({ env: {} }) },
     "@/lib/generated/chat-context.json": context,
     "@/lib/groq": { completeChat, AIError: Error },
+    "@/lib/chat-guard": guard,
   }).POST;
 }
 const request = (body) => new Request("http://localhost/api/chat", { method: "POST", body });
@@ -72,13 +75,13 @@ test("rejects malformed JSON, empty, invalid roles and oversized messages before
 
 test("chat bundles dated context, limits history and strips extra message fields", async () => {
   const post = route(async (sent) => {
-    assert.equal(sent.length, 21);
+    assert.equal(sent.length, 11);
     assert.equal(sent[0].role, "system");
     assert.ok(sent[0].content.includes(context[0].tanggal));
     assert.deepEqual(sent.at(-1), messages[0]);
     return "Harga berdasarkan snapshot.";
   });
-  const response = await post(request(JSON.stringify({ messages: Array.from({ length: 25 }, () => ({ ...messages[0], injected: true })) })));
+  const response = await post(request(JSON.stringify({ messages: Array.from({ length: 20 }, () => ({ ...messages[0], injected: true })) })));
   assert.equal(response.status, 200);
   assert.deepEqual(await response.json(), { text: "Harga berdasarkan snapshot." });
 });
@@ -103,7 +106,7 @@ test("province questions select relevant data and long history stays bounded", a
     assert.ok(sent.slice(1).reduce((sum, message) => sum + message.content.length, 0) <= 8000);
     return "OK";
   });
-  const history = Array.from({ length: 20 }, () => ({ role: "user", content: "a".repeat(2000) }));
+  const history = Array.from({ length: 19 }, () => ({ role: "user", content: "a".repeat(2000) }));
   history.push({ role: "user", content: "Harga beras di Aceh?" });
   assert.deepEqual(await (await post(request(JSON.stringify({ messages: history })))).json(), { text: "OK" });
 });

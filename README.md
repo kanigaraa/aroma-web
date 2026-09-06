@@ -89,8 +89,8 @@ Data yang tersedia mencakup **10 komoditas pangan** dan **34 provinsi**. AROMA m
 - **Autentikasi akun** - Masuk melalui email dan kata sandi atau Google.
 - **Verifikasi email** - Menggunakan OTP yang dikirim melalui Resend.
 - **Filter peta** - Mencari provinsi dan menyaringnya berdasarkan status risiko.
-- **Ambang harga** - Menyimpan batas peringatan pada browser pengguna.
-- **Tur waktu** - Memutar perubahan status peta dari hari ke hari.
+- **Ambang harga** - Menyimpan batas peringatan per komoditas dan provinsi pada akun pengguna.
+- **Status ambang** - Menampilkan status ketika peta dibuka. Riwayat trigger dan notifikasi perangkat belum tersedia.
 - **Desain responsif** - Menyesuaikan tampilan desktop, tablet, dan perangkat seluler.
 
 ---
@@ -103,11 +103,7 @@ Data yang tersedia mencakup **10 komoditas pangan** dan **34 provinsi**. AROMA m
 
 ### Screenshot Aplikasi
 
-#### Dashboard
-
 <div align="center">
-  <img src="./public/dashboard-preview.png" alt="Dashboard AROMA yang menampilkan perbandingan harga dan peta risiko" width="900" />
-  <p><em>Dashboard AROMA menampilkan grafik harga, prediksi, status risiko, dan ringkasan antarwilayah.</em></p>
   <img src="./public/peta-preview.png" alt="Peta risiko AROMA" width="900" />
   <p><em>Peta risiko AROMA menampilkan status risiko harga pangan di Indonesia.</em></p>
   <img src="./public/komoditas-preview.png" alt="Halaman komoditas AROMA" width="900" />
@@ -122,7 +118,7 @@ Data yang tersedia mencakup **10 komoditas pangan** dan **34 provinsi**. AROMA m
 
 ### Video Demo
 
-Video demo belum tersedia.
+Video demo belum tersedia. Rekaman final akan ditempatkan di `public/demo.mp4` dan ditautkan pada bagian ini.
 
 ---
 
@@ -281,7 +277,7 @@ GROQ_API_KEY=""
 GROQ_MODEL="qwen/qwen3.8-27b"
 ```
 
-`GOOGLE_CLIENT_ID` dan `GOOGLE_CLIENT_SECRET` diperlukan untuk login Google. `RESEND_API_KEY` diperlukan untuk pengiriman OTP. `GROQ_API_KEY` diperlukan untuk ringkasan dan asisten AI.
+`GOOGLE_CLIENT_ID` dan `GOOGLE_CLIENT_SECRET` diperlukan untuk login Google. `RESEND_API_KEY` diperlukan untuk pengiriman OTP. `GROQ_API_KEY` diperlukan untuk asisten AI.
 
 #### 4️⃣ Setup Database
 
@@ -383,13 +379,15 @@ POST /api/chat
 
 Mengirim percakapan ke asisten AI dengan konteks data AROMA.
 
-#### Ringkasan Insight
+#### Alert harga
 
 ```http
-POST /api/insight
+GET    /api/alerts
+POST   /api/alerts
+DELETE /api/alerts
 ```
 
-Membuat ringkasan kondisi harga dari data dashboard.
+Membaca, menyimpan, atau menghapus ambang harga milik akun yang sedang login.
 
 ### Example Request
 

@@ -33,7 +33,7 @@ export default function PrivacyPage() {
         <h2 className="text-lg font-semibold">3. Cara Kami Menggunakan Informasi</h2>
         <ul className="mt-2 list-inside list-disc space-y-1 text-secondary">
           <li>Menyediakan autentikasi, keamanan akun, dan pengelolaan sesi.</li>
-          <li>Menampilkan data harga pangan terkini dan hasil prediksi 14 hari ke depan per provinsi dan komoditas.</li>
+          <li>Menampilkan data harga pangan dari arsip PIHPS beserta prediksi 14 hari per provinsi dan komoditas yang tersedia.</li>
           <li>Mengirim notifikasi terkait akun Anda (verifikasi email, reset kata sandi).</li>
           <li>Memperbaiki dan meningkatkan kualitas layanan serta akurasi prediksi.</li>
           <li>Menganalisis tren harga pangan untuk menyediakan insight berbasis AI.</li>
@@ -71,7 +71,7 @@ export default function PrivacyPage() {
       <section>
         <h2 className="text-lg font-semibold">7. Retensi Data</h2>
         <p className="mt-2 text-secondary">
-          Akun Anda dan data terkait disimpan selama akun aktif. Anda dapat menghapus akun kapan saja melalui menu Pengaturan, yang akan menghapus semua data pribadi secara permanen dalam 30 hari. Data agregat tanpa identifier pribadi dapat disimpan tanpa batas.
+          Akun Anda dan data terkait disimpan selama akun aktif. Untuk meminta penghapusan akun dan data pribadi, hubungi support@aroma.my.id. Data agregat tanpa identifier pribadi dapat disimpan tanpa batas.
         </p>
       </section>
 

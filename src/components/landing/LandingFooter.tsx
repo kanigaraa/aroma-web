@@ -14,6 +14,7 @@ export default function LandingFooter() {
           <nav className={styles.footerLinks} aria-label="Dokumen layanan">
             <Link href="/privacy">Kebijakan Privasi</Link>
             <Link href="/terms">Ketentuan Layanan</Link>
+            <Link href="/metodologi">Metodologi Data</Link>
           </nav>
           <p>© 2026 AkaliDev. Semua hak dilindungi.</p>
         </div>

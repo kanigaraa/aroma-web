@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, Suspense } from "react";
+import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Lock, ArrowRight } from "lucide-react";
 import AuthShell from "@/components/auth/AuthShell";
@@ -15,7 +15,6 @@ function ResetForm() {
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
 
-  useEffect(() => { if (!token) setErr("Token tidak valid atau kadaluarsa."); }, [token]);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,7 +35,7 @@ function ResetForm() {
         <p className="mt-1.5 text-sm text-secondary">Masukkan kata sandi baru kamu.</p>
       </div>
 
-      {done ? (
+      {!token ? <p className="mt-6 text-xs font-medium text-red-500">Token tidak valid atau kadaluarsa.</p> : done ? (
         <div className="mt-6 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-700">
           Kata sandi berhasil direset. Mengalihkan ke halaman masuk...
         </div>

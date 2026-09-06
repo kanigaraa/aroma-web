@@ -6,7 +6,7 @@ export default function LandingFaq({ commodityCount, provinceCount }: Props) {
   const questions = [
     {
       question: "Apa saja yang bisa dipantau di AROMA?",
-      answer: `AROMA menyediakan data ${commodityCount} komoditas pangan di ${provinceCount} provinsi. Kamu bisa melihat riwayat harga, prediksi, dan perbandingan harga antarprovinsi melalui dashboard, halaman komoditas, serta peta.`,
+      answer: `AROMA menyediakan data ${commodityCount} komoditas pangan pada provinsi yang tersedia dalam arsip PIHPS. Kamu bisa melihat riwayat harga, prediksi, dan perbandingan antarwilayah melalui dashboard, halaman komoditas, serta peta.`,
     },
     {
       question: "Apakah harga yang ditampilkan selalu harga hari ini?",

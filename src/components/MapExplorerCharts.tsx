@@ -16,7 +16,7 @@ export const COMPARE_COLORS = ["#14b8a6", "#f97316", "#6366f1"];
 
 export type ProvHistory = { tanggal: string; harga: number }[];
 
-/** kontrol ambang alert harga per provinsi (tersimpan di parent via localStorage) */
+/** kontrol ambang harga per provinsi (tersimpan di browser) */
 export function AlertControl({
   current,
   satuan,
@@ -61,7 +61,7 @@ export function AlertControl({
         </div>
       ) : (
         <div className="mt-1.5 text-[10px] text-secondary">
-          Dapatkan peringatan saat harga mencapai ambang.
+          Ambang tersimpan pada akun. Status diperbarui saat halaman dibuka; notifikasi perangkat belum dikirim.
         </div>
       )}
       {threshold != null && (

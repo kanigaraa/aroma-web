@@ -198,7 +198,7 @@ export default function DashboardClient({
             <ArrowUpRight className="h-4.5 w-4.5" />
           </span>
           <div className="text-3xl font-bold text-primary tnum">{naik}</div>
-          <div className="mt-1 text-xs text-secondary">Komoditas Naik</div>
+          <div className="mt-1 text-xs text-secondary">Naik · 7 hari</div>
         </div>
         {/* Komoditas turun */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -206,7 +206,7 @@ export default function DashboardClient({
             <ArrowDownRight className="h-4.5 w-4.5" />
           </span>
           <div className="text-3xl font-bold text-primary tnum">{turun}</div>
-          <div className="mt-1 text-xs text-secondary">Komoditas Turun</div>
+          <div className="mt-1 text-xs text-secondary">Turun · 7 hari</div>
         </div>
         {/* Pergerakan terbesar */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -217,7 +217,7 @@ export default function DashboardClient({
             {moving ? `${moving.dir > 0 ? "+" : "−"}${Math.abs(moving.delta).toLocaleString("id-ID")}` : "—"}
           </div>
           <div className="mt-1 text-xs text-secondary truncate">
-            {moving ? `${moving.nama} (pergerakan terbesar)` : "Harga Cenderung Stabil"}
+            {moving ? `${moving.nama} · 7 hari` : "Tidak ada perubahan tercatat"}
           </div>
         </div>
       </div>

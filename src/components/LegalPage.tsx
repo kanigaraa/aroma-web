@@ -22,6 +22,7 @@ export default function LegalPage({ title, children }: { title: string; children
         <nav className={styles.navigation} aria-label="Dokumen layanan">
           <Link href="/privacy" aria-current={title === "Kebijakan Privasi" ? "page" : undefined}>Kebijakan Privasi</Link>
           <Link href="/terms" aria-current={title === "Ketentuan Layanan" ? "page" : undefined}>Ketentuan Layanan</Link>
+          <Link href="/metodologi" aria-current={title === "Metodologi & Sumber Data" ? "page" : undefined}>Metodologi Data</Link>
         </nav>
         <article className={styles.content}>{children}</article>
         <Link href="/" className={`${landing.secondaryButton} ${styles.bottomBack}`}>
