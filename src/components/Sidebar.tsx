@@ -2,16 +2,10 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { LayoutDashboard, Map, Package, Settings, ChevronRight, LogOut } from "lucide-react";
+import { ChevronRight, LogOut } from "lucide-react";
 import Logo from "@/components/Logo";
 import { authClient } from "@/lib/auth-client";
-
-const NAV = [
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/peta", label: "Peta Risiko", icon: Map },
-  { href: "/komoditas", label: "Komoditas", icon: Package },
-  { href: "/pengaturan", label: "Pengaturan", icon: Settings },
-];
+import { NAV } from "@/lib/nav";
 
 export default function Sidebar() {
   const pathname = usePathname();
