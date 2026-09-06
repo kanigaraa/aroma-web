@@ -148,8 +148,7 @@ export default function DashboardClient({
             <Package className="h-4.5 w-4.5" />
           </span>
           <div className="text-2xl font-bold text-primary tnum">{rows.length}</div>
-          <div className="mt-1 text-xs text-secondary">Komoditas dipantau</div>
-          <div className="mt-2 text-[11px] text-secondary/80">Seluruh Indonesia · 34 provinsi</div>
+          <div className="text-sm text-secondary">Komoditas dipantau</div>
         </div>
         {/* Rata-rata harga */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -157,8 +156,7 @@ export default function DashboardClient({
             <Wallet className="h-4.5 w-4.5" />
           </span>
           <div className="text-2xl font-bold text-primary tnum">Rp {fmt(avgNasional)}</div>
-          <div className="mt-1 text-xs text-secondary">Rata-rata harga nasional</div>
-          <div className="mt-2 text-[11px] text-secondary/80">· {formatTanggal(lastTanggal)}</div>
+          <div className="text-sm text-secondary">Rata-rata harga nasional</div>
         </div>
         {/* Komoditas naik */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -166,8 +164,7 @@ export default function DashboardClient({
             <ArrowUpRight className="h-4.5 w-4.5" />
           </span>
           <div className="text-2xl font-bold text-primary tnum">{naik}</div>
-                    <div className="mt-1 text-xs text-secondary">Komoditas Naik</div>
-          <div className="mt-2 text-[11px] text-red-500">Dibanding hari sebelumnya</div>
+          <div className="text-sm text-secondary">Komoditas Naik</div>
         </div>
         {/* Komoditas turun */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -175,22 +172,18 @@ export default function DashboardClient({
             <ArrowDownRight className="h-4.5 w-4.5" />
           </span>
           <div className="text-2xl font-bold text-primary tnum">{turun}</div>
-                    <div className="mt-1 text-xs text-secondary">Komoditas Turun</div>
-          <div className="mt-2 text-[11px] text-emerald-600">Dibanding hari sebelumnya</div>
+          <div className="text-sm text-secondary">Komoditas Turun</div>
         </div>
         {/* Pergerakan terbesar */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
           <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-xl bg-orange-50 text-orange-600">
             {moving && moving.dir < 0 ? <TrendingDown className="h-4.5 w-4.5" /> : <TrendingUp className="h-4.5 w-4.5" />}
           </span>
-          <div className="text-3xl font-bold text-primary tnum">
+          <div className="text-2xl font-bold text-primary tnum">
             {moving ? `${moving.dir > 0 ? "+" : "−"}${Math.abs(moving.delta).toLocaleString("id-ID")}` : "—"}
           </div>
-          <div className="mt-1 text-xs text-secondary truncate">
-            {moving ? `${moving.nama} (pergerakan terbesar)` : "Harga Cenderung Stabil"}
-          </div>
-          <div className={`mt-2 text-[11px] ${moving && moving.dir > 0 ? "text-red-500" : "text-emerald-600"}`}>
-            {moving ? `${moving.dir > 0 ? "Naik" : "Turun"} dibanding hari sebelumnya` : "Tidak ada lonjakan"}
+          <div className="text-sm text-secondary truncate">
+            {moving ? moving.nama : "Harga Stabil"}
           </div>
         </div>
       </div>
