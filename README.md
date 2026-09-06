@@ -118,7 +118,9 @@ Data yang tersedia mencakup **10 komoditas pangan** dan **34 provinsi**. AROMA m
 
 ### Video Demo
 
-Video demo belum tersedia. Rekaman final akan ditempatkan di `public/demo.mp4` dan ditautkan pada bagian ini.
+[▶ Tonton video demo AROMA — 3 menit 4 detik](./public/demo-aroma.mp4)
+
+Video tersimpan di `public` dan dapat diputar pada halaman file GitHub atau di `https://aroma.my.id/demo-aroma.mp4` setelah deploy.
 
 ---
 
