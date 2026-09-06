@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   Package,
@@ -73,6 +73,16 @@ export default function DashboardClient({
   insights,
   moving,
 }: Props) {
+  const [selectedProv, setSelectedProv] = useState(defaultProv);
+
+  // set default province from user profile if available
+  useEffect(() => {
+    fetch("/api/user/province")
+      .then((r) => r.json())
+      .then((d) => { if (d.provinceName && provinsi.includes(d.provinceName)) setSelectedProv(d.provinceName); })
+      .catch(() => {});
+  }, []);
+
   // komoditas terpilih di card Perbandingan Harga -> sinkron ke Peta Risiko
   const [komo, setKomo] = useState("beras");
   const mapStatus: Record<string, Status> = statusPerProv[komo] ?? {};
@@ -199,7 +209,7 @@ export default function DashboardClient({
                   <RiskBadge status={statusNasional[komo] ?? "stabil"} />
                 </h2>
                 <p className="text-xs text-secondary mt-0.5">
-                  Komoditas untuk wilayah {defaultProv}
+                  Komoditas untuk wilayah {selectedProv}
                 </p>
               </div>
               <select
@@ -218,7 +228,7 @@ export default function DashboardClient({
               komoditas={komoditas}
               chart={chart}
               komo={komo}
-              prov={defaultProv}
+              prov={selectedProv}
             />
           </section>
 
