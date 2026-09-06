@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { Bell, Settings, LogOut, CheckCircle2 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useSession, signOut } from "@/lib/auth-client";
+import { authClient, useSession } from "@/lib/auth-client";
 
 export type Notif = {
   id: string;
@@ -39,10 +39,9 @@ export default function Topbar() {
   const toggle = (k: "notif" | "user") => setOpen((o) => (o === k ? null : k));
 
   const handleLogout = async () => {
-    await signOut();
-    router.replace("/login");
-  };
-
+      await authClient.signOut();
+      router.push("/");
+    };
   return (
     <header className="relative flex h-16 shrink-0 items-center justify-end gap-2 border-b border-border bg-surface px-6">
       <div ref={ref} className="flex items-center gap-2">
@@ -64,7 +63,7 @@ export default function Topbar() {
           className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-600 text-sm font-bold text-white"
           aria-label="Akun"
         >
-          {initial}
+          {session?.user?.image ? <img src={session.user.image} alt="Foto profil" className="h-full w-full rounded-xl object-cover" /> : initial}
         </button>
 
         {open === "notif" && (

@@ -13,7 +13,7 @@ export default function Sidebar() {
 
   const handleLogout = async () => {
     await authClient.signOut();
-    router.replace("/login");
+    router.push("/");
   };
 
   return (
