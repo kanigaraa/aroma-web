@@ -44,7 +44,10 @@ export async function POST(req: Request) {
   try {
     const question = normalized.messages.at(-1)!.content.toLowerCase();
     const selectedContext = context.map(({ harga_provinsi, prediksi, ...summary }) => {
-      const commoditySelected = question.includes(summary.nama.toLowerCase());
+      const commodityName = summary.nama.toLowerCase();
+      const commoditySelected = question.includes(commodityName) || commodityName
+        .split(/\s+/)
+        .some((word) => word.length >= 4 && question.includes(word));
       const provinces = Object.keys(harga_provinsi).filter((name) => question.includes(name.toLowerCase()));
       return {
         ...summary,
