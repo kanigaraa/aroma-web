@@ -26,7 +26,7 @@ function otpPlugin() {
           : type === "forget-password"
           ? "Reset kata sandi AROMA"
           : "Kode masuk AROMA";
-      await fetch("https://api.resend.com/emails", {
+      const res = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${resendKey}`,
@@ -39,6 +39,10 @@ function otpPlugin() {
           html: `<p>Kode OTP kamu: <strong style="font-size:24px;letter-spacing:4px">${otp}</strong></p><p>Berlaku 5 menit.</p>`,
         }),
       });
+      if (!res.ok) {
+        const body = await res.text();
+        throw new Error(`Resend failed ${res.status}: ${body}`);
+      }
     },
   });
 }
