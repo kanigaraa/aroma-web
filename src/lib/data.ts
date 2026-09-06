@@ -51,6 +51,44 @@ export function getInsight(): InsightKomoditas[] {
   return readJSON<InsightKomoditas[]>("insight/cuaca.json");
 }
 
+export type PriceNotification = {
+  id: string;
+  title: string;
+  body: string;
+  time: string;
+};
+
+/** Ringkasan pergerakan harga terbaru untuk notifikasi aplikasi. */
+export function getPriceNotifications(): PriceNotification[] {
+  return getMeta().komoditas
+    .flatMap((commodity) => {
+      const points = getKomoditasProcessedSlim(commodity.slug, 2).seri;
+      const latest = points.at(-1);
+      const previous = points.at(-2);
+      if (!latest || !previous) return [];
+      const average = (point: typeof latest) => {
+        const values = Object.values(point.data).map((item) => item.harga).filter(Number.isFinite);
+        return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
+      };
+      const current = average(latest);
+      const before = average(previous);
+      if (current == null || before == null || before === 0) return [];
+      const change = ((current - before) / before) * 100;
+      if (Math.abs(change) < 0.05) return [];
+      const direction = change > 0 ? "naik" : "turun";
+      return [{
+        id: commodity.slug,
+        title: `${commodity.nama} ${direction}`,
+        body: `${Math.abs(change).toLocaleString("id-ID", { maximumFractionDigits: 1 })}% dibanding hari sebelumnya secara nasional.`,
+        time: `Data ${latest.tanggal}`,
+        change: Math.abs(change),
+      }];
+    })
+    .sort((a, b) => b.change - a.change)
+    .slice(0, 3)
+    .map(({ change: _change, ...notification }) => notification);
+}
+
 export function getDashboardChart(province: string, historyDays = 90): Record<string, ForecastPoint[]> {
   return Object.fromEntries(getMeta().komoditas.map((commodity) => {
     const series = getKomoditasForecast(commodity.slug).provinsi[province]?.seri ?? [];
