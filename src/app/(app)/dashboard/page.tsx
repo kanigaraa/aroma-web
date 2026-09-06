@@ -4,7 +4,8 @@ import { summarizeStatus } from "@/components/RiskBadge";
 import { getMapData } from "@/lib/mapData";
 import type { ForecastPoint, Status } from "@/lib/types";
 
-export const dynamic = "force-static";
+// ISR: revalidate tiap 6 jam — data PIHPS tidak berubah sering
+export const revalidate = 21600;
 
 function trendFrom(seri: { data: Record<string, { harga: number }> }[]) {
   if (seri.length < 2) return { delta: 0, dir: 0 as 0 | 1 | -1 };
