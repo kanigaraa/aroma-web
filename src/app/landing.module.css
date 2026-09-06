@@ -161,8 +161,11 @@
 .footerSurface { background: transparent; }
 .footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 22px; padding-block: 24px calc(24px + env(safe-area-inset-bottom)); border-top: 1px solid #789b892e; }
 .footer .brand { font-size: 16px; }
-.footer p { color: var(--copy); font-size: 10px; }
-@media (max-width: 699px) {
+.footerLinks { display: flex; gap: 16px; }
+.footerLinks a { color: var(--copy); font-size: 10px; text-decoration: underline; }
+.footerLinks a:hover { color: var(--accent); }
+
+@media (max-width: 640px) {
   .footer { flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding-block: 20px calc(20px + env(safe-area-inset-bottom)); text-align: center; }
   .footer p { max-width: 280px; font-size: 11px; line-height: 1.65; text-wrap: balance; }
   .footer p:last-child { margin-top: 4px; }
