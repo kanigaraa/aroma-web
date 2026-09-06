@@ -4,15 +4,28 @@ import { useState, useRef, useEffect } from "react";
 import { Bot, Send, Loader2, X } from "lucide-react";
 
 type Msg = { role: "user" | "assistant"; content: string };
+const INITIAL_MESSAGE: Msg = { role: "assistant", content: "Halo! Tanya apa saja soal harga pangan AROMA. Contoh: \"Berapa harga cabai rawit sekarang?\"" };
+const HISTORY_KEY = "aroma-chat-history-v1";
+
+function readHistory(): Msg[] {
+  if (typeof window === "undefined") return [INITIAL_MESSAGE];
+  try {
+    const stored: unknown = JSON.parse(localStorage.getItem(HISTORY_KEY) ?? "[]");
+    if (!Array.isArray(stored)) return [INITIAL_MESSAGE];
+    const valid = stored.filter((message): message is Msg => Boolean(message) && typeof message === "object" && ((message as Msg).role === "user" || (message as Msg).role === "assistant") && typeof (message as Msg).content === "string" && (message as Msg).content.length <= 2_000).slice(-20);
+    return valid.length ? valid : [INITIAL_MESSAGE];
+  } catch { return [INITIAL_MESSAGE]; }
+}
 
 export default function FloatingChat() {
   const [open, setOpen] = useState(false);
-  const [msgs, setMsgs] = useState<Msg[]>([
-    { role: "assistant", content: "Halo! Tanya apa saja soal harga pangan AROMA. Contoh: \"Berapa harga cabai rawit sekarang?\"" },
-  ]);
+  const [msgs, setMsgs] = useState<Msg[]>(readHistory);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    try { localStorage.setItem(HISTORY_KEY, JSON.stringify(msgs.slice(-20))); } catch {}
+  }, [msgs]);
 
   // Drag state
   const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
