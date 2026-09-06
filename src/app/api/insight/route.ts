@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createHash } from "crypto";
 import { promises as fs } from "fs";
 import path from "path";
+import { AIError, completeChat } from "@/lib/groq";
 
 // Ringkasan Hari Ini — hasil LLM di-cache per (tanggal + hash data).
 // Satu panggilan GROQ per kombinasi data; refresh berulang tidak memanggil AI lagi.
@@ -45,24 +46,8 @@ export async function POST(req: Request) {
   const prompt = `Kamu adalah asisten analisis harga pangan Indonesia. Ringkas kondisi harga pangan hari ini (${lastTanggal}) dalam 2-3 kalimat untuk pembaca umum (bukan analis data), dalam Bahasa Indonesia, informatif dan natural. Jangan menyebutkan istilah teknis seperti zscore atau persentase mentah. Fokus pada hal paling menonjol: komoditas berstatus waspada/tinggi, serta yang naik/turun paling besar. Jangan menyebutkan semua komoditas — pilih yang paling relevan. Mulai langsung dengan kalimat pertama, tanpa kata pengantar.\n\nData (${provinsi.length} provinsi):\n${list}`;
 
   // 3) Panggil GROQ
-  const GROQ_KEY = process.env.GROQ_API_KEY;
-  const GROQ_MODEL = process.env.GROQ_MODEL ?? "qwen/qwen3-8b";
-  if (!GROQ_KEY) return NextResponse.json({ text: null, error: "no key" }, { status: 500 });
-
   try {
-    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${GROQ_KEY}` },
-      body: JSON.stringify({
-        model: GROQ_MODEL,
-        messages: [{ role: "user", content: prompt }],
-        temperature: 0.3,
-      }),
-    });
-    const data = (await res.json()) as { choices?: Array<{ message?: { content?: string } }> };
-    const text: string | undefined = data?.choices?.[0]?.message?.content;
-
-    if (!text) return NextResponse.json({ text: null, error: "groq empty" }, { status: 502 });
+    const text = await completeChat([{ role: "user", content: prompt }]);
 
     // 4) Simpan cache (sinkron, best-effort)
     await fs.mkdir(CACHE_DIR, { recursive: true }).catch(() => {});
@@ -70,6 +55,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ text });
   } catch (e) {
-    return NextResponse.json({ text: null, error: (e as Error).message }, { status: 500 });
+    return NextResponse.json({ text: null, error: e instanceof AIError ? e.message : "Gagal memproses ringkasan." },
+      { status: e instanceof AIError ? e.status : 500 });
   }
 }

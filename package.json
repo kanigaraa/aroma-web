@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "chat:context": "node scripts/generate-chat-context.mjs",
+    "test:chat": "npm run chat:context && node --test tests/chat.test.mjs",
+    "predev": "npm run chat:context",
+    "prebuild": "npm run chat:context",
     "dev": "next dev",
     "build": "next build",
     "build:open-next": "NODE_OPTIONS=--max-old-space-size=4096 npx opennextjs-cloudflare build",
