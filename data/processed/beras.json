@@ -253009,6 +253009,4997 @@
      "status": "stabil"
     }
    }
+  },
+  {
+   "tanggal": "2026-08-19",
+   "data": {
+    "Aceh": {
+     "harga": 15700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.44,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 17950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.22,
+     "status": "waspada"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.33,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.59,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.19,
+     "status": "stabil"
+    },
+    "Kepulauan Bangka Belitung": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.48,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.37,
+     "status": "waspada"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.89,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 15900.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.81,
+     "status": "waspada"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.67,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16800.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.37,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.33,
+     "status": "tinggi"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.7,
+     "status": "tinggi"
+    },
+    "Kalimantan Timur": {
+     "harga": 16600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.22,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.7,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.3,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14400.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.41,
+     "status": "waspada"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.37,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16350.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.04,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.07,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.26,
+     "status": "waspada"
+    },
+    "Maluku": {
+     "harga": 17300.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.74,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.0,
+     "status": "waspada"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.15,
+     "status": "tinggi"
+    },
+    "Papua Barat": {
+     "harga": 17200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-08-20",
+   "data": {
+    "Aceh": {
+     "harga": 15700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.44,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 17950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.22,
+     "status": "waspada"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.33,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.59,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.19,
+     "status": "stabil"
+    },
+    "Kepulauan Bangka Belitung": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.48,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.37,
+     "status": "waspada"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.89,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 15900.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.81,
+     "status": "waspada"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.67,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16800.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.37,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.33,
+     "status": "tinggi"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.7,
+     "status": "tinggi"
+    },
+    "Kalimantan Timur": {
+     "harga": 16600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.22,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.7,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.3,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14400.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.41,
+     "status": "waspada"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.37,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16350.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.04,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.07,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.26,
+     "status": "waspada"
+    },
+    "Maluku": {
+     "harga": 17350.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.78,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.0,
+     "status": "waspada"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.15,
+     "status": "tinggi"
+    },
+    "Papua Barat": {
+     "harga": 17200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-08-21",
+   "data": {
+    "Aceh": {
+     "harga": 15700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.44,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 17950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.22,
+     "status": "waspada"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.33,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.59,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.19,
+     "status": "stabil"
+    },
+    "Kepulauan Bangka Belitung": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.48,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.37,
+     "status": "waspada"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.89,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 15900.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.81,
+     "status": "waspada"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.67,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16800.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.37,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.33,
+     "status": "tinggi"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.7,
+     "status": "tinggi"
+    },
+    "Kalimantan Timur": {
+     "harga": 16600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.22,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.7,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.3,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14400.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.41,
+     "status": "waspada"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.37,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16350.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.04,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.07,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.26,
+     "status": "waspada"
+    },
+    "Maluku": {
+     "harga": 17200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.0,
+     "status": "waspada"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.15,
+     "status": "tinggi"
+    },
+    "Papua Barat": {
+     "harga": 17200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-08-22",
+   "data": {
+    "Aceh": {
+     "harga": 15700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.44,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 17950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.22,
+     "status": "waspada"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.33,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.59,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.19,
+     "status": "stabil"
+    },
+    "Kepulauan Bangka Belitung": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.48,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.37,
+     "status": "waspada"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.89,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 15900.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.81,
+     "status": "waspada"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.67,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16800.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.37,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.33,
+     "status": "tinggi"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.7,
+     "status": "tinggi"
+    },
+    "Kalimantan Timur": {
+     "harga": 16600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.22,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.7,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.3,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14400.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.41,
+     "status": "waspada"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.37,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16350.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.04,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.07,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.26,
+     "status": "waspada"
+    },
+    "Maluku": {
+     "harga": 17200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.0,
+     "status": "waspada"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.15,
+     "status": "tinggi"
+    },
+    "Papua Barat": {
+     "harga": 17200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-08-23",
+   "data": {
+    "Aceh": {
+     "harga": 15700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.44,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 17950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.22,
+     "status": "waspada"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.33,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.59,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.19,
+     "status": "stabil"
+    },
+    "Kepulauan Bangka Belitung": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.48,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.37,
+     "status": "waspada"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.89,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 15900.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.81,
+     "status": "waspada"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.67,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16800.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.37,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.33,
+     "status": "tinggi"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.7,
+     "status": "tinggi"
+    },
+    "Kalimantan Timur": {
+     "harga": 16600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.22,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.7,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.3,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14400.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.41,
+     "status": "waspada"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.37,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16350.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.04,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.07,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.26,
+     "status": "waspada"
+    },
+    "Maluku": {
+     "harga": 17200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.0,
+     "status": "waspada"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.15,
+     "status": "tinggi"
+    },
+    "Papua Barat": {
+     "harga": 17200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-08-24",
+   "data": {
+    "Aceh": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.67,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 17950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.19,
+     "status": "waspada"
+    },
+    "Riau": {
+     "harga": 16850.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.37,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.48,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.33,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16550.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.15,
+     "status": "stabil"
+    },
+    "Kepulauan Bangka Belitung": {
+     "harga": 15450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.67,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15550.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.59,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": -0.04,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15500.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.44,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.41,
+     "status": "waspada"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.93,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.33,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.85,
+     "status": "waspada"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.7,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.33,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.3,
+     "status": "tinggi"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.67,
+     "status": "tinggi"
+    },
+    "Kalimantan Timur": {
+     "harga": 16600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.19,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.26,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.44,
+     "status": "waspada"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16350.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.11,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.3,
+     "status": "waspada"
+    },
+    "Maluku": {
+     "harga": 17200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.63,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 0.96,
+     "status": "stabil"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.11,
+     "status": "tinggi"
+    },
+    "Papua Barat": {
+     "harga": 17200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.63,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-08-25",
+   "data": {
+    "Aceh": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "4",
+     "zscore": -0.18,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15450.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "4",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 17950.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "2",
+     "zscore": 0.52,
+     "status": "stabil"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "3",
+     "zscore": 0.13,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "4",
+     "zscore": -0.28,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15700.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "4",
+     "zscore": -0.21,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "4",
+     "zscore": -0.15,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "4",
+     "zscore": -0.1,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15600.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "4",
+     "zscore": -0.25,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "3",
+     "zscore": -0.02,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15450.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "4",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "3",
+     "zscore": 0.2,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15600.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "4",
+     "zscore": -0.25,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14450.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "5",
+     "zscore": -0.62,
+     "status": "stabil"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "4",
+     "zscore": -0.15,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "5",
+     "zscore": -0.82,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "4",
+     "zscore": -0.31,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16800.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "3",
+     "zscore": 0.15,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "1",
+     "zscore": 1.02,
+     "status": "waspada"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19950.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "1",
+     "zscore": 1.18,
+     "status": "waspada"
+    },
+    "Kalimantan Timur": {
+     "harga": 16600.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "3",
+     "zscore": 0.08,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "3",
+     "zscore": 0.3,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "3",
+     "zscore": 0.11,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14400.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "5",
+     "zscore": -0.64,
+     "status": "stabil"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "4",
+     "zscore": -0.18,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16350.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16200.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "4",
+     "zscore": -0.05,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "5",
+     "zscore": -0.57,
+     "status": "stabil"
+    },
+    "Maluku": {
+     "harga": 17200.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "3",
+     "zscore": 0.28,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "2",
+     "zscore": 0.43,
+     "status": "stabil"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "1",
+     "zscore": 0.93,
+     "status": "stabil"
+    },
+    "Papua Barat": {
+     "harga": 17200.0,
+     "avg": 16350.0,
+     "stddev": 3050.0,
+     "kelompok": "3",
+     "zscore": 0.28,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-08-26",
+   "data": {
+    "Aceh": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.67,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 17950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.19,
+     "status": "waspada"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.3,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.48,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.33,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.22,
+     "status": "stabil"
+    },
+    "Kepulauan Bangka Belitung": {
+     "harga": 15750.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "6",
+     "zscore": -0.44,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": -0.04,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15500.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.44,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.41,
+     "status": "waspada"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.93,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.33,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.85,
+     "status": "waspada"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.7,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16850.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.37,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.3,
+     "status": "tinggi"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.67,
+     "status": "tinggi"
+    },
+    "Kalimantan Timur": {
+     "harga": 16600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.19,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.26,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.44,
+     "status": "waspada"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16350.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.11,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.3,
+     "status": "waspada"
+    },
+    "Maluku": {
+     "harga": 17400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.78,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 0.96,
+     "status": "stabil"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.11,
+     "status": "tinggi"
+    },
+    "Papua Barat": {
+     "harga": 17200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.63,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-08-27",
+   "data": {
+    "Aceh": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.67,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 17950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.19,
+     "status": "waspada"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.3,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.48,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.33,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.22,
+     "status": "stabil"
+    },
+    "Kepulauan Bangka Belitung": {
+     "harga": 15750.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.44,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": -0.04,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15500.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.44,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14550.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.33,
+     "status": "waspada"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.93,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.33,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.85,
+     "status": "waspada"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.7,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16850.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.37,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.3,
+     "status": "tinggi"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.67,
+     "status": "tinggi"
+    },
+    "Kalimantan Timur": {
+     "harga": 16600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.19,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.26,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.44,
+     "status": "waspada"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16350.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.11,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.3,
+     "status": "waspada"
+    },
+    "Maluku": {
+     "harga": 17400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.78,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 0.96,
+     "status": "stabil"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.11,
+     "status": "tinggi"
+    },
+    "Papua Barat": {
+     "harga": 17200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.63,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-08-28",
+   "data": {
+    "Aceh": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.67,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 17950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.19,
+     "status": "waspada"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.3,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.48,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.33,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.22,
+     "status": "stabil"
+    },
+    "Kepulauan Bangka Belitung": {
+     "harga": 15750.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.44,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": -0.04,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15500.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.44,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14550.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.33,
+     "status": "waspada"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.93,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.33,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.85,
+     "status": "waspada"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.7,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16850.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.37,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.3,
+     "status": "tinggi"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.63,
+     "status": "tinggi"
+    },
+    "Kalimantan Timur": {
+     "harga": 16600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.19,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.26,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.44,
+     "status": "waspada"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16350.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.11,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.3,
+     "status": "waspada"
+    },
+    "Maluku": {
+     "harga": 17400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.78,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 0.96,
+     "status": "stabil"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.11,
+     "status": "tinggi"
+    },
+    "Papua Barat": {
+     "harga": 17150.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.59,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-08-29",
+   "data": {
+    "Aceh": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.67,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 17950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.19,
+     "status": "waspada"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.3,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.48,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.33,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.22,
+     "status": "stabil"
+    },
+    "Kepulauan Bangka Belitung": {
+     "harga": 15750.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.44,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": -0.04,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15500.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.44,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14550.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.33,
+     "status": "waspada"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.93,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.33,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.85,
+     "status": "waspada"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.7,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16850.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.37,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.3,
+     "status": "tinggi"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.63,
+     "status": "tinggi"
+    },
+    "Kalimantan Timur": {
+     "harga": 16600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.19,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.26,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.44,
+     "status": "waspada"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16350.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.11,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.3,
+     "status": "waspada"
+    },
+    "Maluku": {
+     "harga": 17400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.78,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 0.96,
+     "status": "stabil"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.11,
+     "status": "tinggi"
+    },
+    "Papua Barat": {
+     "harga": 17150.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.59,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-08-30",
+   "data": {
+    "Aceh": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.67,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 17950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.19,
+     "status": "waspada"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.3,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.48,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.33,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.22,
+     "status": "stabil"
+    },
+    "Kepulauan Bangka Belitung": {
+     "harga": 15750.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.44,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": -0.04,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15500.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.44,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14550.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.33,
+     "status": "waspada"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.93,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.33,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.85,
+     "status": "waspada"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.7,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16850.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.37,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.3,
+     "status": "tinggi"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.63,
+     "status": "tinggi"
+    },
+    "Kalimantan Timur": {
+     "harga": 16600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.19,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.26,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.44,
+     "status": "waspada"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16350.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.11,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.3,
+     "status": "waspada"
+    },
+    "Maluku": {
+     "harga": 17400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.78,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 0.96,
+     "status": "stabil"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.11,
+     "status": "tinggi"
+    },
+    "Papua Barat": {
+     "harga": 17150.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.59,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-08-31",
+   "data": {
+    "Aceh": {
+     "harga": 15800.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.37,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 18000.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.26,
+     "status": "waspada"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.33,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.59,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.44,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 15950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.26,
+     "status": "stabil"
+    },
+    "Kepulauan Bangka Belitung": {
+     "harga": 15750.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.52,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15500.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.59,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.48,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.52,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.19,
+     "status": "waspada"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.89,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 15950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.26,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.81,
+     "status": "waspada"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.67,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16850.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.41,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.33,
+     "status": "tinggi"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19900.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.67,
+     "status": "tinggi"
+    },
+    "Kalimantan Timur": {
+     "harga": 16600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.22,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.7,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.3,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14350.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.44,
+     "status": "waspada"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.37,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16350.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.04,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.07,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.26,
+     "status": "waspada"
+    },
+    "Maluku": {
+     "harga": 17200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.0,
+     "status": "waspada"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.15,
+     "status": "tinggi"
+    },
+    "Papua Barat": {
+     "harga": 17150.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.63,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-09-01",
+   "data": {
+    "Aceh": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.67,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 18000.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.22,
+     "status": "waspada"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.3,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.48,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.33,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16100.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.19,
+     "status": "stabil"
+    },
+    "Kepulauan Bangka Belitung": {
+     "harga": 15750.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.44,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": -0.04,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15550.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.59,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.44,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.22,
+     "status": "waspada"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.93,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 16000.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.26,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.85,
+     "status": "waspada"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.7,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16850.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.37,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.3,
+     "status": "tinggi"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.63,
+     "status": "tinggi"
+    },
+    "Kalimantan Timur": {
+     "harga": 16600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.19,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.26,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14350.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.48,
+     "status": "waspada"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16350.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16250.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.07,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.3,
+     "status": "waspada"
+    },
+    "Maluku": {
+     "harga": 17000.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.48,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 0.96,
+     "status": "stabil"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.11,
+     "status": "tinggi"
+    },
+    "Papua Barat": {
+     "harga": 17150.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.59,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-09-02",
+   "data": {
+    "Aceh": {
+     "harga": 15800.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.37,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15500.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.59,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 18000.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.26,
+     "status": "waspada"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.33,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.59,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.44,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.19,
+     "status": "stabil"
+    },
+    "Kepulauan Bangka Belitung": {
+     "harga": 15750.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15650.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.48,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15550.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.56,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.48,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.52,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.19,
+     "status": "waspada"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.89,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 16000.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.22,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.81,
+     "status": "waspada"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.67,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16950.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.48,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.33,
+     "status": "tinggi"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19900.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.67,
+     "status": "tinggi"
+    },
+    "Kalimantan Timur": {
+     "harga": 16350.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.04,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.7,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.3,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14350.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.44,
+     "status": "waspada"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.37,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16300.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16300.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.26,
+     "status": "waspada"
+    },
+    "Maluku": {
+     "harga": 17000.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.52,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.0,
+     "status": "waspada"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.15,
+     "status": "tinggi"
+    },
+    "Papua Barat": {
+     "harga": 17150.0,
+     "avg": 16300.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.63,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-09-03",
+   "data": {
+    "Aceh": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15550.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.59,
+     "status": "stabil"
+    },
+    "Sumatera Barat": {
+     "harga": 18000.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 1.22,
+     "status": "waspada"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.3,
+     "status": "stabil"
+    },
+    "Kepulauan Riau": {
+     "harga": 15500.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.63,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.48,
+     "status": "stabil"
+    },
+    "Bengkulu": {
+     "harga": 15900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.33,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.22,
+     "status": "stabil"
+    },
+    "Kepulauan Bangka Belitung": {
+     "harga": 15750.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.44,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15650.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.52,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": -0.04,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15550.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.59,
+     "status": "stabil"
+    },
+    "DKI Jakarta": {
+     "harga": 16950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.44,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15650.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.52,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.22,
+     "status": "waspada"
+    },
+    "Jawa Timur": {
+     "harga": 15100.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.93,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 16000.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.26,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.85,
+     "status": "waspada"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.7,
+     "status": "stabil"
+    },
+    "Kalimantan Barat": {
+     "harga": 16950.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.44,
+     "status": "stabil"
+    },
+    "Kalimantan Selatan": {
+     "harga": 19450.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.3,
+     "status": "tinggi"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19900.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.63,
+     "status": "tinggi"
+    },
+    "Kalimantan Timur": {
+     "harga": 16600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.19,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.67,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.26,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14350.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.48,
+     "status": "waspada"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "4",
+     "zscore": -0.41,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16300.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": -0.04,
+     "status": "stabil"
+    },
+    "Sulawesi Utara": {
+     "harga": 16350.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.0,
+     "status": "stabil"
+    },
+    "Sulawesi Barat": {
+     "harga": 14600.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "5",
+     "zscore": -1.3,
+     "status": "waspada"
+    },
+    "Maluku": {
+     "harga": 17000.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.48,
+     "status": "stabil"
+    },
+    "Maluku Utara": {
+     "harga": 17650.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "2",
+     "zscore": 0.96,
+     "status": "stabil"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "1",
+     "zscore": 2.11,
+     "status": "tinggi"
+    },
+    "Papua Barat": {
+     "harga": 17150.0,
+     "avg": 16350.0,
+     "stddev": 1350.0,
+     "kelompok": "3",
+     "zscore": 0.59,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-09-04",
+   "data": {
+    "Aceh": {
+     "harga": 15650.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.06,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15650.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.06,
+     "status": "stabil"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.09,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15350.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.1,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.01,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15650.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.06,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.03,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15500.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.08,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15450.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.09,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14700.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "5",
+     "zscore": -0.18,
+     "status": "stabil"
+    },
+    "Jawa Timur": {
+     "harga": 15050.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "5",
+     "zscore": -0.14,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 16000.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.01,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "5",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.09,
+     "status": "stabil"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19900.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "1",
+     "zscore": 0.5,
+     "status": "stabil"
+    },
+    "Kalimantan Timur": {
+     "harga": 16650.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.07,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.15,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.08,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14350.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "5",
+     "zscore": -0.23,
+     "status": "stabil"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.04,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16200.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": 0.01,
+     "status": "stabil"
+    },
+    "Maluku": {
+     "harga": 17000.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.12,
+     "status": "stabil"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "1",
+     "zscore": 0.41,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-09-05",
+   "data": {
+    "Aceh": {
+     "harga": 15650.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.06,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15650.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.06,
+     "status": "stabil"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.09,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15350.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.1,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.01,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15650.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.06,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.03,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15500.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.08,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15450.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.09,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14700.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "5",
+     "zscore": -0.18,
+     "status": "stabil"
+    },
+    "Jawa Timur": {
+     "harga": 15050.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "5",
+     "zscore": -0.14,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 16000.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.01,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "5",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.09,
+     "status": "stabil"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19900.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "1",
+     "zscore": 0.5,
+     "status": "stabil"
+    },
+    "Kalimantan Timur": {
+     "harga": 16650.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.07,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.15,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.08,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14350.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "5",
+     "zscore": -0.23,
+     "status": "stabil"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.04,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16200.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": 0.01,
+     "status": "stabil"
+    },
+    "Maluku": {
+     "harga": 17000.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.12,
+     "status": "stabil"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "1",
+     "zscore": 0.41,
+     "status": "stabil"
+    }
+   }
+  },
+  {
+   "tanggal": "2026-09-06",
+   "data": {
+    "Aceh": {
+     "harga": 15650.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.06,
+     "status": "stabil"
+    },
+    "Sumatera Utara": {
+     "harga": 15650.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.06,
+     "status": "stabil"
+    },
+    "Riau": {
+     "harga": 16750.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.09,
+     "status": "stabil"
+    },
+    "Jambi": {
+     "harga": 15350.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.1,
+     "status": "stabil"
+    },
+    "Sumatera Selatan": {
+     "harga": 16050.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.01,
+     "status": "stabil"
+    },
+    "Lampung": {
+     "harga": 15650.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.06,
+     "status": "stabil"
+    },
+    "Banten": {
+     "harga": 16300.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.03,
+     "status": "stabil"
+    },
+    "Jawa Barat": {
+     "harga": 15500.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.08,
+     "status": "stabil"
+    },
+    "Jawa Tengah": {
+     "harga": 15450.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.09,
+     "status": "stabil"
+    },
+    "DI Yogyakarta": {
+     "harga": 14700.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "5",
+     "zscore": -0.18,
+     "status": "stabil"
+    },
+    "Jawa Timur": {
+     "harga": 15050.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "5",
+     "zscore": -0.14,
+     "status": "stabil"
+    },
+    "Bali": {
+     "harga": 16000.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.01,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Barat": {
+     "harga": 13850.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "5",
+     "zscore": -0.3,
+     "status": "stabil"
+    },
+    "Nusa Tenggara Timur": {
+     "harga": 15400.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.09,
+     "status": "stabil"
+    },
+    "Kalimantan Tengah": {
+     "harga": 19900.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "1",
+     "zscore": 0.5,
+     "status": "stabil"
+    },
+    "Kalimantan Timur": {
+     "harga": 16650.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.07,
+     "status": "stabil"
+    },
+    "Kalimantan Utara": {
+     "harga": 17250.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.15,
+     "status": "stabil"
+    },
+    "Gorontalo": {
+     "harga": 16700.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.08,
+     "status": "stabil"
+    },
+    "Sulawesi Selatan": {
+     "harga": 14350.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "5",
+     "zscore": -0.23,
+     "status": "stabil"
+    },
+    "Sulawesi Tenggara": {
+     "harga": 15800.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": -0.04,
+     "status": "stabil"
+    },
+    "Sulawesi Tengah": {
+     "harga": 16200.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "4",
+     "zscore": 0.01,
+     "status": "stabil"
+    },
+    "Maluku": {
+     "harga": 17000.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "3",
+     "zscore": 0.12,
+     "status": "stabil"
+    },
+    "Papua": {
+     "harga": 19200.0,
+     "avg": 16100.0,
+     "stddev": 7600.0,
+     "kelompok": "1",
+     "zscore": 0.41,
+     "status": "stabil"
+    }
+   }
   }
  ]
 }

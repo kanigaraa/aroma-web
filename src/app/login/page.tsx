@@ -26,7 +26,7 @@ export default function LoginPage() {
 
   const googleLogin = async () => {
     setErr("");
-    await signIn.social({ provider: "google", callbackURL: "/dashboard" });
+    await signIn.social({ provider: "google", callbackURL: "/onboarding" });
   };
 
   return (

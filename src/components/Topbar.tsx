@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { Bell, Settings, LogOut, CheckCircle2 } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { authClient, useSession } from "@/lib/auth-client";
 
 export type Notif = {
@@ -16,7 +15,6 @@ export type Notif = {
 export default function Topbar() {
   const [open, setOpen] = useState<null | "notif" | "user">(null);
   const ref = useRef<HTMLDivElement>(null);
-  const router = useRouter();
   const { data: session } = useSession();
 
   const name = session?.user?.name ?? "–";
@@ -39,9 +37,9 @@ export default function Topbar() {
   const toggle = (k: "notif" | "user") => setOpen((o) => (o === k ? null : k));
 
   const handleLogout = async () => {
-      await authClient.signOut();
-      router.push("/");
-    };
+    const result = await authClient.signOut();
+    if (!result.error) window.location.assign("/");
+  };
   return (
     <header className="relative flex h-16 shrink-0 items-center justify-end gap-2 border-b border-border bg-surface px-6">
       <div ref={ref} className="flex items-center gap-2">
