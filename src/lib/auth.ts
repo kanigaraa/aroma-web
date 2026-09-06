@@ -117,4 +117,8 @@ export function createAuthDev() {
   });
 }
 
-export type Auth = ReturnType<typeof createAuth>;
+export function getAuth() {
+  if (process.env.NODE_ENV === "development") return createAuthDev();
+  const { env } = getCloudflareContext();
+  return createAuth((env as CloudflareEnv).DB);
+}
