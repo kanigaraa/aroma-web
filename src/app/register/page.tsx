@@ -163,10 +163,6 @@ export default function RegisterPage() {
 
   return (
     <AuthShell mode="register">
-      <div className="mb-6 text-center">
-        <h1 className="text-2xl font-bold text-primary">Daftar Aroma</h1>
-        <p className="mt-1 text-sm text-secondary">Mulai pemantauan harga pangan</p>
-      </div>
       <form className="space-y-4" onSubmit={submit}>
         <div>
           <label className="mb-1.5 block text-sm font-medium text-primary">Nama</label>
