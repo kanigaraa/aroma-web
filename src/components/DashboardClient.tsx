@@ -147,7 +147,7 @@ export default function DashboardClient({
           <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-xl bg-teal-50 text-teal-600">
             <Package className="h-4.5 w-4.5" />
           </span>
-          <div className="text-3xl font-bold text-primary tnum">{rows.length}</div>
+          <div className="text-2xl font-bold text-primary tnum">{rows.length}</div>
           <div className="mt-1 text-xs text-secondary">Komoditas dipantau</div>
           <div className="mt-2 text-[11px] text-secondary/80">Seluruh Indonesia · 34 provinsi</div>
         </div>
@@ -156,7 +156,7 @@ export default function DashboardClient({
           <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
             <Wallet className="h-4.5 w-4.5" />
           </span>
-          <div className="text-3xl font-bold text-primary tnum">Rp {fmt(avgNasional)}</div>
+          <div className="text-2xl font-bold text-primary tnum">Rp {fmt(avgNasional)}</div>
           <div className="mt-1 text-xs text-secondary">Rata-rata harga nasional</div>
           <div className="mt-2 text-[11px] text-secondary/80">· {formatTanggal(lastTanggal)}</div>
         </div>
@@ -165,8 +165,8 @@ export default function DashboardClient({
           <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-xl bg-red-50 text-red-600">
             <ArrowUpRight className="h-4.5 w-4.5" />
           </span>
-          <div className="text-3xl font-bold text-primary tnum">{naik}</div>
-          <div className="mt-1 text-xs text-secondary">Komoditas Naik</div>
+          <div className="text-2xl font-bold text-primary tnum">{naik}</div>
+                    <div className="mt-1 text-xs text-secondary">Komoditas Naik</div>
           <div className="mt-2 text-[11px] text-red-500">Dibanding hari sebelumnya</div>
         </div>
         {/* Komoditas turun */}
@@ -174,8 +174,8 @@ export default function DashboardClient({
           <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
             <ArrowDownRight className="h-4.5 w-4.5" />
           </span>
-          <div className="text-3xl font-bold text-primary tnum">{turun}</div>
-          <div className="mt-1 text-xs text-secondary">Komoditas Turun</div>
+          <div className="text-2xl font-bold text-primary tnum">{turun}</div>
+                    <div className="mt-1 text-xs text-secondary">Komoditas Turun</div>
           <div className="mt-2 text-[11px] text-emerald-600">Dibanding hari sebelumnya</div>
         </div>
         {/* Pergerakan terbesar */}
