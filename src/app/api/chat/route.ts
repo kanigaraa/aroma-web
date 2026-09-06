@@ -1,12 +1,28 @@
 import { NextResponse } from "next/server";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 import context from "@/lib/generated/chat-context.json";
 import { AIError, completeChat, type ChatMessage } from "@/lib/groq";
 import { normalizeChat, safeOutput, validOrigin } from "@/lib/chat-guard";
 
 export const runtime = "nodejs";
 
+type RateLimiter = { limit(input: { key: string }): Promise<{ success: boolean }> };
+
+async function allowed(request: Request) {
+  try {
+    const { env } = getCloudflareContext();
+    const limiter = (env as unknown as { CHAT_RATE_LIMIT?: RateLimiter }).CHAT_RATE_LIMIT;
+    if (!limiter) return true;
+    const key = request.headers.get("cf-connecting-ip") ?? "anonymous";
+    return (await limiter.limit({ key })).success;
+  } catch {
+    return true;
+  }
+}
+
 export async function POST(req: Request) {
   if (!validOrigin(req)) return NextResponse.json({ error: "Origin tidak diizinkan." }, { status: 403 });
+  if (!await allowed(req)) return NextResponse.json({ error: "Terlalu banyak permintaan AI. Coba lagi sebentar." }, { status: 429 });
   let body: unknown;
   try {
     const raw = await req.text();

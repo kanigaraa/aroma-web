@@ -30,3 +30,11 @@ database_id = "f5045b0c-3f90-49e7-8843-dbef447ee55d"
 [vars]
 BETTER_AUTH_URL = "https://aroma.my.id"
 GROQ_MODEL = "qwen/qwen3.8-27b"
+
+[[ratelimits]]
+name = "CHAT_RATE_LIMIT"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 12
+  period = 60

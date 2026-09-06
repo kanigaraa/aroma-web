@@ -57,6 +57,7 @@ function route(completeChat) {
   const guard = load("../src/lib/chat-guard.ts", { "./groq": {} });
   return load("../src/app/api/chat/route.ts", {
     "next/server": { NextResponse: Response },
+    "@opennextjs/cloudflare": { getCloudflareContext: () => ({ env: {} }) },
     "@/lib/generated/chat-context.json": context,
     "@/lib/groq": { completeChat, AIError: Error },
     "@/lib/chat-guard": guard,
