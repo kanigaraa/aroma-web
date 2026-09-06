@@ -354,7 +354,7 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
               {/* ALERT AMBANG HARGA */}
               <div className="rounded-xl bg-muted/60 p-4">
                 <div className="text-xs text-secondary flex items-center gap-1 mb-2">
-                  <BellRing className="h-3 w-3 text-accent" /> Alert Harga
+                  <BellRing className="h-3 w-3 text-accent" /> Pengingat Harga
                 </div>
                 <AlertControl
                   current={d.harga}
@@ -452,6 +452,15 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
             <p className="mt-3 text-[11px] text-secondary">
               Pilih provinsi di peta untuk melihat detail harga dan perkiraan.
             </p>
+
+            <div className="mt-3 rounded-xl bg-muted/60 p-4">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BellRing className="h-4 w-4 text-accent" /> Pengingat Harga
+              </div>
+              <p className="mt-1 text-xs leading-relaxed text-secondary">
+                Pilih provinsi di peta untuk menetapkan ambang harga komoditas ini.
+              </p>
+            </div>
 
             {/* PERBANDINGAN PROVINSI */}
             <div className="mt-3 rounded-xl bg-muted/60 p-4">
