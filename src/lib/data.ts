@@ -47,6 +47,19 @@ export function getKomoditasForecastSlim(slug: string): ForecastKomoditas {
   return { ...d, provinsi };
 }
 
+/** Data grafik ringkas untuk komponen client. Jangan kirim arsip penuh ke RSC. */
+export function getKomoditasForecastWindow(
+  slug: string,
+  province: string,
+  historyDays = 30
+): ForecastPoint[] {
+  const series = getKomoditasForecast(slug).provinsi[province]?.seri ?? [];
+  return [
+    ...series.filter((point) => !point.is_future).slice(-historyDays),
+    ...series.filter((point) => point.is_future),
+  ];
+}
+
 export function getInsight(): InsightKomoditas[] {
   return readJSON<InsightKomoditas[]>("insight/cuaca.json");
 }
