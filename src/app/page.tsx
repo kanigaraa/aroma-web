@@ -7,7 +7,7 @@ import CoverageShowcase from "@/components/landing/CoverageShowcase";
 import LandingFaq from "@/components/landing/LandingFaq";
 import LandingFooter from "@/components/landing/LandingFooter";
 import LandingHeader from "@/components/landing/LandingHeader";
-import { getKomoditasForecast, getKomoditasProcessed, getMeta } from "@/lib/data";
+import { getKomoditasForecast, getKomoditasForecastWindow, getKomoditasProcessed, getMeta } from "@/lib/data";
 import { getMapData, MAP_H, MAP_W } from "@/lib/mapData";
 import styles from "./landing.module.css";
 
@@ -49,7 +49,7 @@ export default function LandingPage() {
       nama: commodity.nama,
       satuan: commodity.satuan,
       status: processed.seri.at(-1)?.data[featureProvince]?.status ?? "stabil" as const,
-      data: getKomoditasForecast(slug).provinsi[featureProvince]?.seri ?? [],
+      data: getKomoditasForecastWindow(slug, featureProvince),
     };
   });
   const featureRiskSnapshot = [...riceProcessed.seri].reverse().find((entry) => {
