@@ -102,7 +102,7 @@ export function getPriceNotifications(): PriceNotification[] {
     .map(({ change: _change, ...notification }) => notification);
 }
 
-export function getDashboardChart(province: string, historyDays = 365): Record<string, ForecastPoint[]> {
+export function getDashboardChart(province: string, historyDays = 90): Record<string, ForecastPoint[]> {
   return Object.fromEntries(getMeta().komoditas.map((commodity) => {
     const series = getKomoditasForecast(commodity.slug).provinsi[province]?.seri ?? [];
     const history = series.filter((point) => !point.is_future).slice(-historyDays);

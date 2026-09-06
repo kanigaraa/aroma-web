@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Bell, LogOut, MapPin, Save, User } from "lucide-react";
-import { authClient, signOut, useSession } from "@/lib/auth-client";
+import { Bell, MapPin, Save, User } from "lucide-react";
+import { authClient, useSession } from "@/lib/auth-client";
 
 type SettingsUser = {
   id: string;
@@ -53,11 +53,6 @@ function SettingsForm({ user, provinces }: { user: SettingsUser; provinces: stri
     }
     setStatus("saved");
     router.refresh();
-  };
-
-  const logout = async () => {
-    const result = await signOut();
-    if (!result.error) window.location.assign("/");
   };
 
   return (
@@ -123,10 +118,6 @@ function SettingsForm({ user, provinces }: { user: SettingsUser; provinces: stri
         </button>
         {status === "saved" && <span className="text-sm font-medium text-teal-600">Perubahan tersimpan.</span>}
         {error && <span className="text-sm font-medium text-red-600">{error}</span>}
-        <button type="button" onClick={logout}
-          className="ml-auto flex items-center gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-2.5 text-sm font-semibold text-red-600 transition-colors hover:bg-red-100">
-          <LogOut className="h-4 w-4" /> Keluar
-        </button>
       </div>
     </main>
   );
