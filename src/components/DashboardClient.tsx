@@ -30,6 +30,7 @@ import IndonesiaMap from "./IndonesiaMap";
 import CommodityIcon from "./CommodityIcon";
 import type { ForecastPoint, Status } from "@/lib/types";
 import { useSession } from "@/lib/auth-client";
+import { provinceToSlug } from "@/lib/province-slug";
 
 export type KomoRow = {
   slug: string;
@@ -87,7 +88,7 @@ export default function DashboardClient({
   useEffect(() => {
     if (!preferredProvince || preferredProvince === defaultProv) return;
     const controller = new AbortController();
-    fetch(`/api/dashboard-chart/${encodeURIComponent(preferredProvince)}`, { signal: controller.signal })
+    fetch(`/api/dashboard-chart/${provinceToSlug(preferredProvince)}`, { signal: controller.signal })
       .then(async (response) => {
         if (!response.ok) throw new Error("Wilayah tidak tersedia");
         return await response.json() as { province: string; chart: Record<string, ForecastPoint[]> };

@@ -9,7 +9,7 @@
     "prebuild": "npm run chat:context",
     "dev": "next dev",
     "build": "next build",
-    "build:open-next": "NODE_OPTIONS=--max-old-space-size=4096 npx opennextjs-cloudflare build",
+    "build:open-next": "cross-env NODE_OPTIONS=--max-old-space-size=4096 npx opennextjs-cloudflare build",
     "start": "next start",
     "lint": "eslint",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
