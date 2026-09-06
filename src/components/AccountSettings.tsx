@@ -52,9 +52,14 @@ function SettingsForm({ user, provinces }: { user: SettingsUser; provinces: stri
       setStatus("error");
       return;
     }
-    const result = await authClient.updateUser({ name: cleanName, region, provinceName: region, provinceId, notifications });
-    if (result.error) {
-      setError(result.error.message ?? "Perubahan belum dapat disimpan.");
+    const response = await fetch("/api/account/preferences", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: cleanName, province: region, notifications }),
+    });
+    const result = await response.json() as { error?: string };
+    if (!response.ok) {
+      setError(result.error ?? "Perubahan belum dapat disimpan.");
       setStatus("error");
       return;
     }
