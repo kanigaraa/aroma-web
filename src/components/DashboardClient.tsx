@@ -180,8 +180,7 @@ export default function DashboardClient({
             <Package className="h-4.5 w-4.5" />
           </span>
           <div className="text-3xl font-bold text-primary tnum">{rows.length}</div>
-          <div className="mt-1 text-xs text-secondary">Komoditas dipantau</div>
-          <div className="mt-2 text-[11px] text-secondary/80">Seluruh Indonesia · 34 provinsi</div>
+          <div className="mt-1 text-base font-semibold text-secondary">Komoditas dipantau</div>
         </div>
         {/* Rata-rata harga */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -192,7 +191,6 @@ export default function DashboardClient({
             </span>
           </div>
           <div className="mt-1 text-xs text-secondary">Rata-rata harga nasional</div>
-          <div className="mt-2 text-[11px] text-secondary/80">· {formatTanggal(lastTanggal)}</div>
         </div>
         {/* Komoditas naik */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -201,7 +199,6 @@ export default function DashboardClient({
           </span>
           <div className="text-3xl font-bold text-primary tnum">{naik}</div>
           <div className="mt-1 text-xs text-secondary">Komoditas Naik</div>
-          <div className="mt-2 text-[11px] text-red-500">Dibanding hari sebelumnya</div>
         </div>
         {/* Komoditas turun */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -210,7 +207,6 @@ export default function DashboardClient({
           </span>
           <div className="text-3xl font-bold text-primary tnum">{turun}</div>
           <div className="mt-1 text-xs text-secondary">Komoditas Turun</div>
-          <div className="mt-2 text-[11px] text-emerald-600">Dibanding hari sebelumnya</div>
         </div>
         {/* Pergerakan terbesar */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
@@ -222,9 +218,6 @@ export default function DashboardClient({
           </div>
           <div className="mt-1 text-xs text-secondary truncate">
             {moving ? `${moving.nama} (pergerakan terbesar)` : "Harga Cenderung Stabil"}
-          </div>
-          <div className={`mt-2 text-[11px] ${moving && moving.dir > 0 ? "text-red-500" : "text-emerald-600"}`}>
-            {moving ? `${moving.dir > 0 ? "Naik" : "Turun"} dibanding hari sebelumnya` : "Tidak ada lonjakan"}
           </div>
         </div>
       </div>
