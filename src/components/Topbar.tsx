@@ -12,7 +12,7 @@ export type Notif = {
   time: string;
 };
 
-export default function Topbar() {
+export default function Topbar({ notifications }: { notifications: Notif[] }) {
   const [open, setOpen] = useState<null | "notif" | "user">(null);
   const ref = useRef<HTMLDivElement>(null);
   const { data: session } = useSession();
@@ -20,11 +20,6 @@ export default function Topbar() {
   const name = session?.user?.name ?? "–";
   const email = session?.user?.email ?? "";
   const initial = name.charAt(0).toUpperCase();
-
-  const notifs: Notif[] = [
-    { id: "1", title: "Cabai Rawit naik", body: "Cabai Rawit naik 4% di 6 provinsi.", time: "2 jam lalu" },
-    { id: "2", title: "Beras stabil", body: "Harga beras nasional stabil pekan ini.", time: "Kemarin" },
-  ];
 
   useEffect(() => {
     const h = (e: MouseEvent) => {
@@ -50,9 +45,9 @@ export default function Topbar() {
           aria-label="Notifikasi"
         >
           <Bell className="h-4.5 w-4.5" />
-          <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[9px] font-bold text-white">
-            {notifs.length}
-          </span>
+          {notifications.length > 0 && <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[9px] font-bold text-white">
+            {notifications.length}
+          </span>}
         </button>
 
         {/* Avatar */}
@@ -68,10 +63,10 @@ export default function Topbar() {
           <div className="absolute right-6 top-16 z-50 w-80 overflow-hidden rounded-2xl border border-border bg-surface shadow-xl">
             <div className="flex items-center justify-between border-b border-border px-4 py-3">
               <span className="text-sm font-semibold text-primary">Notifikasi</span>
-              <span className="text-xs text-secondary">{notifs.length} baru</span>
+              <span className="text-xs text-secondary">{notifications.length} terbaru</span>
             </div>
             <div className="max-h-80 overflow-y-auto">
-              {notifs.map((n) => (
+              {notifications.length === 0 ? <div className="px-4 py-5 text-center text-xs text-secondary">Belum ada perubahan harga terbaru.</div> : notifications.map((n) => (
                 <div key={n.id} className="flex gap-3 border-b border-border/60 px-4 py-3 last:border-0">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" />
                   <div className="min-w-0">
