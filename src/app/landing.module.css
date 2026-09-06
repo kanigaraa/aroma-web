@@ -11,7 +11,7 @@
 .navbar { min-height: 64px; display: flex; align-items: center; padding: 0 15px; gap: 12px; }
 .brand { display: inline-flex; align-items: center; gap: 8px; font-size: 17px; font-weight: 700; letter-spacing: -.7px; min-height: 44px; }
 .desktopNav { display: none; }
-.accountNav { margin-left: auto; display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 600; }
+.accountNav { margin-left: auto; display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; }
 .accountNav > a { display: inline-flex; align-items: center; min-height: 44px; }
 .navCta { background: var(--accent); color: white; padding: 0 13px; border-radius: 9px; }
 .hero { position: relative; isolation: isolate; padding-top: 132px; padding-bottom: 155px; overflow: clip; background: var(--landing-background); }
@@ -160,14 +160,14 @@
 .closingLogin span { color: var(--primary); text-decoration: underline; text-underline-offset: 4px; }
 .footerSurface { background: transparent; }
 .footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 22px; padding-block: 24px calc(24px + env(safe-area-inset-bottom)); border-top: 1px solid #789b892e; }
-.footer .brand { font-size: 16px; }
+.footer .brand { font-size: 17px; }
 .footerLinks { display: flex; gap: 16px; }
-.footerLinks a { color: var(--copy); font-size: 10px; text-decoration: underline; }
+.footerLinks a { color: var(--copy); font-size: 13px; text-decoration: underline; }
 .footerLinks a:hover { color: var(--accent); }
 
 @media (max-width: 640px) {
   .footer { flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding-block: 20px calc(20px + env(safe-area-inset-bottom)); text-align: center; }
-  .footer p { max-width: 280px; font-size: 11px; line-height: 1.65; text-wrap: balance; }
+  .footer p { max-width: 280px; font-size: 13px; line-height: 1.65; text-wrap: balance; }
   .footer p:last-child { margin-top: 4px; }
 }
 @media (min-width: 480px) {
@@ -216,7 +216,7 @@
   .planning { padding-block: 105px; }
   .mapStage { grid-template-columns: minmax(0, 1fr) 250px; gap: 25px; }
   .navbar { min-height: 72px; padding-inline: 24px; gap: 24px; }
-  .desktopNav { display: flex; align-items: center; gap: 27px; margin-inline: auto; font-size: 12px; color: var(--copy); }
+  .desktopNav { display: flex; align-items: center; gap: 27px; margin-inline: auto; font-size: 14px; color: var(--copy); }
   .desktopNav a { display: inline-flex; align-items: center; min-height: 44px; }
   .accountNav { margin: 0; gap: 20px; font-size: 13px; }
   .navCta { padding-inline: 19px; }

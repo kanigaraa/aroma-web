@@ -50,7 +50,13 @@ export default function RegisterPage() {
     if (!name || !email || !pw) { setErr("Semua kolom wajib diisi."); return; }
     if (pw.length < 8) { setErr("Kata sandi minimal 8 karakter."); return; }
     setLoading(true); setErr("");
-    const res = await signUp.email({ name, email, password: pw });
+    const res = await signUp.email({
+      name,
+      email,
+      password: pw,
+      provinceId: 31,
+      provinceName: "DKI Jakarta",
+    });
     if (res.error) {
       setLoading(false);
       setErr(res.error.message ?? "Pendaftaran gagal.");
