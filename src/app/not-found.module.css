@@ -1,0 +1,29 @@
+.page {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  overflow: clip;
+  background: #f8faf9;
+  color: var(--primary);
+}
+
+.landscape { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.landscape svg { width: 100%; height: 100%; }
+.content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 132px 24px 64px; text-align: center; }
+.code { color: #c0d7ce; font-size: clamp(110px, 20vw, 220px); line-height: .95; letter-spacing: -.075em; font-weight: 500; margin-bottom: 28px; }
+.content h1 { font-size: clamp(36px, 5.5vw, 64px); line-height: 1.14; letter-spacing: -.055em; font-weight: 500; }
+.content em { color: #087b71; font-weight: 450; }
+.description { margin-top: 22px; color: #475569; font-size: 15px; line-height: 1.85; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; margin-top: 28px; padding: 14px 22px; border-radius: 10px; background: var(--accent); color: white; font-size: 14px; font-weight: 650; transition: background 180ms ease; }
+.button:hover { background: var(--accent-strong); }
+.page a:focus-visible { outline: 3px solid var(--accent-strong); outline-offset: 5px; }
+@media (max-width: 699px) {
+  .content { padding: 112px 20px 36px; }
+  .code { font-size: clamp(76px, 22vw, 112px); margin-bottom: 20px; }
+  .content h1 { max-width: 360px; font-size: clamp(25px, 6.5vw, 34px); line-height: 1.22; letter-spacing: -.045em; }
+  .description { max-width: 300px; margin-top: 16px; font-size: 13px; line-height: 1.7; }
+  .button { width: auto; max-width: 100%; min-height: 46px; margin-top: 22px; padding: 12px 18px; font-size: 13px; }
+}
+

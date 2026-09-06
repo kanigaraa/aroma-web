@@ -1,11 +1,12 @@
 import Link from "next/link";
-import Logo from "@/components/Logo";
 import LandingExplorer from "@/components/landing/LandingExplorer";
 import LandingMotion from "@/components/landing/LandingMotion";
 import TerraceBackdrop from "@/components/landing/TerraceBackdrop";
 import FeatureShowcase from "@/components/landing/FeatureShowcase";
 import CoverageShowcase from "@/components/landing/CoverageShowcase";
 import LandingFaq from "@/components/landing/LandingFaq";
+import LandingFooter from "@/components/landing/LandingFooter";
+import LandingHeader from "@/components/landing/LandingHeader";
 import { getKomoditasForecast, getKomoditasProcessed, getMeta } from "@/lib/data";
 import { getMapData, MAP_H, MAP_W } from "@/lib/mapData";
 import styles from "./landing.module.css";
@@ -59,15 +60,7 @@ export default function LandingPage() {
   return (
     <LandingMotion>
       <a className={styles.skipLink} href="#konten">Langsung ke konten</a>
-      <header className={styles.header}>
-        <div className={`${styles.container} ${styles.navbar}`}>
-          <Link href="/" className={styles.brand} aria-label="AROMA, beranda"><Logo size={34} /><span>AROMA</span></Link>
-          <nav aria-label="Navigasi utama" className={styles.desktopNav}>
-            <a href="#analisis">Analisis</a><a href="#fitur">Fitur</a><a href="#cakupan">Cakupan data</a>
-          </nav>
-          <div className={styles.accountNav}><Link href="/login" className={styles.navCta}>Masuk</Link></div>
-        </div>
-      </header>
+      <LandingHeader home />
       <main id="konten">
         <section className={styles.hero} aria-labelledby="hero-heading" data-hero>
           <div className={styles.heroLandscape} data-landscape aria-hidden="true"><TerraceBackdrop /></div>
@@ -98,12 +91,7 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
-      <footer className={styles.footerSurface}>
-        <div className={`${styles.container} ${styles.footer}`}>
-        <Link href="/" className={styles.brand}><Logo size={28} /><span>AROMA</span></Link>
-        <p>Analisis Risiko Optimasi Masa depan Agrikultur</p><a href="#konten" className={styles.backToTop}>Kembali ke atas <span aria-hidden="true">↑</span></a>
-        </div>
-      </footer>
+      <LandingFooter />
     </LandingMotion>
   );
 }
