@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   Package,
@@ -29,6 +29,7 @@ import { RiskBadge } from "./RiskBadge";
 import IndonesiaMap from "./IndonesiaMap";
 import CommodityIcon from "./CommodityIcon";
 import type { ForecastPoint, Status } from "@/lib/types";
+import { useSession } from "@/lib/auth-client";
 
 export type KomoRow = {
   slug: string;
@@ -48,7 +49,7 @@ type Props = {
   komoditas: { slug: string; nama: string; satuan: string }[];
   provinsi: string[];
   rows: KomoRow[];
-  chart: Record<string, Record<string, ForecastPoint[]>>;
+  chart: Record<string, ForecastPoint[]>;
   statusNasional: Record<string, Status>;
   statusPerProv: Record<string, Record<string, Status>>; // komoditas -> prov -> status
   mapPaths: { name: string; path: string }[];
@@ -73,8 +74,38 @@ export default function DashboardClient({
   insights,
   moving,
 }: Props) {
+  const { data: session } = useSession();
   // komoditas terpilih di card Perbandingan Harga -> sinkron ke Peta Risiko
   const [komo, setKomo] = useState("beras");
+  const [regional, setRegional] = useState<{ province: string; chart: Record<string, ForecastPoint[]> } | null>(null);
+  const [chartError, setChartError] = useState<{ province: string; message: string } | null>(null);
+  const preferredProvince = session?.user?.region;
+  const matchingRegional = regional?.province === preferredProvince ? regional : null;
+  const activeProvince = matchingRegional?.province ?? defaultProv;
+  const activeChart = matchingRegional?.chart ?? chart;
+
+  useEffect(() => {
+    if (!preferredProvince || preferredProvince === defaultProv) return;
+    const controller = new AbortController();
+    fetch(`/api/dashboard-chart/${encodeURIComponent(preferredProvince)}`, { signal: controller.signal })
+      .then(async (response) => {
+        if (!response.ok) throw new Error("Wilayah tidak tersedia");
+        return await response.json() as { province: string; chart: Record<string, ForecastPoint[]> };
+      })
+      .then((data) => {
+        setRegional(data);
+        setChartError(null);
+      })
+      .catch((error) => {
+        if (error instanceof Error && error.name !== "AbortError") {
+          setChartError({
+            province: preferredProvince,
+            message: "Data wilayah pilihan belum dapat dimuat. Grafik masih menampilkan DKI Jakarta.",
+          });
+        }
+      });
+    return () => controller.abort();
+  }, [preferredProvince, defaultProv]);
   const mapStatus: Record<string, Status> = statusPerProv[komo] ?? {};
   const hargaTerjangkau = rows.filter((k) => k.avg != null);
   const avgNasional = hargaTerjangkau.length
@@ -153,10 +184,12 @@ export default function DashboardClient({
         </div>
         {/* Rata-rata harga */}
         <div className="relative rounded-2xl border border-border bg-surface p-5">
-          <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
-            <Wallet className="h-4.5 w-4.5" />
-          </span>
-          <div className="text-3xl font-bold text-primary tnum">Rp {fmt(avgNasional)}</div>
+          <div className="flex items-start justify-between gap-2">
+            <div className="whitespace-nowrap text-2xl font-bold text-primary tnum xl:text-xl 2xl:text-2xl">Rp {fmt(avgNasional)}</div>
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+              <Wallet className="h-4.5 w-4.5" />
+            </span>
+          </div>
           <div className="mt-1 text-xs text-secondary">Rata-rata harga nasional</div>
           <div className="mt-2 text-[11px] text-secondary/80">· {formatTanggal(lastTanggal)}</div>
         </div>
@@ -206,7 +239,7 @@ export default function DashboardClient({
                   <RiskBadge status={statusNasional[komo] ?? "stabil"} />
                 </h2>
                 <p className="text-xs text-secondary mt-0.5">
-                  Komoditas untuk wilayah {defaultProv}
+                  Komoditas untuk wilayah {activeProvince}
                 </p>
               </div>
               <select
@@ -223,10 +256,13 @@ export default function DashboardClient({
             </div>
             <DashboardChart
               komoditas={komoditas}
-              chart={chart}
+              chart={activeChart}
               komo={komo}
-              prov={defaultProv}
+              key={activeProvince}
             />
+            {chartError && chartError.province === preferredProvince && (
+              <p className="mt-2 text-xs text-red-600">{chartError.message}</p>
+            )}
           </section>
 
           {/* GRID KOMODITAS */}

@@ -19,7 +19,7 @@ export default function FeaturePriceCard({ commodities, province }: { commoditie
   const commodity = commodities.find((item) => item.slug === selected);
   if (!commodity) return null;
 
-  const chart = Object.fromEntries(commodities.map((item) => [item.slug, { [province]: item.data }]));
+  const chart = Object.fromEntries(commodities.map((item) => [item.slug, item.data]));
 
   return (
     <div className={styles.featurePriceCard}>
@@ -39,7 +39,6 @@ export default function FeaturePriceCard({ commodities, province }: { commoditie
         komoditas={commodities.map(({ slug, nama, satuan }) => ({ slug, nama, satuan }))}
         chart={chart}
         komo={selected}
-        prov={province}
         height={150}
         compact
       />

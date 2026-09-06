@@ -2,8 +2,10 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { emailOTP } from "better-auth/plugins";
 import { drizzle } from "drizzle-orm/d1";
-import { SqliteDialect } from "kysely";
 import { authSchema } from "@/lib/auth-schema";
+import { userAdditionalFields } from "@/lib/auth-fields";
+
+const userOptions = { additionalFields: userAdditionalFields };
 
 // ponytail: getEnv covers both Node (dev) and Workers (prod) runtimes
 function getEnv(key: string): string {
@@ -51,6 +53,7 @@ export function createAuth(db: D1Database) {
     }),
     baseURL: getEnv("BETTER_AUTH_URL"),
     secret: getEnv("BETTER_AUTH_SECRET"),
+    user: userOptions,
     trustedOrigins: [
       "https://aroma.my.id",
       "http://localhost:3000",
@@ -64,29 +67,6 @@ export function createAuth(db: D1Database) {
       google: {
         clientId: getEnv("GOOGLE_CLIENT_ID"),
         clientSecret: getEnv("GOOGLE_CLIENT_SECRET"),
-      },
-    },
-    plugins: [otpPlugin()],
-  });
-}
-
-export function createAuthDev() {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const Database = require("better-sqlite3");
-  const dbFile = new Database(".dev.db");
-  return betterAuth({
-    database: {
-      dialect: new SqliteDialect({ database: dbFile }),
-      type: "sqlite",
-    },
-    baseURL: process.env.BETTER_AUTH_URL ?? "http://localhost:3000",
-    secret: process.env.BETTER_AUTH_SECRET ?? "dev-secret-change-me",
-    trustedOrigins: ["http://localhost:3000", "http://127.0.0.1:8787"],
-    emailAndPassword: { enabled: true, requireEmailVerification: false },
-    socialProviders: {
-      google: {
-        clientId: process.env.GOOGLE_CLIENT_ID ?? "",
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
       },
     },
     plugins: [otpPlugin()],
