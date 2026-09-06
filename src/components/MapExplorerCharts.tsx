@@ -135,17 +135,15 @@ export function CompareChart({
   );
 }
 
-/** grafik tren harga historis satu provinsi dengan rentang 30/90 hari */
+/** grafik tren harga historis 30 hari */
 export function TrendChart({
   data,
-  range,
   satuan,
 }: {
   data: ProvHistory;
-  range: 30 | 90;
   satuan: string;
 }) {
-  const sliced = data.slice(-range);
+  const sliced = data.slice(-30);
   if (sliced.length < 2) {
     return <div className="text-xs text-secondary py-6 text-center">Data historis tidak tersedia.</div>;
   }

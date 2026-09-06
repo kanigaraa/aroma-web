@@ -24,8 +24,8 @@ const minLa = Math.min(...lats), maxLa = Math.max(...lats);
 const m = 0.06;
 const W = 680, H = 450;
 
-function px(v) { return m + (v - minL) / (maxL - minL) * (1 - 2 * m); }
-function py(v) { return 1 - m - (v - minLa) / (maxLa - minLa) * (1 - 2 * m); }
+function px(v) { return (m + (v - minL) / (maxL - minL) * (1 - 2 * m)) * W; }
+function py(v) { return (1 - m - (v - minLa) / (maxLa - minLa) * (1 - 2 * m)) * H; }
 
 function toPath(geo) {
   function ring(r) {

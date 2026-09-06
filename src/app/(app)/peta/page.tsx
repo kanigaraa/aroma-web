@@ -6,7 +6,6 @@ import {
   getInsight,
 } from "@/lib/data";
 import MapExplorer from "@/components/MapExplorer";
-import MapTimelineSection from "@/components/MapTimelineSection";
 import { getMapData } from "@/lib/mapData";
 import type { Status } from "@/lib/types";
 
@@ -40,14 +39,14 @@ export default function PetaPage() {
   > = {};
 
   meta.komoditas.forEach((k) => {
-    const p = getKomoditasProcessedSlim(k.slug, 90);
+    const p = getKomoditasProcessedSlim(k.slug, 30);
     const fc = getKomoditasForecastSlim(k.slug);
     const insight = getInsight().find((i) => i.komoditas === k.slug);
     const status: Record<string, Status> = {};
     const detail: Record<string, ProvDetail> = {};
     const history: Record<string, ProvHistory> = {};
-    // 90 hari terakhir utk semua provinsi (satu pass)
-    const last90 = p.seri.slice(-90);
+    // 30 hari terakhir utk semua provinsi agar payload peta tetap kecil.
+    const last30 = p.seri.slice(-30);
     meta.provinsi.forEach((prov) => {
       const latest = [...p.seri].reverse().find((point) => point.data[prov]?.harga > 0);
       const d = latest?.data[prov];
@@ -65,7 +64,7 @@ export default function PetaPage() {
         forecast: fcLast ? String(fcLast.forecast) : "0",
         rCuaca: ins?.r_hujan_harian ?? null,
       };
-      history[prov] = last90
+      history[prov] = last30
         .map((s) => ({ tanggal: s.tanggal, harga: s.data[prov]?.harga ?? 0 }))
         .filter((h) => h.harga > 0);
     });
@@ -89,9 +88,6 @@ export default function PetaPage() {
           </div>
         </div>
         <MapExplorer komoditas={meta.komoditas} dataset={dataset} paths={paths} centroids={centroids} />
-        <div className="mt-5">
-          <MapTimelineSection slug="beras" nama="Beras" />
-        </div>
     </main>
   );
 }

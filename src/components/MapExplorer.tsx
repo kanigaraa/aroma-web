@@ -66,7 +66,6 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
   const [hoverPos, setHoverPos] = useState<{ clientX: number; clientY: number } | null>(null);
   const [filter, setFilter] = useState<Filter>("semua");
   const [q, setQ] = useState("");
-  const [range, setRange] = useState<30 | 90>(30);
   const [compare, setCompare] = useState<string[]>([]);
   // ambang harga alert per komoditas+provinsi (localStorage)
   const [thresholds, setThresholds] = useState<Record<string, number>>(() => {
@@ -197,9 +196,6 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
           </div>
         </div>
 
-        <div className="flex items-center gap-3 text-[11px] font-medium text-secondary">
-          <span className="text-secondary">Pilih provinsi</span>
-        </div>
       </div>
 
       {/* MAP HERO */}
@@ -368,25 +364,10 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
                 />
               </div>
 
-              {/* TREN HARGA 30/90 HARI */}
+              {/* TREN HARGA 30 HARI */}
               <div className="rounded-xl bg-muted/60 p-4">
-                <div className="mb-2 flex items-center justify-between">
-                  <div className="text-xs text-secondary font-medium">Tren Harga</div>
-                  <div className="flex items-center gap-1 rounded-lg border border-border bg-surface p-0.5">
-                    {([30, 90] as const).map((r) => (
-                      <button
-                        key={r}
-                        onClick={() => setRange(r)}
-                        className={`rounded-md px-2 py-0.5 text-[10px] font-semibold transition-colors ${
-                          range === r ? "bg-primary text-white" : "text-secondary hover:bg-muted"
-                        }`}
-                      >
-                        {r}H
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                <TrendChart data={history[selKey!] ?? []} range={range} satuan={d.satuan} />
+                <div className="mb-2 text-xs font-medium text-secondary">Tren Harga · 30 hari</div>
+                <TrendChart data={history[selKey!] ?? []} satuan={d.satuan} />
               </div>
             </div>
           </div>
@@ -422,7 +403,7 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
             </div>
 
             {/* RANGKING TOP 5 */}
-            <div className="mt-3 grid grid-cols-2 gap-3">
+            <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {[
                 { title: "Termahal", items: topMahal },
                 { title: "Termurah", items: topMurah },
@@ -452,7 +433,7 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
                               >
                                 {rank}
                               </span>
-                              <span className="truncate text-primary">{prov.length > 14 ? prov.substring(0, 12) + ".." : prov}</span>
+                              <span className="truncate text-primary" title={prov}>{prov}</span>
                             </span>
                             <span className="flex shrink-0 items-center gap-1">
                               <span className={up ? "text-red-500" : "text-emerald-500"}>{up ? "▲" : "▼"}</span>
@@ -522,7 +503,7 @@ export default function MapExplorer({ komoditas, dataset, paths, centroids }: Pr
               <div className="mt-2">
                 <CompareChart
                   series={compare
-                    .map((p) => ({ prov: p, data: (history[p] ?? []).slice(-range) }))
+                    .map((p) => ({ prov: p, data: history[p] ?? [] }))
                     .filter((s) => s.data.length >= 2)}
                   satuan={firstSatuan}
                 />

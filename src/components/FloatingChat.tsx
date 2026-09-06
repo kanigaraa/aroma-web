@@ -17,6 +17,7 @@ export default function FloatingChat() {
   // Drag state
   const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
   const dragging = useRef(false);
+  const moved = useRef(false);
   const offset = useRef({ x: 0, y: 0 });
   const btnRef = useRef<HTMLButtonElement>(null);
 
@@ -49,6 +50,7 @@ export default function FloatingChat() {
   const onPointerDown = (e: React.PointerEvent) => {
     if (open) return; // jangan drag saat chat terbuka
     dragging.current = true;
+    moved.current = false;
     const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
     offset.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
@@ -56,6 +58,7 @@ export default function FloatingChat() {
 
   const onPointerMove = (e: React.PointerEvent) => {
     if (!dragging.current) return;
+    moved.current = true;
     const x = e.clientX - offset.current.x;
     const y = e.clientY - offset.current.y;
     setPos({ x, y });
@@ -76,7 +79,7 @@ export default function FloatingChat() {
         left: pos.x + 56 > window.innerWidth - 340
           ? pos.x - 328
           : pos.x,
-        top: pos.y - 320 < 0 ? pos.y + 60 : pos.y - 320,
+        top: pos.y - 390 < 12 ? pos.y + 70 : pos.y - 390,
         right: "auto",
         bottom: "auto",
       }
@@ -87,7 +90,7 @@ export default function FloatingChat() {
       {open && (
         <div
           className="fixed z-50 flex w-80 flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-2xl sm:w-96"
-          style={Object.keys(panelStyle).length ? panelStyle : { bottom: "5.5rem", right: "1.25rem" }}
+          style={Object.keys(panelStyle).length ? panelStyle : { bottom: "10rem", right: "1.25rem" }}
         >
           <div className="flex items-center justify-between border-b border-border bg-teal-600 px-4 py-3">
             <div className="flex items-center gap-2">
@@ -142,17 +145,20 @@ export default function FloatingChat() {
       {/* Floating button — draggable, mobile-safe position */}
       <button
         ref={btnRef}
-        onClick={() => !dragging.current && setOpen((o) => !o)}
+        onClick={() => {
+          if (moved.current) { moved.current = false; return; }
+          setOpen((o) => !o);
+        }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         aria-label="Asisten AI"
-        className={`fixed z-50 flex h-14 w-14 touch-none items-center justify-center rounded-full shadow-lg transition-all hover:scale-105 active:scale-95 ${
+        className={`fixed z-50 flex h-14 w-14 touch-none items-center justify-center rounded-full shadow-lg transition-transform duration-150 hover:scale-105 active:scale-95 ${
           open ? "bg-teal-700" : "bg-teal-600"
         }`}
         style={
           Object.keys(btnStyle).length
-            ? btnStyle
+            ? { ...btnStyle, willChange: "left, top" }
             : { bottom: "5.5rem", right: "1.25rem" }
         }
       >

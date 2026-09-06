@@ -66,6 +66,9 @@ export function createAuth(db: D1Database) {
       enabled: true,
       requireEmailVerification: true,
       sendResetPassword: async ({ user, url }) => {
+        const token = new URL(url).pathname.split("/").at(-1);
+        if (!token) throw new Error("Reset password token is missing");
+        const resetUrl = `${getEnv("BETTER_AUTH_URL")}/reset-password?token=${encodeURIComponent(token)}`;
         const response = await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
@@ -76,7 +79,7 @@ export function createAuth(db: D1Database) {
             from: "AROMA <support@aroma.my.id>",
             to: [user.email],
             subject: "Reset kata sandi AROMA",
-            html: `<p>Klik tautan berikut untuk reset kata sandi kamu:</p><p><a href="${url}" style="color:#0d9488;font-weight:600">Reset Kata Sandi</a></p><p>Tautan berlaku 1 jam. Abaikan jika tidak merasa meminta reset.</p>`,
+            html: `<p>Klik tautan berikut untuk reset kata sandi kamu:</p><p><a href="${resetUrl}" style="color:#0d9488;font-weight:600">Reset Kata Sandi</a></p><p>Tautan berlaku 1 jam. Abaikan jika tidak merasa meminta reset.</p>`,
           }),
         });
         if (!response.ok) {
