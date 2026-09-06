@@ -1,13 +1,23 @@
 import { betterAuth } from "better-auth";
 import { emailOTP } from "better-auth/plugins";
 import { Resend } from "resend";
+import type { D1Database } from "@cloudflare/workers-types";
 
-function makeResend() {
-  return new Resend(process.env.RESEND_API_KEY);
+export type AuthEnv = {
+  DB: D1Database;
+  BETTER_AUTH_URL: string;
+  BETTER_AUTH_SECRET: string;
+  GOOGLE_CLIENT_ID: string;
+  GOOGLE_CLIENT_SECRET: string;
+  RESEND_API_KEY: string;
+};
+
+function makeResend(apiKey: string) {
+  return new Resend(apiKey);
 }
 
-function makePlugins() {
-  const resend = makeResend();
+function makePlugins(env: AuthEnv) {
+  const resend = makeResend(env.RESEND_API_KEY);
   return [
     emailOTP({
       async sendVerificationOTP({ email, otp, type }) {
@@ -28,15 +38,15 @@ function makePlugins() {
   ];
 }
 
-function makeCommon() {
-  const resend = makeResend();
+function makeCommon(env: AuthEnv) {
+  const resend = makeResend(env.RESEND_API_KEY);
   return {
-    baseURL: process.env.BETTER_AUTH_URL ?? "https://aroma.my.id",
-    secret: process.env.BETTER_AUTH_SECRET!,
+    baseURL: env.BETTER_AUTH_URL,
+    secret: env.BETTER_AUTH_SECRET,
     socialProviders: {
       google: {
-        clientId: process.env.GOOGLE_CLIENT_ID!,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+        clientId: env.GOOGLE_CLIENT_ID,
+        clientSecret: env.GOOGLE_CLIENT_SECRET,
       },
     },
     emailAndPassword: {
@@ -50,31 +60,15 @@ function makeCommon() {
         });
       },
     },
-    plugins: makePlugins(),
+    plugins: makePlugins(env),
   };
 }
 
-// Production: D1 via Drizzle adapter
-export function createAuth(db: D1Database) {
-  const { drizzleAdapter } = require("better-auth/adapters/drizzle");
-  const { drizzle } = require("drizzle-orm/d1");
+export function createAuth(env: AuthEnv) {
   return betterAuth({
-    ...makeCommon(),
-    database: drizzleAdapter(drizzle(db), { provider: "sqlite" }),
+    ...makeCommon(env),
+    database: env.DB,
   });
 }
 
-// Dev: Kysely + better-sqlite3 local file
-export function createAuthDev() {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const { Kysely, SqliteDialect } = require("kysely");
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const Database = require("better-sqlite3");
-  const db = new Kysely({ dialect: new SqliteDialect({ database: new Database(".dev.db") }) });
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return betterAuth({ ...makeCommon(), database: { db, type: "sqlite" } as any });
-}
-
 export type Auth = ReturnType<typeof createAuth>;
-declare global { const D1Database: unknown; }
-type D1Database = import("@cloudflare/workers-types").D1Database;

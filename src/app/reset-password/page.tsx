@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, Suspense } from "react";
+import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Lock, ArrowRight } from "lucide-react";
 import AuthShell from "@/components/auth/AuthShell";
@@ -11,11 +11,9 @@ function ResetForm() {
   const token = params.get("token") ?? "";
   const [pw, setPw] = useState("");
   const [pw2, setPw2] = useState("");
-  const [err, setErr] = useState("");
+  const [err, setErr] = useState(token ? "" : "Token tidak valid atau kadaluarsa.");
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
-
-  useEffect(() => { if (!token) setErr("Token tidak valid atau kadaluarsa."); }, [token]);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();

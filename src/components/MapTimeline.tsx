@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Play, Pause, SkipBack } from "lucide-react";
 import IndonesiaMap from "./IndonesiaMap";
-import { RiskBadge } from "./RiskBadge";
 import type { MapProvince } from "@/lib/mapData";
 import type { Status } from "@/lib/types";
 
@@ -21,7 +20,6 @@ type Props = {
 };
 
 export default function MapTimeline({
-  slug,
   nama,
   paths,
   centroids,
@@ -47,8 +45,6 @@ export default function MapTimeline({
 
   const day = days[idx];
   const status = day?.status ?? {};
-  const pct = days.length ? (idx / (days.length - 1)) * 100 : 0;
-
   const counts = { stabil: 0, waspada: 0, tinggi: 0 };
   Object.values(status).forEach((s) => { counts[s] = (counts[s] ?? 0) + 1; });
 

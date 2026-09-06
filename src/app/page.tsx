@@ -10,10 +10,10 @@ import { getKomoditasForecast, getKomoditasProcessed, getMeta } from "@/lib/data
 import { getMapData, MAP_H, MAP_W } from "@/lib/mapData";
 import styles from "./landing.module.css";
 
-export default function LandingPage() {
-  const meta = getMeta();
+export default async function LandingPage() {
+  const meta = await getMeta();
   const { paths, centroids } = getMapData();
-  const riceProcessed = getKomoditasProcessed("beras");
+  const riceProcessed = await getKomoditasProcessed("beras");
   const lastRice = riceProcessed.seri.at(-1);
   const regions = ["Sumatera Utara", "DKI Jakarta", "Sulawesi Selatan", "Papua"].flatMap((name) => {
     const point = lastRice?.data[name];
@@ -21,9 +21,11 @@ export default function LandingPage() {
     if (!lastRice || !point || !Number.isFinite(point.harga) || !centroidKey) return [];
     return [{ name, price: point.harga, date: lastRice.tanggal, ...centroids[centroidKey] }];
   });
-  const previews = ["beras", "cabai-rawit", "bawang-merah"].map((slug) => {
-    const processed = getKomoditasProcessed(slug);
-    const forecast = getKomoditasForecast(slug);
+  const previews = await Promise.all(["beras", "cabai-rawit", "bawang-merah"].map(async (slug) => {
+    const [processed, forecast] = await Promise.all([
+      getKomoditasProcessed(slug),
+      getKomoditasForecast(slug),
+    ]);
     const province = "DKI Jakarta";
     const history = processed.seri
       .filter((point) => Number.isFinite(point.data[province]?.harga))
@@ -38,19 +40,22 @@ export default function LandingPage() {
         .filter((point) => point.is_future && Number.isFinite(point.forecast))
         .map((point) => ({ date: point.tanggal, value: point.forecast })),
     };
-  });
+  }));
   const featureProvince = "DKI Jakarta";
-  const featureCommodities = ["beras", "cabai-rawit", "bawang-merah"].map((slug) => {
+  const featureCommodities = await Promise.all(["beras", "cabai-rawit", "bawang-merah"].map(async (slug) => {
     const commodity = meta.komoditas.find((item) => item.slug === slug)!;
-    const processed = getKomoditasProcessed(slug);
+    const [processed, forecast] = await Promise.all([
+      getKomoditasProcessed(slug),
+      getKomoditasForecast(slug),
+    ]);
     return {
       slug,
       nama: commodity.nama,
       satuan: commodity.satuan,
       status: processed.seri.at(-1)?.data[featureProvince]?.status ?? "stabil" as const,
-      data: getKomoditasForecast(slug).provinsi[featureProvince]?.seri ?? [],
+      data: forecast.provinsi[featureProvince]?.seri ?? [],
     };
-  });
+  }));
   const featureRiskSnapshot = [...riceProcessed.seri].reverse().find((entry) => {
     const statuses = Object.values(entry.data).map((item) => item.status);
     return statuses.includes("waspada") && statuses.includes("tinggi");

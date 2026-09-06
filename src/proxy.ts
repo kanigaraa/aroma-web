@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 const PROTECTED = ["/dashboard", "/peta", "/komoditas", "/pengaturan"];
 const AUTH_PAGES = ["/login", "/register"];
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const session = req.cookies.get("better-auth.session_token")
     ?? req.cookies.get("__Secure-better-auth.session_token");

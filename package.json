@@ -3,18 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "predev": "npm run generate:runtime-data",
+    "dev": "vinext dev",
+    "generate:runtime-data": "node scripts/generate-runtime-data.mjs",
+    "prebuild": "npm run generate:runtime-data",
+    "build": "vinext build",
+    "start": "wrangler dev --config dist/server/wrangler.json",
+    "preview": "wrangler dev --config dist/server/wrangler.json",
+    "deploy": "npm run build && npm run deploy:built",
+    "deploy:built": "vinext-cloudflare deploy --skip-build --config dist/server/wrangler.json",
+    "check:vinext": "vinext check",
+    "check:cloudflare": "vinext check && vinext-cloudflare deploy --dry-run",
+    "typecheck": "next typegen && tsc --noEmit",
+    "cf:typegen": "wrangler types",
+    "db:migrate:local": "wrangler d1 migrations apply aroma-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply aroma-db --remote",
     "lint": "eslint"
   },
   "dependencies": {
-    "@auth/drizzle-adapter": "^1.11.3",
-    "@types/better-sqlite3": "^9.6.0",
+    "@vinext/cloudflare": "^1.0.0-beta.7",
     "better-auth": "^1.7.2",
-    "better-sqlite3": "^12.11.1",
     "clsx": "^2.1.1",
-    "drizzle-orm": "^0.45.2",
     "framer-motion": "^13.2.0",
     "gsap": "^3.15.0",
     "lenis": "^1.3.26",
@@ -23,22 +32,32 @@
     "next": "16.3.1",
     "react": "19.2.8",
     "react-dom": "19.2.8",
+    "react-server-dom-webpack": "^19.2.8",
     "react-zoom-pan-pinch": "^4.0.4",
     "recharts": "^3.10.1",
     "resend": "^6.25.0",
-    "tailwind-merge": "^3.6.0"
+    "tailwind-merge": "^3.6.0",
+    "vinext": "^1.0.0-beta.9"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.54.4",
     "@cloudflare/workers-types": "^5.20260831.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.1.1",
+    "@vitejs/plugin-rsc": "^0.5.34",
     "babel-plugin-react-compiler": "1.0.0",
-    "drizzle-kit": "^0.31.10",
     "eslint": "^9",
     "eslint-config-next": "16.3.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
-  }
+    "typescript": "^5",
+    "vite": "^8.2.2",
+    "wrangler": "^4.129.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "type": "module"
 }

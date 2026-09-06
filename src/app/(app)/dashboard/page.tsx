@@ -4,8 +4,6 @@ import { summarizeStatus } from "@/components/RiskBadge";
 import { getMapData } from "@/lib/mapData";
 import type { ForecastPoint, Status } from "@/lib/types";
 
-export const dynamic = "force-static";
-
 function trendFrom(seri: { data: Record<string, { harga: number }> }[]) {
   if (seri.length < 2) return { delta: 0, dir: 0 as 0 | 1 | -1 };
   const last = Object.values(seri.at(-1)!.data);
@@ -16,11 +14,15 @@ function trendFrom(seri: { data: Record<string, { harga: number }> }[]) {
   return { delta, dir: delta > 0 ? 1 : delta < 0 ? -1 : 0 };
 }
 
-export default function Home() {
-  const meta = getMeta();
+export default async function Home() {
+  const meta = await getMeta();
+  const commodityData = await Promise.all(meta.komoditas.map(async (commodity) => ({
+    commodity,
+    processed: await getKomoditasProcessed(commodity.slug),
+    forecast: await getKomoditasForecast(commodity.slug),
+  })));
 
-  const rows: KomoRow[] = meta.komoditas.map((k) => {
-    const p = getKomoditasProcessed(k.slug);
+  const rows: KomoRow[] = commodityData.map(({ commodity: k, processed: p }) => {
     const last = p.seri[p.seri.length - 1];
     const st = summarizeStatus(p.seri);
     const { dir, delta } = trendFrom(p.seri);
@@ -37,9 +39,7 @@ export default function Home() {
   const chart: Record<string, Record<string, ForecastPoint[]>> = {};
   const statusNasional: Record<string, Status> = {};
   const statusPerProv: Record<string, Record<string, Status>> = {};
-  meta.komoditas.forEach((k) => {
-    const p = getKomoditasProcessed(k.slug);
-    const fc = getKomoditasForecast(k.slug);
+  commodityData.forEach(({ commodity: k, processed: p, forecast: fc }) => {
     const inner: Record<string, ForecastPoint[]> = {};
     const last = p.seri[p.seri.length - 1];
     const perProv: Record<string, Status> = {};
@@ -57,8 +57,10 @@ export default function Home() {
 
   const { paths: mapPaths, centroids: mapCentroids } = getMapData();
 
-  const insights = getInsight();
-  const pBeras = getKomoditasProcessed("beras");
+  const [insights, pBeras] = await Promise.all([
+    getInsight(),
+    getKomoditasProcessed("beras"),
+  ]);
   const lastTanggal = pBeras.seri[pBeras.seri.length - 1]?.tanggal ?? "";
 
   return (

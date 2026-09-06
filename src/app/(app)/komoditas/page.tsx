@@ -4,12 +4,10 @@ import { getMeta, getKomoditasProcessed } from "@/lib/data";
 import { RiskBadge, summarizeStatus } from "@/components/RiskBadge";
 import CommodityIcon from "@/components/CommodityIcon";
 
-export const dynamic = "force-static";
-
-export default function KomoditasPage() {
-  const meta = getMeta();
-  const rows = meta.komoditas.map((k, i) => {
-    const p = getKomoditasProcessed(k.slug);
+export default async function KomoditasPage() {
+  const meta = await getMeta();
+  const rows = await Promise.all(meta.komoditas.map(async (k, i) => {
+    const p = await getKomoditasProcessed(k.slug);
     const last = p.seri[p.seri.length - 1];
     const vals = last ? Object.values(last.data).map((d) => d.harga) : [];
     const avg = vals.length
@@ -24,7 +22,7 @@ export default function KomoditasPage() {
       dir = delta > 0 ? 1 : delta < 0 ? -1 : 0;
     }
     return { ...k, status: summarizeStatus(p.seri), avg, prov: p.provinsi.length, dir, delta, seed: i };
-  });
+  }));
 
   return (
     <main className="flex-1 min-w-0 px-6 py-6 lg:px-8">

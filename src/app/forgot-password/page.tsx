@@ -1,12 +1,10 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { Mail, ArrowRight } from "lucide-react";
 import AuthShell from "@/components/auth/AuthShell";
 import { authClient } from "@/lib/auth-client";
 
 export default function ForgotPasswordPage() {
-  const router = useRouter();
   const [email, setEmail] = useState("");
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(false);

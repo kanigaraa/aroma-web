@@ -1,0 +1,42 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "aroma-web",
+  "main": "vinext/server/fetch-handler",
+  "compatibility_date": "2026-09-06",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "dist/client",
+    "binding": "ASSETS",
+    "not_found_handling": "none"
+  },
+  "cache": {
+    "enabled": true
+  },
+  "version_metadata": {
+    "binding": "CF_VERSION_METADATA"
+  },
+  "images": {
+    "binding": "IMAGES"
+  },
+  "vars": {
+    "BETTER_AUTH_URL": "https://aroma.my.id",
+    "GROQ_MODEL": "qwen/qwen3.8-27b"
+  },
+  "secrets": {
+    "required": [
+      "BETTER_AUTH_SECRET",
+      "GOOGLE_CLIENT_ID",
+      "GOOGLE_CLIENT_SECRET",
+      "RESEND_API_KEY",
+      "GROQ_API_KEY"
+    ]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "aroma-db",
+      "database_id": "0400df7e-7dc4-462f-a86c-47601378d185",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

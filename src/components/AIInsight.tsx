@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Sparkles, RefreshCw } from "lucide-react";
 
 type Props = {
@@ -9,12 +9,14 @@ type Props = {
   provinsi: string[];
 };
 
+type InsightResponse = { text?: string | null };
+
 export default function AIInsight({ rows, lastTanggal, provinsi }: Props) {
   const [text, setText] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState(false);
 
-  const load = async () => {
+  const load = useCallback(async () => {
     setLoading(true);
     setErr(false);
     try {
@@ -23,7 +25,7 @@ export default function AIInsight({ rows, lastTanggal, provinsi }: Props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ rows, lastTanggal, provinsi }),
       });
-      const d = await r.json();
+      const d = await r.json() as InsightResponse;
       setText(d.text || null);
       if (!d.text) setErr(true);
     } catch {
@@ -31,9 +33,12 @@ export default function AIInsight({ rows, lastTanggal, provinsi }: Props) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [lastTanggal, provinsi, rows]);
 
-  useEffect(() => { load(); }, []);
+  useEffect(() => {
+    const timer = window.setTimeout(() => void load(), 0);
+    return () => window.clearTimeout(timer);
+  }, [load]);
 
   return (
     <div className="mb-6 rounded-2xl border border-teal-100 bg-gradient-to-r from-teal-50 via-white to-emerald-50 p-5">

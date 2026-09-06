@@ -5,28 +5,32 @@ import geojson from "@/data/idn.json";
 
 export type MapProvince = { name: string; path: string };
 
+type Position = [number, number];
+type PolygonGeometry = { type: "Polygon"; coordinates: Position[][] };
+type MultiPolygonGeometry = { type: "MultiPolygon"; coordinates: Position[][][] };
+type Geometry = PolygonGeometry | MultiPolygonGeometry;
 type Feature = {
   type: string;
   properties: { name: string; slug: string };
-  geometry: { type: string; coordinates: any };
+  geometry: Geometry;
 };
+type ProvinceGeoJson = { features: Feature[] };
 
-const features = (geojson as any).features as Feature[];
+const features = (geojson as unknown as ProvinceGeoJson).features;
 
-function flattenCoords(geo: any): [number, number][] {
-  const out: [number, number][] = [];
-  const push = (c: number[]) => out.push([c[0], c[1]]);
-  const walk = (g: any) => {
-    if (!g) return;
-    if (g.type === "Polygon") g.coordinates.forEach((ring: any) => ring.forEach(push));
-    else if (g.type === "MultiPolygon")
-      g.coordinates.forEach((poly: any) => poly.forEach((ring: any) => ring.forEach(push)));
-  };
-  walk(geo);
+function flattenCoords(geo: Geometry): Position[] {
+  const out: Position[] = [];
+  if (geo.type === "Polygon") {
+    geo.coordinates.forEach((ring) => ring.forEach((position) => out.push(position)));
+  } else {
+    geo.coordinates.forEach((polygon) =>
+      polygon.forEach((ring) => ring.forEach((position) => out.push(position)))
+    );
+  }
   return out;
 }
 
-function project(pts: [number, number][], width: number, height: number) {
+function project(pts: Position[], width: number, height: number) {
   const lngs = pts.map((p) => p[0]);
   const lats = pts.map((p) => p[1]);
   const minLng = Math.min(...lngs),
@@ -68,7 +72,7 @@ export const MAP_OFF_Y = Math.max(0, B.minY);
 export const MAP_W = Math.ceil(B.maxX - B.minX);
 export const MAP_H = Math.ceil(B.maxY - B.minY);
 
-function ringToPath(ring: number[][]): string {
+function ringToPath(ring: Position[]): string {
   return (
     "M" +
     ring
@@ -78,15 +82,10 @@ function ringToPath(ring: number[][]): string {
   );
 }
 
-function toPath(geo: any): string {
+function toPath(geo: Geometry): string {
   if (geo.type === "Polygon")
-    return geo.coordinates.map((ring: number[][]) => ringToPath(ring)).join(" ");
-  if (geo.type === "MultiPolygon")
-    return geo.coordinates
-      .flat()
-      .map((ring: number[][]) => ringToPath(ring))
-      .join(" ");
-  return "";
+    return geo.coordinates.map((ring) => ringToPath(ring)).join(" ");
+  return geo.coordinates.flat().map((ring) => ringToPath(ring)).join(" ");
 }
 
 export function getMapData(): { paths: MapProvince[]; centroids: Record<string, { x: number; y: number }> } {

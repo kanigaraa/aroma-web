@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AROMA
 
-## Getting Started
+AROMA is a Next.js 16 application deployed to Cloudflare Workers with vinext. Authentication uses Better Auth and the existing Cloudflare D1 database bound as `DB`.
 
-First, run the development server:
+## Requirements
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 22 or newer (Node.js 24 is selected in `.node-version`)
+- npm
+- A Cloudflare account with access to the `aroma-web` Worker and `aroma-db` D1 database
+
+## Local development
+
+Keep local secrets in `.env` at the project root:
+
+```dotenv
+BETTER_AUTH_SECRET=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+RESEND_API_KEY=
+GROQ_API_KEY=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The non-secret values `BETTER_AUTH_URL` and `GROQ_MODEL` are defined in `wrangler.jsonc`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Install dependencies, create the local D1 schema, and start vinext in the Workers runtime:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run db:migrate:local
+npm run dev
+```
 
-## Learn More
+## Verification
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+npm run typecheck
+npm run check:cloudflare
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`npm run build` generates a reduced runtime data set in `public/_data`, builds the Worker, and copies those files into `dist/client` as Workers static assets.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Database migrations
 
-## Deploy on Vercel
+Apply migrations to the existing production D1 database only when a migration has not already been applied:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run db:migrate:remote
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The D1 binding, database name, and database ID are defined in `wrangler.jsonc`.
+
+## Deployment
+
+Deploy from a machine authenticated with Wrangler:
+
+```bash
+npm run deploy
+```
+
+For Cloudflare Workers Builds connected to GitHub, use:
+
+- Build command: `npm run build`
+- Deploy command: `npm run deploy:built`
+- Root directory: `/`
+
+Configure the required Worker secrets in Cloudflare before deploying. The Worker name in Cloudflare must be `aroma-web` so it matches `wrangler.jsonc`.

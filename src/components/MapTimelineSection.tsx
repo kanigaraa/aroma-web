@@ -4,15 +4,17 @@ import { getMapData } from "@/lib/mapData";
 import type { Status } from "@/lib/types";
 
 // ambil status per tanggal utk 30 hari terakhir (terbaru di akhir)
-export default function MapTimelineSection({
+export default async function MapTimelineSection({
   slug,
   nama,
 }: {
   slug: string;
   nama: string;
 }) {
-  const meta = getMeta();
-  const p = getKomoditasProcessed(slug);
+  const [meta, p] = await Promise.all([
+    getMeta(),
+    getKomoditasProcessed(slug),
+  ]);
   const { paths, centroids } = getMapData();
   const last30 = p.seri.slice(-30);
 

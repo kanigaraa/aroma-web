@@ -10,8 +10,6 @@ import MapTimelineSection from "@/components/MapTimelineSection";
 import { getMapData } from "@/lib/mapData";
 import type { Status } from "@/lib/types";
 
-export const dynamic = "force-static";
-
 type ProvDetail = {
   nama: string;
   harga: number;
@@ -24,9 +22,13 @@ type ProvDetail = {
 // histori harga per provinsi (maks 90 hari terakhir) utk chart tren
 type ProvHistory = { tanggal: string; harga: number }[];
 
-export default function PetaPage() {
-  const meta = getMeta();
-  const lastTanggal = getKomoditasProcessed("beras").seri.at(-1)?.tanggal;
+export default async function PetaPage() {
+  const [meta, insights, rice] = await Promise.all([
+    getMeta(),
+    getInsight(),
+    getKomoditasProcessed("beras"),
+  ]);
+  const lastTanggal = rice.seri.at(-1)?.tanggal;
   const { paths, centroids } = getMapData();
 
   // data per komoditas -> { status: Record<prov,Status>, detail: Record<prov,ProvDetail> }
@@ -39,10 +41,14 @@ export default function PetaPage() {
     }
   > = {};
 
-  meta.komoditas.forEach((k) => {
-    const p = getKomoditasProcessed(k.slug);
-    const fc = getKomoditasForecast(k.slug);
-    const insight = getInsight().find((i) => i.komoditas === k.slug);
+  const commodityData = await Promise.all(meta.komoditas.map(async (commodity) => ({
+    commodity,
+    processed: await getKomoditasProcessed(commodity.slug),
+    forecast: await getKomoditasForecast(commodity.slug),
+  })));
+
+  commodityData.forEach(({ commodity: k, processed: p, forecast: fc }) => {
+    const insight = insights.find((i) => i.komoditas === k.slug);
     const status: Record<string, Status> = {};
     const detail: Record<string, ProvDetail> = {};
     const history: Record<string, ProvHistory> = {};

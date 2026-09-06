@@ -1,13 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import {
   RotateCcw,
   ZoomIn,
   ZoomOut,
   TrendingUp,
-  TrendingDown,
   CloudSun,
   MapPin,
   X,
@@ -27,7 +26,7 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
-import { MAP_W, MAP_H, type MapProvince } from "@/lib/mapData";
+import type { MapProvince } from "@/lib/mapData";
 import type { Status } from "@/lib/types";
 
 type ProvDetail = {

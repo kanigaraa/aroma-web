@@ -1,13 +1,8 @@
+import { env } from "cloudflare:workers";
 import { NextResponse } from "next/server";
-import { createHash } from "crypto";
-import { promises as fs } from "fs";
-import path from "path";
-
-// Ringkasan Hari Ini — hasil LLM di-cache per (tanggal + hash data).
-// Satu panggilan GROQ per kombinasi data; refresh berulang tidak memanggil AI lagi.
-const CACHE_DIR = path.join(process.cwd(), ".cache", "insight");
 
 type Body = { rows?: { nama: string; avg: number | null; dir: number; delta: number; status: string }[]; lastTanggal?: string; provinsi?: string[] };
+type GroqResponse = { choices?: { message?: { content?: string } }[] };
 
 export async function POST(req: Request) {
   let body: Body;
@@ -22,19 +17,20 @@ export async function POST(req: Request) {
   const provinsi = Array.isArray(body.provinsi) ? body.provinsi : [];
 
   // Kunci cache: tanggal + hash ringkas baris data (semua komoditas)
-  const hash = createHash("sha1")
-    .update(JSON.stringify(rows.map((r) => [r.nama, r.avg, r.dir, r.status])))
-    .digest("hex")
-    .slice(0, 12);
+  const bytes = new TextEncoder().encode(
+    JSON.stringify(rows.map((r) => [r.nama, r.avg, r.dir, r.status]))
+  );
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  const hash = Array.from(new Uint8Array(digest).slice(0, 6), (byte) =>
+    byte.toString(16).padStart(2, "0")
+  ).join("");
   const key = `${lastTanggal}-${hash}`;
-  const file = path.join(CACHE_DIR, `${key}.json`);
+  const cache = (caches as CacheStorage & { default: Cache }).default;
+  const cacheKey = new Request(`https://aroma-cache.invalid/insight/${encodeURIComponent(key)}`);
 
-  // 1) Cek cache
-  try {
-    const cached = JSON.parse(await fs.readFile(file, "utf8"));
-    return NextResponse.json({ text: cached.text });
-  } catch {
-    /* cache miss — hitung ulang */
+  const cached = await cache.match(cacheKey);
+  if (cached) {
+    return NextResponse.json(await cached.json());
   }
 
   // 2) Bangun daftar konteks utk AI
@@ -45,8 +41,8 @@ export async function POST(req: Request) {
   const prompt = `Kamu adalah asisten analisis harga pangan Indonesia. Ringkas kondisi harga pangan hari ini (${lastTanggal}) dalam 2-3 kalimat untuk pembaca umum (bukan analis data), dalam Bahasa Indonesia, informatif dan natural. Jangan menyebutkan istilah teknis seperti zscore atau persentase mentah. Fokus pada hal paling menonjol: komoditas berstatus waspada/tinggi, serta yang naik/turun paling besar. Jangan menyebutkan semua komoditas — pilih yang paling relevan. Mulai langsung dengan kalimat pertama, tanpa kata pengantar.\n\nData (${provinsi.length} provinsi):\n${list}`;
 
   // 3) Panggil GROQ
-  const GROQ_KEY = process.env.GROQ_API_KEY;
-  const GROQ_MODEL = process.env.GROQ_MODEL ?? "qwen/qwen3-8b";
+  const GROQ_KEY = env.GROQ_API_KEY;
+  const GROQ_MODEL = env.GROQ_MODEL;
   if (!GROQ_KEY) return NextResponse.json({ text: null, error: "no key" }, { status: 500 });
 
   try {
@@ -59,14 +55,18 @@ export async function POST(req: Request) {
         temperature: 0.3,
       }),
     });
-    const data = await res.json();
+    const data = await res.json() as GroqResponse;
     const text: string | undefined = data?.choices?.[0]?.message?.content;
 
     if (!text) return NextResponse.json({ text: null, error: "groq empty" }, { status: 502 });
 
-    // 4) Simpan cache (sinkron, best-effort)
-    await fs.mkdir(CACHE_DIR, { recursive: true }).catch(() => {});
-    await fs.writeFile(file, JSON.stringify({ text, at: new Date().toISOString() })).catch(() => {});
+    await cache.put(
+      cacheKey,
+      Response.json(
+        { text },
+        { headers: { "Cache-Control": "public, max-age=86400" } }
+      )
+    );
 
     return NextResponse.json({ text });
   } catch (e) {
