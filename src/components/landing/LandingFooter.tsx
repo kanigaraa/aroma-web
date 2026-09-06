@@ -6,12 +6,16 @@ export default function LandingFooter() {
   return (
     <footer className={`${styles.landing} ${styles.footerSurface}`}>
       <div className={`${styles.container} ${styles.footer}`}>
-        <Link href="/" className={styles.brand}><Logo size={28} /><span>AROMA</span></Link>
-        <p>Analisis Risiko Optimasi Masa depan Agrikultur</p>
-        <p>© 2026 AkaliDev. Semua hak dilindungi.</p>
-        <div className={styles.footerLinks}>
-          <a href="/privacy">Kebijakan Privasi</a>
-          <a href="/terms">Ketentuan Layanan</a>
+        <div className={styles.footerIdentity}>
+          <Link href="/" className={styles.brand}><Logo size={28} /><span>AROMA</span></Link>
+          <p>Analisis Risiko Optimasi Masa Depan Agrikultur</p>
+        </div>
+        <div className={styles.footerMeta}>
+          <nav className={styles.footerLinks} aria-label="Dokumen layanan">
+            <Link href="/privacy">Kebijakan Privasi</Link>
+            <Link href="/terms">Ketentuan Layanan</Link>
+          </nav>
+          <p>© 2026 AkaliDev. Semua hak dilindungi.</p>
         </div>
       </div>
     </footer>
